@@ -1,15 +1,273 @@
-<!doctype html><html lang=en><head><title>Diversity-Inclusion-and-Everything-In-Between :: Artur Kondas</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Before I&amp;rsquo;ll jump into the topic, as you can see this is my first post since a while. A lot of stuff has happened, most of them good - hope that your personal Apocalypse Now has been, at least a bit, good for you!
- Every now and then, there&amp;rsquo;s a new big &amp;ldquo;gamechanger&amp;rdquo; in the tech world. A few years ago it was Agile ways of working, not so far ago it was CI/CD, small, yet stable changes (so basically Agile v2) - now it&amp;rsquo;s diversity, inclusion and equity."><meta name=keywords content="Go,Golang,Programming,Open Source,Lessons,Pizza"><meta name=robots content="noodp"><link rel=canonical href=/blog/diversity-inclusion-and-everything-in-between/><link rel=stylesheet href=/assets/style.css><link rel=apple-touch-icon href=/img/apple-touch-icon-192x192.png><link rel="shortcut icon" href=/img/favicon/orange.png><meta name=twitter:card content="summary"><meta name=twitter:site content="arturkondas"><meta name=twitter:creator content><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="og:title" content="Diversity-Inclusion-and-Everything-In-Between"><meta property="og:description" content="Before I&amp;rsquo;ll jump into the topic, as you can see this is my first post since a while. A lot of stuff has happened, most of them good - hope that your personal Apocalypse Now has been, at least a bit, good for you!
- Every now and then, there&amp;rsquo;s a new big &amp;ldquo;gamechanger&amp;rdquo; in the tech world. A few years ago it was Agile ways of working, not so far ago it was CI/CD, small, yet stable changes (so basically Agile v2) - now it&amp;rsquo;s diversity, inclusion and equity."><meta property="og:url" content="/blog/diversity-inclusion-and-everything-in-between/"><meta property="og:site_name" content="Artur Kondas"><meta property="og:image" content="/img/favicon/orange.png"><meta property="og:image:width" content="2048"><meta property="og:image:height" content="1024"><meta property="article:published_time" content="2021-05-21 00:00:00 +0000 UTC"></head><body class=orange><div class="container headings--one-size"><header class=header><div class=header__inner><div class=header__logo><a href=/><div class=logo>Artur Kondas</div></a></div><div class=menu-trigger>menu</div></div><nav class=menu><ul class="menu__inner menu__inner--desktop"><li><a href=/about>About</a></li><li><a href=/media>Media</a></li><li><a href=/opensource>Open Source</a></li><li><a href=https://akondas.com/talks>Talks</a></li></ul><ul class="menu__inner menu__inner--mobile"><li><a href=/about>About</a></li><li><a href=/media>Media</a></li><li><a href=/opensource>Open Source</a></li><li><a href=https://akondas.com/talks>Talks</a></li></ul></nav></header><div class=content><div class=post><h1 class=post-title><a href=/blog/diversity-inclusion-and-everything-in-between/>Diversity-Inclusion-and-Everything-In-Between</a></h1><div class=post-meta><span class=post-date>2021-05-21</span></div><div class=post-content><div><p>Before I&rsquo;ll jump into the topic, as you can see this is my first post since a while. A lot of stuff has happened, most of them good - hope that your personal Apocalypse Now has been, at least a bit, good for you!</p><hr><p>Every now and then, there&rsquo;s a new big &ldquo;gamechanger&rdquo; in the tech world. A few years ago it was Agile ways of working, not so far ago it was CI/CD, small, yet stable changes (so basically Agile v2) - now it&rsquo;s diversity, inclusion and equity. The issue is, same as it was with Agile and everything after - in my opinion, it&rsquo;s widely misunderstood how it should work.</p><p>Before you start commenting and saying &ldquo;You&rsquo;re a white male in Europe, what do you know about diversity and equity?&rdquo;, hear me out. Also, these are my thoughts only and you&rsquo;re more than welcome to disagree with them (or agree!) - I&rsquo;d love to have some constructive discussion about the topic!</p><h1 id=diversity-is-widely-misunderstood>Diversity is widely misunderstood<a href=#diversity-is-widely-misunderstood class=hanchor arialabel=Anchor>&#8983;</a></h1><p>And that comes down to what&rsquo;s the most clickable or most controversial. Diversity in tech is mostly understood as race and gender - what about nationality and religion? Why most of the companies cut the &ldquo;tough&rdquo; topics from their handbooks and go for the low-hanging fruit?</p><p>Why diversity doesn&rsquo;t take into consideration age or willingness to become a parent?
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Diversity-Inclusion-and-Everything-In-Between :: Artur Kondas</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Before I&amp;rsquo;ll jump into the topic, as you can see this is my first post since a while. A lot of stuff has happened, most of them good - hope that your personal Apocalypse Now has been, at least a bit, good for you!
+ Every now and then, there&amp;rsquo;s a new big &amp;ldquo;gamechanger&amp;rdquo; in the tech world. A few years ago it was Agile ways of working, not so far ago it was CI/CD, small, yet stable changes (so basically Agile v2) - now it&amp;rsquo;s diversity, inclusion and equity." />
+<meta name="keywords" content="Go, Golang, Programming, Open Source, Lessons, Pizza" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/blog/diversity-inclusion-and-everything-in-between/" />
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css">
+
+
+
+
+
+
+<link rel="apple-touch-icon" href="/img/apple-touch-icon-192x192.png">
+
+  <link rel="shortcut icon" href="/img/favicon/orange.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+  
+    <meta name="twitter:site" content="arturkondas" />
+  
+    <meta name="twitter:creator" content="" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Diversity-Inclusion-and-Everything-In-Between">
+<meta property="og:description" content="Before I&amp;rsquo;ll jump into the topic, as you can see this is my first post since a while. A lot of stuff has happened, most of them good - hope that your personal Apocalypse Now has been, at least a bit, good for you!
+ Every now and then, there&amp;rsquo;s a new big &amp;ldquo;gamechanger&amp;rdquo; in the tech world. A few years ago it was Agile ways of working, not so far ago it was CI/CD, small, yet stable changes (so basically Agile v2) - now it&amp;rsquo;s diversity, inclusion and equity." />
+<meta property="og:url" content="/blog/diversity-inclusion-and-everything-in-between/" />
+<meta property="og:site_name" content="Artur Kondas" />
+
+  
+    <meta property="og:image" content="/img/favicon/orange.png">
+  
+
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+  <meta property="article:published_time" content="2021-05-21 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="orange">
+
+
+<div class="container headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Artur Kondas
+  </div>
+</a>
+
+    </div>
+    
+      <div class="menu-trigger">menu</div>
+    
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/media">Media</a></li>
+        
+      
+        
+          <li><a href="/opensource">Open Source</a></li>
+        
+      
+        
+          <li><a href="/talks">Talks</a></li>
+        
+      
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/media">Media</a></li>
+      
+    
+      
+        <li><a href="/opensource">Open Source</a></li>
+      
+    
+      
+        <li><a href="/talks">Talks</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="/blog/diversity-inclusion-and-everything-in-between/">Diversity-Inclusion-and-Everything-In-Between</a></h1>
+  <div class="post-meta">
+    
+      <span class="post-date">
+        2021-05-21 
+      </span>
+    
+    
+  </div>
+
+  
+
+  
+
+  
+
+  <div class="post-content"><div>
+        <p>Before I&rsquo;ll jump into the topic, as you can see this is my first post since a while. A lot of stuff has happened, most of them good - hope that your personal Apocalypse Now has been, at least a bit, good for you!</p>
+<hr>
+<p>Every now and then, there&rsquo;s a new big &ldquo;gamechanger&rdquo; in the tech world. A few years ago it was Agile ways of working, not so far ago it was CI/CD, small, yet stable changes (so basically Agile v2) - now it&rsquo;s diversity, inclusion and equity. The issue is, same as it was with Agile and everything after - in my opinion, it&rsquo;s widely misunderstood how it should work.</p>
+<p>Before you start commenting and saying &ldquo;You&rsquo;re a white male in Europe, what do you know about diversity and equity?&rdquo;, hear me out. Also, these are my thoughts only and you&rsquo;re more than welcome to disagree with them (or agree!) - I&rsquo;d love to have some constructive discussion about the topic!</p>
+<h1 id="diversity-is-widely-misunderstood">Diversity is widely misunderstood<a href="#diversity-is-widely-misunderstood" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>And that comes down to what&rsquo;s the most clickable or most controversial. Diversity in tech is mostly understood as race and gender - what about nationality and religion? Why most of the companies cut the &ldquo;tough&rdquo; topics from their handbooks and go for the low-hanging fruit?</p>
+<p>Why diversity doesn&rsquo;t take into consideration age or willingness to become a parent?
 Why it&rsquo;s so hard for the older folks to break into the new companies or into new life ventures?
 Why if you want to be a parent, you only get mere 6 weeks of full pay (in most places) and then you&rsquo;re basically on your own?
-Why if you&rsquo;re back from maternity there&rsquo;s nothing set up to ease you back into the work?</p><p>At this point, you can&rsquo;t pivot your career over the course of a few weeks/months - you have to drop everything and just YOLO into the new venture. Will it pay off? Will it work? Who the fuck knows.</p><p>Having a kid? Yes, let&rsquo;s do that, but don&rsquo;t count on your work to treat you fairly just because you want to be a parent.</p><h1 id=equity-for-boomers>Equity for boomers<a href=#equity-for-boomers class=hanchor arialabel=Anchor>&#8983;</a></h1><p>Although the word &ldquo;boomer&rdquo; can be taken negatively, it&rsquo;s <a href=https://en.wikipedia.org/wiki/Baby_boomers>perfectly okay to use it</a> - why people can bash Millenials (or any other generation for this matter) and it&rsquo;s acceptable?
+Why if you&rsquo;re back from maternity there&rsquo;s nothing set up to ease you back into the work?</p>
+<p>At this point, you can&rsquo;t pivot your career over the course of a few weeks/months - you have to drop everything and just YOLO into the new venture. Will it pay off? Will it work? Who the fuck knows.</p>
+<p>Having a kid? Yes, let&rsquo;s do that, but don&rsquo;t count on your work to treat you fairly just because you want to be a parent.</p>
+<h1 id="equity-for-boomers">Equity for boomers<a href="#equity-for-boomers" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>Although the word &ldquo;boomer&rdquo; can be taken negatively, it&rsquo;s <a href="https://en.wikipedia.org/wiki/Baby_boomers">perfectly okay to use it</a> - why people can bash Millenials (or any other generation for this matter) and it&rsquo;s acceptable?
 Why some companies still require your photo on the resume? Why does it even matter?
-Why some companies won&rsquo;t even talk to you if you have tattoos? Or start schooling you, that you won&rsquo;t get a job because you have something on your hands? (been there, walked out of the interview)</p><p>Or, my favourite one recently:</p><p>How come remote/flexible working is bad for productivity and you have to be back in the office because of the &ldquo;company culture&rdquo;? If company culture is so important, why don&rsquo;t you trust me with my work? Why do you want to introduce &ldquo;productivity checkers&rdquo;? Why do you need to monitor the time I spend over the piece of work? Is the time the value you&rsquo;re looking for?</p><p>Maybe the remote work isn&rsquo;t the issue, maybe the real issue is your trust?</p><h1 id=nothing-in-the-middle>Nothing in the middle<a href=#nothing-in-the-middle class=hanchor arialabel=Anchor>&#8983;</a></h1><p>If you look at it, everything has to be blown out of proportion these days - you&rsquo;re either inclusive as hell or not at all. Well, I personally believe, that if you had to set up a whole division in your company that will deal with inclusion, you&rsquo;re either chasing trends or you had a MASSIVE problem from the very beginning.</p><p>The middle would be looking at what we do, where we want to get and how can we do that - not setting up a new team in the company that&rsquo;ll move the one indicator up 3% because you&rsquo;ve hired 2 more people from a minority group but fixing tensions in your teams, because one of the team members is passive-aggressive all the time and that&rsquo;s the way they get shit done. Can you see the problem?</p><h1 id=start-from-the-beginning>Start from the beginning<a href=#start-from-the-beginning class=hanchor arialabel=Anchor>&#8983;</a></h1><p>I don&rsquo;t have all the answers - hell, I don&rsquo;t have any. I&rsquo;ll never know how it is to be not allowed to achieve something just because of the colour of my skin or because I don&rsquo;t believe in your gods. But what I think might help, is a bit more being human in this post-capitalistic world.</p><p>Start with listening to the people you have in your company now. How do you want to be inclusive when you still have problems in your company? How do you want to be diverse if one person FORCES their view upon others?</p><p>Start with trusting your employees. How do you want to give equal opportunities when you &ldquo;need to see your team on a daily basis to see if they&rsquo;re doing their job&rdquo;? Why work from home/flexible working is a bad thing if you get work done?</p><p>Start with supporting your teams in every part of their lives. You call yourself a &ldquo;family&rdquo; within the company, yet you disregard extra pay for pregnant women or giving one extra day for &ldquo;unexpected&rdquo; stuff - I don&rsquo;t know, emergency moving houses. Or your dog&rsquo;s diarrhoea. It won&rsquo;t kill your business, yet your employee will feel MUCH better knowing, that when shit hits the fan, they don&rsquo;t have to worry about today&rsquo;s standup.</p><p>And I guess the most important stuff - change your hiring process. Make it more humane. If you&rsquo;re not working for FAANG or for high-volume financial sector, you won&rsquo;t have to know all the algorithms inside out. Do you want to have smart people in your company? Give them interesting problems to solve and see how they approach it.
-Everybody can google &ldquo;most efficient sorting algorithm&rdquo; but not everybody can figure out how one, minuscule change in your application can improve it in terms of readability and usability. Try to get to know the candidate and not treat them as yet another number in your book.</p><h1 id=it-all-starts-with-you>It all starts with YOU<a href=#it-all-starts-with-you class=hanchor arialabel=Anchor>&#8983;</a></h1><p>I&rsquo;ve ranted about the companies, now I&rsquo;ll rant about you.</p><p>If you want your company to change, what have you done to make the change? Speak up! Nobody will know that you&rsquo;re miserable if you won&rsquo;t say it. If you&rsquo;re scared, that you&rsquo;ll have issues after you speak up, maybe that&rsquo;s not the company you want to work for? If they don&rsquo;t allow any dialogue to happen, what does that say about them?</p><p>If you want your company to be more inclusive, what have you done about it? Instead of talking smack about your peers, why not swallow your pride and helping them find, what you consider, a better way of working? Why not engage in the discussion?</p><p>If you want your company to grow, have you help somebody to grow? Don&rsquo;t treat everybody as &ldquo;THEY WANT TO TAKE MY JOB, I NEED TO BE THE BEST&rdquo;. Life&rsquo;s not a Pokemon game, you don&rsquo;t have to catch them all. Spend some time to teach your peers something new, help them with something and most important - get to know them, just a bit.
-Life is not all about you, people go through all kinds of shit ALL THE TIME. Maybe the code that broke the production was written when they had a really bad day? Instead of going &ldquo;IT&rsquo;S XXXX FAULT&rdquo;, be blameless. Help them, instead of judging them.</p><h1 id=be-more-humane>Be more humane<a href=#be-more-humane class=hanchor arialabel=Anchor>&#8983;</a></h1><p>I wasn&rsquo;t the greatest and the most inclusive human being from the start - I have my fair share of days when I was just a shitty person. But I was lucky enough to find people, that helped me to find my own shortcomings and work on them.</p><p>I have been lucky enough to help with two editions of <a href=https://www.colorintech.org/>Colorintech</a> events - and, in my opinion, this is Diversity & Inclusion done right - they&rsquo;re not writing empty blogposts (&mldr;) and nothing else - they go above and beyond to help people from minorities kick-start their careers in tech.
-I&rsquo;ve helped with <a href=https://codefirstgirls.org.uk/>Code First: Girls</a> events - which, honestly, for me, was one of the most fun things I&rsquo;ve done EVER - by the way, I&rsquo;ll be like Samuel L Jackson in Pulp Fiction if I&rsquo;ll find out about another company that pays women less or forces them to work from the office just because they are <a href=https://www.tuc.org.uk/news/employers-are-breaking-law-and-forcing-pregnant-women-out-work-during-pandemic-warns-tuc>&ldquo;getting pregnant&rdquo;</a>.</p><h1 id=change-is-imminent->Change is imminent (?)<a href=#change-is-imminent- class=hanchor arialabel=Anchor>&#8983;</a></h1><p>2020, in my opinion, basically made the inevitable change of the current workspace a reality. In my head, that&rsquo;s a good thing, because it shows who&rsquo;s actually caring about their employees and who&rsquo;s willing to change. <a href=https://www.bbc.co.uk/news/business-56452494>There&rsquo;s no work that requires 80 hours per week</a> and <a href=https://www.bbc.co.uk/news/business-56192048>there&rsquo;s no new normal, there&rsquo;s change</a>.</p><p>Work was always about people, working from home doesn&rsquo;t change that. It doesn&rsquo;t change people needs - they still want to be trusted and be allowed to evolve. You want to be inclusive and diverse? Start with yourself, then with what you currently have, then with the future.</p><p>Maybe it&rsquo;s time that instead of trying to chase the rabbit with $ in its eyes and filling up yet another excel chart about productivity, we start to think about how we feel about work. Change starts with us, not with the big money.</p><p>Trust and be trustworthy.</p><p>Help and don&rsquo;t be ashamed when you need help as well.</p><p>Be human.</p><p>/ rant over.</p></div></div><div class=pagination><div class=pagination__title><span class=pagination__title-h>Read other posts</span><hr></div><div class=pagination__buttons><span class="button previous"><a href=/blog/rust-vim-setup-for-dummies/><span class=button__icon>←</span>
-<span class=button__text>Rust - Vim Setup For Dummies</span></a></span>
-<span class="button next"><a href=/blog/how-to-write-a-music-video-in-go/><span class=button__text>How To Write A Music Video In Go</span>
-<span class=button__icon>→</span></a></span></div></div></div></div><footer class=footer><div class=footer__inner><div class=copyright><span>© 2021 Powered by <a href=http://gohugo.io>Hugo</a></span>
-<span>:: Theme made by <a href=https://twitter.com/panr>panr</a></span></div></div></footer><script src=/assets/main.js></script><script src=/assets/prism.js></script></div></body></html>
+Why some companies won&rsquo;t even talk to you if you have tattoos? Or start schooling you, that you won&rsquo;t get a job because you have something on your hands? (been there, walked out of the interview)</p>
+<p>Or, my favourite one recently:</p>
+<p>How come remote/flexible working is bad for productivity and you have to be back in the office because of the &ldquo;company culture&rdquo;? If company culture is so important, why don&rsquo;t you trust me with my work? Why do you want to introduce &ldquo;productivity checkers&rdquo;? Why do you need to monitor the time I spend over the piece of work? Is the time the value you&rsquo;re looking for?</p>
+<p>Maybe the remote work isn&rsquo;t the issue, maybe the real issue is your trust?</p>
+<h1 id="nothing-in-the-middle">Nothing in the middle<a href="#nothing-in-the-middle" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>If you look at it, everything has to be blown out of proportion these days - you&rsquo;re either inclusive as hell or not at all. Well, I personally believe, that if you had to set up a whole division in your company that will deal with inclusion, you&rsquo;re either chasing trends or you had a MASSIVE problem from the very beginning.</p>
+<p>The middle would be looking at what we do, where we want to get and how can we do that - not setting up a new team in the company that&rsquo;ll move the one indicator up 3% because you&rsquo;ve hired 2 more people from a minority group but fixing tensions in your teams, because one of the team members is passive-aggressive all the time and that&rsquo;s the way they get shit done. Can you see the problem?</p>
+<h1 id="start-from-the-beginning">Start from the beginning<a href="#start-from-the-beginning" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>I don&rsquo;t have all the answers - hell, I don&rsquo;t have any. I&rsquo;ll never know how it is to be not allowed to achieve something just because of the colour of my skin or because I don&rsquo;t believe in your gods. But what I think might help, is a bit more being human in this post-capitalistic world.</p>
+<p>Start with listening to the people you have in your company now. How do you want to be inclusive when you still have problems in your company? How do you want to be diverse if one person FORCES their view upon others?</p>
+<p>Start with trusting your employees. How do you want to give equal opportunities when you &ldquo;need to see your team on a daily basis to see if they&rsquo;re doing their job&rdquo;? Why work from home/flexible working is a bad thing if you get work done?</p>
+<p>Start with supporting your teams in every part of their lives. You call yourself a &ldquo;family&rdquo; within the company, yet you disregard extra pay for pregnant women or giving one extra day for &ldquo;unexpected&rdquo; stuff - I don&rsquo;t know, emergency moving houses. Or your dog&rsquo;s diarrhoea. It won&rsquo;t kill your business, yet your employee will feel MUCH better knowing, that when shit hits the fan, they don&rsquo;t have to worry about today&rsquo;s standup.</p>
+<p>And I guess the most important stuff - change your hiring process. Make it more humane. If you&rsquo;re not working for FAANG or for high-volume financial sector, you won&rsquo;t have to know all the algorithms inside out. Do you want to have smart people in your company? Give them interesting problems to solve and see how they approach it.
+Everybody can google &ldquo;most efficient sorting algorithm&rdquo; but not everybody can figure out how one, minuscule change in your application can improve it in terms of readability and usability. Try to get to know the candidate and not treat them as yet another number in your book.</p>
+<h1 id="it-all-starts-with-you">It all starts with YOU<a href="#it-all-starts-with-you" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>I&rsquo;ve ranted about the companies, now I&rsquo;ll rant about you.</p>
+<p>If you want your company to change, what have you done to make the change? Speak up! Nobody will know that you&rsquo;re miserable if you won&rsquo;t say it. If you&rsquo;re scared, that you&rsquo;ll have issues after you speak up, maybe that&rsquo;s not the company you want to work for? If they don&rsquo;t allow any dialogue to happen, what does that say about them?</p>
+<p>If you want your company to be more inclusive, what have you done about it? Instead of talking smack about your peers, why not swallow your pride and helping them find, what you consider, a better way of working? Why not engage in the discussion?</p>
+<p>If you want your company to grow, have you help somebody to grow? Don&rsquo;t treat everybody as &ldquo;THEY WANT TO TAKE MY JOB, I NEED TO BE THE BEST&rdquo;. Life&rsquo;s not a Pokemon game, you don&rsquo;t have to catch them all. Spend some time to teach your peers something new, help them with something and most important - get to know them, just a bit.
+Life is not all about you, people go through all kinds of shit ALL THE TIME. Maybe the code that broke the production was written when they had a really bad day? Instead of going &ldquo;IT&rsquo;S XXXX FAULT&rdquo;, be blameless. Help them, instead of judging them.</p>
+<h1 id="be-more-humane">Be more humane<a href="#be-more-humane" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>I wasn&rsquo;t the greatest and the most inclusive human being from the start - I have my fair share of days when I was just a shitty person. But I was lucky enough to find people, that helped me to find my own shortcomings and work on them.</p>
+<p>I have been lucky enough to help with two editions of <a href="https://www.colorintech.org/">Colorintech</a> events - and, in my opinion, this is Diversity &amp; Inclusion done right - they&rsquo;re not writing empty blogposts (&hellip;) and nothing else - they go above and beyond to help people from minorities kick-start their careers in tech.
+I&rsquo;ve helped with <a href="https://codefirstgirls.org.uk/">Code First: Girls</a> events - which, honestly, for me, was one of the most fun things I&rsquo;ve done EVER - by the way, I&rsquo;ll be like Samuel L Jackson in Pulp Fiction if I&rsquo;ll find out about another company that pays women less or forces them to work from the office just because they are <a href="https://www.tuc.org.uk/news/employers-are-breaking-law-and-forcing-pregnant-women-out-work-during-pandemic-warns-tuc">&ldquo;getting pregnant&rdquo;</a>.</p>
+<h1 id="change-is-imminent-">Change is imminent (?)<a href="#change-is-imminent-" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>2020, in my opinion, basically made the inevitable change of the current workspace a reality. In my head, that&rsquo;s a good thing, because it shows who&rsquo;s actually caring about their employees and who&rsquo;s willing to change. <a href="https://www.bbc.co.uk/news/business-56452494">There&rsquo;s no work that requires 80 hours per week</a> and <a href="https://www.bbc.co.uk/news/business-56192048">there&rsquo;s no new normal, there&rsquo;s change</a>.</p>
+<p>Work was always about people, working from home doesn&rsquo;t change that. It doesn&rsquo;t change people needs - they still want to be trusted and be allowed to evolve. You want to be inclusive and diverse? Start with yourself, then with what you currently have, then with the future.</p>
+<p>Maybe it&rsquo;s time that instead of trying to chase the rabbit with $ in its eyes and filling up yet another excel chart about productivity, we start to think about how we feel about work. Change starts with us, not with the big money.</p>
+<p>Trust and be trustworthy.</p>
+<p>Help and don&rsquo;t be ashamed when you need help as well.</p>
+<p>Be human.</p>
+<p>/ rant over.</p>
+
+      </div></div>
+
+  
+  
+<div class="pagination">
+    <div class="pagination__title">
+        <span class="pagination__title-h">Read other posts</span>
+        <hr />
+    </div>
+    <div class="pagination__buttons">
+        
+        <span class="button previous">
+            <a href="/blog/rust-vim-setup-for-dummies/">
+                <span class="button__icon">←</span>
+                <span class="button__text">Rust - Vim Setup For Dummies</span>
+            </a>
+        </span>
+        
+        
+        <span class="button next">
+            <a href="/blog/how-to-write-a-music-video-in-go/">
+                <span class="button__text">How To Write A Music Video In Go</span>
+                <span class="button__icon">→</span>
+            </a>
+        </span>
+        
+    </div>
+</div>
+
+  
+
+  
+
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2021 Powered by <a href="http://gohugo.io">Hugo</a></span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>
