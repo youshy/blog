@@ -1,6 +1,7 @@
 ---
 date: "2021-06-16T00:00:00Z"
 title: Go - Vim Setup For Dummies
+draft: false
 ---
 
 So, I did the [Rust setup](https://akondas.com/blog/Rust-Vim-Setup-For-Dummies) recently, so I've figured out I'll do the one for Go as well (as I work with Go daily).
