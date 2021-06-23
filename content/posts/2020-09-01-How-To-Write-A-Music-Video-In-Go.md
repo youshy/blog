@@ -19,7 +19,6 @@ Table of Contents:
 * [Last scene](#Last)
 * [Where to go from now?](#Where)
 
-<a name="Intro"/>
 ## Intro
 
 I always had a soft spot for interesting movies. Of course, I like the good story as much as the next guy, but the visual aspect can make me fall in love with a movie. I won't even count how many times I've watched Guy Richie's Sherlock Holmes (both movies actually), What We Do In The Shadows, Blade Runner or anything by Quentin Tarantino. 

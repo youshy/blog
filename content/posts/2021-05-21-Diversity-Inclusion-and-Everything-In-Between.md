@@ -1,6 +1,8 @@
 ---
 date: "2021-05-21T00:00:00Z"
 title: Diversity-Inclusion-and-Everything-In-Between
+toc: true
+tags: [rant]
 ---
 
 Before I'll jump into the topic, as you can see this is my first post since a while. A lot of stuff has happened, most of them good - hope that your personal Apocalypse Now has been, at least a bit, good for you!
@@ -11,7 +13,7 @@ Every now and then, there's a new big "gamechanger" in the tech world. A few yea
 
 Before you start commenting and saying "You're a white male in Europe, what do you know about diversity and equity?", hear me out. Also, these are my thoughts only and you're more than welcome to disagree with them (or agree!) - I'd love to have some constructive discussion about the topic!
 
-# Diversity is widely misunderstood
+## Diversity is widely misunderstood
 
 And that comes down to what's the most clickable or most controversial. Diversity in tech is mostly understood as race and gender - what about nationality and religion? Why most of the companies cut the "tough" topics from their handbooks and go for the low-hanging fruit?
 
@@ -24,7 +26,7 @@ At this point, you can't pivot your career over the course of a few weeks/months
 
 Having a kid? Yes, let's do that, but don't count on your work to treat you fairly just because you want to be a parent.
 
-# Equity for boomers
+## Equity for boomers
 
 Although the word "boomer" can be taken negatively, it's [perfectly okay to use it](https://en.wikipedia.org/wiki/Baby_boomers) - why people can bash Millenials (or any other generation for this matter) and it's acceptable? 
 Why some companies still require your photo on the resume? Why does it even matter?
@@ -36,13 +38,13 @@ How come remote/flexible working is bad for productivity and you have to be back
 
 Maybe the remote work isn't the issue, maybe the real issue is your trust?
 
-# Nothing in the middle
+## Nothing in the middle
 
 If you look at it, everything has to be blown out of proportion these days - you're either inclusive as hell or not at all. Well, I personally believe, that if you had to set up a whole division in your company that will deal with inclusion, you're either chasing trends or you had a MASSIVE problem from the very beginning.
 
 The middle would be looking at what we do, where we want to get and how can we do that - not setting up a new team in the company that'll move the one indicator up 3% because you've hired 2 more people from a minority group but fixing tensions in your teams, because one of the team members is passive-aggressive all the time and that's the way they get shit done. Can you see the problem?
 
-# Start from the beginning
+## Start from the beginning
 
 I don't have all the answers - hell, I don't have any. I'll never know how it is to be not allowed to achieve something just because of the colour of my skin or because I don't believe in your gods. But what I think might help, is a bit more being human in this post-capitalistic world.
 
@@ -55,7 +57,7 @@ Start with supporting your teams in every part of their lives. You call yourself
 And I guess the most important stuff - change your hiring process. Make it more humane. If you're not working for FAANG or for high-volume financial sector, you won't have to know all the algorithms inside out. Do you want to have smart people in your company? Give them interesting problems to solve and see how they approach it.
 Everybody can google "most efficient sorting algorithm" but not everybody can figure out how one, minuscule change in your application can improve it in terms of readability and usability. Try to get to know the candidate and not treat them as yet another number in your book.
 
-# It all starts with YOU
+## It all starts with YOU
 
 I've ranted about the companies, now I'll rant about you.
 
@@ -66,7 +68,7 @@ If you want your company to be more inclusive, what have you done about it? Inst
 If you want your company to grow, have you help somebody to grow? Don't treat everybody as "THEY WANT TO TAKE MY JOB, I NEED TO BE THE BEST". Life's not a Pokemon game, you don't have to catch them all. Spend some time to teach your peers something new, help them with something and most important - get to know them, just a bit.
 Life is not all about you, people go through all kinds of shit ALL THE TIME. Maybe the code that broke the production was written when they had a really bad day? Instead of going "IT'S XXXX FAULT", be blameless. Help them, instead of judging them.
 
-# Be more humane
+## Be more humane
 
 I wasn't the greatest and the most inclusive human being from the start - I have my fair share of days when I was just a shitty person. But I was lucky enough to find people, that helped me to find my own shortcomings and work on them.
 
