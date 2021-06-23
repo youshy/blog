@@ -5,6 +5,8 @@ paginate = 5
 
 googleAnalytics = "UA-166121756-1"
 
+summaryLength = 20
+
 [permalinks]
   posts = "/blog/:title"
 
