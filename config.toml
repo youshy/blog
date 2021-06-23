@@ -3,6 +3,8 @@ languageCode = "en-us"
 theme = "terminal"
 paginate = 5
 
+googleAnalytics = "UA-166121756-1"
+
 [permalinks]
   posts = "/blog/:title"
 
