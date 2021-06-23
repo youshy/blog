@@ -1,5 +1,5 @@
 ---
-date: "2021-06-23T11:30:00Z"
+date: "2021-06-23T00:00:00Z"
 title: New Blog, Old Me
 draft: false
 ---
