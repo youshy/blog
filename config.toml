@@ -80,13 +80,9 @@ summaryLength = 20
         name = "About"
         url = "/about"
       [[languages.en.menu.main]]
-        identifier = "Talks"
-        name = "Talks"
-        url = "https://akondas.com/talks"
-      [[languages.en.menu.main]]
         identifier = "Media"
         name = "Media"
-        url = "/Media"
+        url = "/media"
       [[languages.en.menu.main]]
         identifier = "Open Source"
         name = "Open Source"
