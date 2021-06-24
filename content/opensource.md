@@ -6,6 +6,7 @@ permalink: /opensource/
 
 My open-source contributions (both current and past):
 
+* Chef - [chef/golang](https://github.com/sous-chefs/golang)
 * Rod - [go-rod/rod](https://github.com/go-rod/rod)
 * Grafana - [grafana/grafana](https://github.com/grafana/grafana)
 * Beep - [faiface/beep](https://github.com/faiface/beep)
