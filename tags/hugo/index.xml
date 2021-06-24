@@ -1,4 +1,88 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>hugo on Artur Kondas</title><link>/tags/hugo/</link><description>Recent content in hugo on Artur Kondas</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Wed, 23 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/hugo/index.xml" rel="self" type="application/rss+xml"/><item><title>New Blog, Old Me</title><link>/blog/new-blog-old-me/</link><pubDate>Wed, 23 Jun 2021 00:00:00 +0000</pubDate><guid>/blog/new-blog-old-me/</guid><description>Thanks to my teammate Roger, we&amp;rsquo;re on hugo, hosted on Netlify now!
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>hugo on Artur Kondas</title><link>/tags/hugo/</link><description>Recent content in hugo on Artur Kondas</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Thu, 24 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/hugo/index.xml" rel="self" type="application/rss+xml"/><item><title>A Love Letter To Hugo</title><link>/blog/a-love-letter-to-hugo/</link><pubDate>Thu, 24 Jun 2021 00:00:00 +0000</pubDate><guid>/blog/a-love-letter-to-hugo/</guid><description>&lt;p>How Go has improved yet another thing in my life - this time - blogging!&lt;/p></description><content>&lt;p>How Go has improved yet another thing in my life - this time - blogging!&lt;/p>
+&lt;h2 id="go-is-awesome">Go is awesome&lt;/h2>
+&lt;p>This week has been sponsored by my migration to &lt;a href="https://gohugo.io/">hugo&lt;/a>. These are all of my findings from a few days, moving from Jekyll x Github Pages combo to Hugo x Netlify.&lt;/p>
+&lt;p>In case you don&amp;rsquo;t know what Hugo is - Hugo is Go-powered, open-source, static site generator. It makes everything fast and neat. And it&amp;rsquo;s markdown compatible, so I can stay within one single domain (I do write documentation in markdown on a daily basis, as probably every other dev) and not learn some new formatting tools.&lt;/p>
+&lt;p>Or, god forbid, writing that stuff in some nice, accessible CMS on some proper blog-hosting site. I want to do EEEEEVVEEEERYYYYTHIIINGGG in my terminal and VIM.&lt;/p>
+&lt;blockquote>
+&lt;p>Kudos if you got the little reference there!&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="migration-is-a-bliss">Migration is a bliss&lt;/h2>
+&lt;p>A lot of the blog posts are mentioning that the migration from Jekyll to Hugo is a rather time-consuming thing. And you couldn&amp;rsquo;t be more wrong to be honest.&lt;/p>
+&lt;p>The major thing I&amp;rsquo;ve used was a nice python script written by &lt;a href="https://github.com/coderzh/ConvertToHugo">coderzh&lt;/a> which took the whole Jekyll blog and rebuilt the posts.&lt;/p>
+&lt;p>Also, it&amp;rsquo;d be a crime if I wouldn&amp;rsquo;t say that &lt;a href="https://gohugo.io/getting-started/">hugo&lt;/a> documentation is AMAZING. Anything you need - is probably there already.&lt;/p>
+&lt;h2 id="themes-are-amazing">Themes are amazing&lt;/h2>
+&lt;p>You want a minimal theme? Clean? Dark? Mobile? Fast? &lt;a href="https://themes.gohugo.io/">Hugo themes&lt;/a> got you covered.&lt;/p>
+&lt;p>I can&amp;rsquo;t design, I can&amp;rsquo;t see stuff and my area of expertise is everything terminal-based. That&amp;rsquo;s why, this bit has been the most fun one - I could just go in, pick and match what I need.&lt;/p>
+&lt;p>And thanks to &lt;a href="https://golang.org/pkg/html/template/">templates&lt;/a> in Go, every part of the theme can be extended and reused.&lt;/p>
+&lt;h2 id="netlify-is-beautiful">Netlify is beautiful&lt;/h2>
+&lt;p>I remember, that deploying on GitHub Pages has never been the most painless experience ever. Also, gh-pages are set up to work with &lt;a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#static-site-generators">Jekyll first&lt;/a> and I had some issues with working out nooks and crannies of that deployment (normally, you should be good with adding &lt;code>.nojekyll&lt;/code> file to the root of your publishing source.&lt;/p>
+&lt;p>So, after wrestling with gh-pages for a while, I gave &lt;a href="https://www.netlify.com/">Netlify&lt;/a> a go.&lt;/p>
+&lt;p>And that was AN AMAZING IDEA. The longest bit was changing my DNS setup but, apart from that, everything took less than 3 minutes.&lt;/p>
+&lt;h2 id="content-setup">Content setup&lt;/h2>
+&lt;p>I like stuff that&amp;rsquo;s automated and I don&amp;rsquo;t really have to do much if it&amp;rsquo;s automated once. Most probably &lt;a href="https://github.com/youshy/nju">nju&lt;/a> will see a massive overhaul over the weekend, as I want the blogging to be as seamless as possible. Hugo has opened up an array of new possibilities.&lt;/p>
+&lt;blockquote>
+&lt;p>Also, please don&amp;rsquo;t judge me on the package, it&amp;rsquo;s old but it worked like a bliss since I&amp;rsquo;ve started blogging. And it&amp;rsquo;s more than 2 years old at the moment!&lt;/p>
+&lt;/blockquote>
+&lt;p>Let&amp;rsquo;s checkout what I&amp;rsquo;ve found so far:&lt;/p>
+&lt;pre>&lt;code>date: &amp;quot;2021-06-24T00:00:00Z&amp;quot;
+title: A Love Letter To Hugo
+draft: true
+tags: [hugo]
+toc: true
+&lt;/code>&lt;/pre>&lt;ul>
+&lt;li>Date - it&amp;rsquo;s simple. The fun bit, is that I can build my local development server by running &lt;code>hugo server --buildDrafts --buildFuture&lt;/code> which takes care of building the draft post (noted by &lt;code>draft: true&lt;/code>) and building the future post (I&amp;rsquo;m writing this post a day earlier now). Although simple, it&amp;rsquo;s a massive quality-of-life improvement!&lt;/li>
+&lt;li>Tags - Hugo automatically gets all the tags I use and packs them neatly under &lt;a href="https://akondas.com/tags/">tags&lt;/a> tab on this blog.&lt;/li>
+&lt;li>TOC - aka Table of Contents - again, it&amp;rsquo;s automatic! Hugo automatically gets all &lt;code>##&lt;/code> headers and builds the table of contents. And if you&amp;rsquo;ll use any lower level (&lt;code>###&lt;/code>), it&amp;rsquo;ll create nested paragraphs there. So good!&lt;/li>
+&lt;/ul>
+&lt;p>And, if I want to have a custom summary, other than the first 20 words of the post - the only thing I have to do is to write the it after the params block and add &lt;code>&amp;lt;!--more--&amp;gt;&lt;/code> at the new line below how I want to summarize my post.&lt;/p>
+&lt;h2 id="nitty-gritty">Nitty gritty&lt;/h2>
+&lt;p>Let&amp;rsquo;s look into a few bits from &lt;code>config.toml&lt;/code> used to tailor this blog.&lt;/p>
+&lt;blockquote>
+&lt;p>I&amp;rsquo;m using a great &lt;a href="https://github.com/panr/hugo-theme-terminal">terminal&lt;/a> theme made by panr - your mileage may wary.&lt;/p>
+&lt;/blockquote>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-toml" data-lang="toml">[...]
+[&lt;span style="color:#a6e22e">permalinks&lt;/span>]
+&lt;span style="color:#a6e22e">posts&lt;/span> = &lt;span style="color:#e6db74">&amp;#34;/blog/:title&amp;#34;&lt;/span>
+[&lt;span style="color:#a6e22e">params&lt;/span>]
+&lt;span style="color:#a6e22e">showMenuItems&lt;/span> = &lt;span style="color:#ae81ff">6&lt;/span>
+&lt;span style="color:#a6e22e">favicon&lt;/span> = &lt;span style="color:#e6db74">&amp;#34;images/favicon.ico&amp;#34;&lt;/span>
+[&lt;span style="color:#a6e22e">languages&lt;/span>]
+[&lt;span style="color:#a6e22e">languages&lt;/span>.&lt;span style="color:#a6e22e">en&lt;/span>]
+[...]
+[&lt;span style="color:#a6e22e">languages&lt;/span>.&lt;span style="color:#a6e22e">en&lt;/span>.&lt;span style="color:#a6e22e">menu&lt;/span>]
+[[&lt;span style="color:#a6e22e">languages&lt;/span>.&lt;span style="color:#a6e22e">en&lt;/span>.&lt;span style="color:#a6e22e">menu&lt;/span>.&lt;span style="color:#a6e22e">main&lt;/span>]]
+&lt;span style="color:#a6e22e">identifier&lt;/span> = &lt;span style="color:#e6db74">&amp;#34;About&amp;#34;&lt;/span>
+&lt;span style="color:#a6e22e">name&lt;/span> = &lt;span style="color:#e6db74">&amp;#34;About&amp;#34;&lt;/span>
+&lt;span style="color:#a6e22e">url&lt;/span> = &lt;span style="color:#e6db74">&amp;#34;/about&amp;#34;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>I&amp;rsquo;ve chosen the bits I really like - and a few that took me a second of reverse engineering my theme to understand how it actually works.&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>posts = &amp;quot;/blog/:title&amp;quot;&lt;/code> - because my Jekyll blog had &lt;code>akondas.com/blog/:title&lt;/code> url per each post, I wanted to keep the same for the V2. If I&amp;rsquo;ll ever want to change it, I just have to change it there, Hugo will take care of it.&lt;/li>
+&lt;li>&lt;code>showMenuItems = 6&lt;/code> - if I&amp;rsquo;ll ever extend a bit more, I can either print all menu items out-of-the-box - or, I can wrap them for a neater, cleaner experience.&lt;/li>
+&lt;li>&lt;code>favicon&lt;/code> - my theme looks for the &lt;code>favicon.ico&lt;/code> icon under &lt;code>static/images&lt;/code>&lt;/li>
+&lt;li>&lt;code>languages&lt;/code> - yes, by default, I can have MULTIPLE language options on my blog and I can have them sorted automagically. AND, I can get my menu items set by the language.&lt;/li>
+&lt;/ul>
+&lt;h2 id="this-is-great">This is great&lt;/h2>
+&lt;p>&lt;img src="https://media.giphy.com/media/xHMIDAy1qkzNS/giphy.gif" alt="This is great">&lt;/p>
+&lt;p>This blog is my fourth or fifth blog over the years. I&amp;rsquo;ve been on almost every platform that&amp;rsquo;s available for free and I have to say - this is the most fun I had ever.&lt;/p>
+&lt;p>The ease of use, the self-automation, the expandability - it&amp;rsquo;s all here.&lt;/p>
+&lt;h2 id="plans-for-the-future">Plans for the future&lt;/h2>
+&lt;p>I&amp;rsquo;ll just go with everything I want - let&amp;rsquo;s see how far I can push the envelope:&lt;/p>
+&lt;ul>
+&lt;li>A search bar - I&amp;rsquo;ve been putting off playing with &lt;a href="https://www.elastic.co/">Elasticsearch&lt;/a> for ages now, I want to see how easy it&amp;rsquo;ll be to plug that here&lt;/li>
+&lt;li>Extra layouts - I have a few ideas for the modular layouts system I want to use&lt;/li>
+&lt;li>At the end of each post, propose my last most popular post&lt;/li>
+&lt;li>New &lt;code>nju&lt;/code> package - my idea is:
+&lt;ul>
+&lt;li>When writing a post, set the post parameters before even starting writing the posts from the list of ever-expanding properties (that&amp;rsquo;d mean either a scrapper of all tags I&amp;rsquo;ve used so far probably)&lt;/li>
+&lt;li>When finishing my VIM session, let&amp;rsquo;s ask the user (me) if that&amp;rsquo;s a draft or not&lt;/li>
+&lt;li>Time of the post should be pickable from the CLI - do I want to post it now? In the future? How far?&lt;/li>
+&lt;li>Show me all posts that are in &lt;code>draft&lt;/code> state so I could go and finish them&lt;/li>
+&lt;li>And most importantly - bring &lt;code>nju&lt;/code> from late 2018 to 2021!&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>As you can see, that&amp;rsquo;s a lot. But we&amp;rsquo;re not in any rush, it&amp;rsquo;ll be fun!&lt;/p>
+&lt;p>If that post helped you in any way, shape or form - let me know! I&amp;rsquo;m happy to discuss more and help you - of course if you&amp;rsquo;ll need help. I believe in you!&lt;/p></content></item><item><title>New Blog, Old Me</title><link>/blog/new-blog-old-me/</link><pubDate>Wed, 23 Jun 2021 00:00:00 +0000</pubDate><guid>/blog/new-blog-old-me/</guid><description>Thanks to my teammate Roger, we&amp;rsquo;re on hugo, hosted on Netlify now!
 Expect many changes here, layout, posts, tabs, maybe even search bar!</description><content>&lt;p>Thanks to my teammate &lt;a href="https://www.linkedin.com/in/chilcano/">Roger&lt;/a>, we&amp;rsquo;re on &lt;a href="https://gohugo.io/">hugo&lt;/a>, hosted on Netlify now!&lt;/p>
 &lt;p>Expect many changes here, layout, posts, tabs, maybe even search bar!&lt;/p>
 &lt;p>And when I&amp;rsquo;ll learn how to do it, I&amp;rsquo;ll probably move again somewhere else with some extra powah!&lt;/p></content></item></channel></rss>
