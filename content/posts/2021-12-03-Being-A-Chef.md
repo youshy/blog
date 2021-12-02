@@ -24,9 +24,9 @@ The submission is called Stylelia - and here's Jason to tell you more about what
 
 <Jason>
 
- Hey all, so I'm Jason, a long term Chef contributor and former board member of the Open Source [Sous-Chefs Org](https://github.com/sous-chefs). 
+Hey all, so I'm Jason, a long term Chef contributor and former board member of the Open Source [Sous-Chefs Org](https://github.com/sous-chefs). 
 
- Stylelia exists to solve a long term problem that we have seen in the industry, the auto remediation of static code analysis recommendations. As an industry we have a number of great tools out there to help keep our code neat and following best practices, in Ruby we have `rubocop`, for Python it's `pylint`, within Golang we have `golangci-lint` and so on and so on. In Chef the tool is called `cookstyle` and the aim of Stylelia is to automate the running of these tools, with an initial focus on `cookstyle` running and creating pull requests for the recommended fixes into GitHub.
+Stylelia exists to solve a long term problem that we have seen in the industry, the auto remediation of static code analysis recommendations. As an industry we have a number of great tools out there to help keep our code neat and following best practices, in Ruby we have `rubocop`, for Python it's `pylint`, within Golang we have `golangci-lint` and so on and so on. In Chef the tool is called `cookstyle` and the aim of Stylelia is to automate the running of these tools, with an initial focus on `cookstyle` running and creating pull requests for the recommended fixes into GitHub.
 
 The main aim of Stylelia is to ensure that the code is always in line with recommended standards from the tools making it quicker and easier to develop with.
 
@@ -36,7 +36,13 @@ The main aim of Stylelia is to ensure that the code is always in line with recom
 
 The biggest thing was, that we TDD'd the living crap out of our code - albeit we had 8 weeks to build it, we've decided that we'll either build it proper, or not build it at all.
 
-Whole thing is built using Go and leveraging [Cookstyle](https://github.com/chef/cookstyle) within AWS Lambda ecosystem.
+Whole thing is built using Go and leveraging [Cookstyle](https://github.com/chef/cookstyle) within AWS Lambda ecosystem. We've chose it as it allows us for basically infinite scalling - however much horsepower we need under the hood, we can have.
+
+Another thing - it's all plug'n'play. We do have our own in-memory store, we have Redis implementation and we do have interfaces for almost everything. For uninitiated - interfaces in Go allows us for literally changing anything as we see fit as long as the interface is satisfied.
+
+<Jason>
+
+</Jason>
 
 ## Would you do it again?
 
@@ -48,10 +54,18 @@ To summarise I found it a great experience when there is a clear vision and a ti
 
 </Jason>
 
-Me? Definitely yes. I like building stuff and also it helps finding your shortcomings.
+Me? Definitely yes. I like building stuff and also it helps finding your shortcomings. Apart from COUNTLESS memes and laughs we've had with Jason, I've learned a lot about the Chef ecosystem and I can see myself writing some more code for them in the future.
+
+And also new PlayStation 5 is pretty sweet. Got Deathloop and Hitman 3 right out of the gate - both are amazing!
 
 ## Listen to us rambling about it
 
 If you really want, you can listen to us talking about Stylelia (and a lot more) on youtube:
 
 [![Stylelia Chat](https://img.youtube.com/vi/FGQ6kZgIP2I/0.jpg)](https://www.youtube.com/watch?v=FGQ6kZgIP2I)
+
+## I want to do hackathons with you guys!
+
+Talk to us on LinkedIn if you have an idea and let's make it a reality!
+
+Also, amazing people from Abbey Road, please do another hackathon and allow me to write code inside of Studio A! (They did [one edition](https://www.abbeyroad.com/hackathon) in 2019, I hope they'll do another in 2022!)
