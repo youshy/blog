@@ -24,7 +24,7 @@
 &lt;p>Also, please don&amp;rsquo;t judge me on the package, it&amp;rsquo;s old but it worked like a bliss since I&amp;rsquo;ve started blogging. And it&amp;rsquo;s more than 2 years old at the moment!&lt;/p>
 &lt;/blockquote>
 &lt;p>Let&amp;rsquo;s checkout what I&amp;rsquo;ve found so far:&lt;/p>
-&lt;pre>&lt;code>date: &amp;quot;2021-06-24T00:00:00Z&amp;quot;
+&lt;pre tabindex="0">&lt;code>date: &amp;quot;2021-06-24T00:00:00Z&amp;quot;
 title: A Love Letter To Hugo
 draft: true
 tags: [hugo]
@@ -40,7 +40,7 @@ toc: true
 &lt;blockquote>
 &lt;p>I&amp;rsquo;m using a great &lt;a href="https://github.com/panr/hugo-theme-terminal">terminal&lt;/a> theme made by panr - your mileage may wary.&lt;/p>
 &lt;/blockquote>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-toml" data-lang="toml">[...]
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-toml" data-lang="toml">[...]
 [&lt;span style="color:#a6e22e">permalinks&lt;/span>]
 &lt;span style="color:#a6e22e">posts&lt;/span> = &lt;span style="color:#e6db74">&amp;#34;/blog/:title&amp;#34;&lt;/span>
 [&lt;span style="color:#a6e22e">params&lt;/span>]
@@ -94,7 +94,7 @@ Expect many changes here, layout, posts, tabs, maybe even search bar!</descripti
 &lt;li>Run in Vim: &lt;code>CocInstall coc-go&lt;/code> - more info &lt;a href="https://github.com/josa42/coc-go">here&lt;/a>&lt;/li>
 &lt;li>Add to your &lt;code>.vimrc&lt;/code>:&lt;/li>
 &lt;/ol>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&lt;span style="color:#e6db74">&amp;#34;
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&lt;span style="color:#e6db74">&amp;#34;
 &lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span> Go setup
 &lt;span style="color:#e6db74">&amp;#34;
 &lt;/span>&lt;span style="color:#e6db74">
@@ -196,7 +196,7 @@ I&amp;rsquo;ve helped with &lt;a href="https://codefirstgirls.org.uk/">Code Firs
 &lt;!-- raw HTML omitted -->
 &lt;p>Getting the sound was actually the easiest bit - I&amp;rsquo;ve used &lt;!-- raw HTML omitted -->Beep by Faiface&lt;!-- raw HTML omitted --> in it&amp;rsquo;s most raw form:&lt;/p>
 &lt;p>&lt;strong>player.go&lt;/strong>&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#f92672">package&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#f92672">package&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>
 &lt;span style="color:#f92672">import&lt;/span> (
 &lt;span style="color:#e6db74">&amp;#34;log&amp;#34;&lt;/span>
 &lt;span style="color:#e6db74">&amp;#34;os&amp;#34;&lt;/span>
@@ -226,7 +226,7 @@ I&amp;rsquo;ve helped with &lt;a href="https://codefirstgirls.org.uk/">Code Firs
 &lt;p>&lt;a href="#top">Go to Top&lt;/a>&lt;/p>
 &lt;!-- raw HTML omitted -->
 &lt;p>The main file, that deals with all the things to print is, unsurprisingly, &lt;code>printer.go&lt;/code>. Let&amp;rsquo;s break it down:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#66d9ef">var&lt;/span> (
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#66d9ef">var&lt;/span> (
 &lt;span style="color:#75715e">// notes
 &lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#a6e22e">fullnote&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> = &lt;span style="color:#ae81ff">1678&lt;/span>
 &lt;span style="color:#a6e22e">halfnote&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> = &lt;span style="color:#ae81ff">839&lt;/span>
@@ -246,7 +246,7 @@ I&amp;rsquo;ve helped with &lt;a href="https://codefirstgirls.org.uk/">Code Firs
 &lt;/blockquote>
 &lt;p>This way, I&amp;rsquo;ve calculated all necessary note durations that I&amp;rsquo;ll need to print.&lt;/p>
 &lt;p>Moving on:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#66d9ef">type&lt;/span> &lt;span style="color:#a6e22e">Sized&lt;/span> &lt;span style="color:#66d9ef">struct&lt;/span> {
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#66d9ef">type&lt;/span> &lt;span style="color:#a6e22e">Sized&lt;/span> &lt;span style="color:#66d9ef">struct&lt;/span> {
 &lt;span style="color:#a6e22e">width&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span>
 &lt;span style="color:#a6e22e">height&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span>
 }
@@ -278,7 +278,7 @@ I&amp;rsquo;ve helped with &lt;a href="https://codefirstgirls.org.uk/">Code Firs
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>We&amp;rsquo;ll touch on &lt;code>Sized&lt;/code> struct a while later; for now, you can see how the song was built.&lt;/p>
 &lt;p>I&amp;rsquo;ve divided the chorus into 4 small chunks (in case I want to change only a part of it). &lt;code>verse1&lt;/code> and &lt;code>verse2&lt;/code> are a tiny bit different in the approach - one is typewriting (printing one character per x milliseconds), second one is Star-Wars-esque &amp;ldquo;Text is going up&amp;rdquo; using frames.&lt;/p>
 &lt;p>Before we go into the rhythm part of the music video, there are three very important functions in &lt;code>printer.go&lt;/code>:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#66d9ef">func&lt;/span> &lt;span style="color:#a6e22e">cleanDisplay&lt;/span>() {
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#66d9ef">func&lt;/span> &lt;span style="color:#a6e22e">cleanDisplay&lt;/span>() {
 &lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Printf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;\x1b[2J&amp;#34;&lt;/span>)
 &lt;span style="color:#a6e22e">moveCursor&lt;/span>(&lt;span style="color:#ae81ff">0&lt;/span>, &lt;span style="color:#ae81ff">0&lt;/span>)
 }
@@ -299,11 +299,11 @@ I&amp;rsquo;ve helped with &lt;a href="https://codefirstgirls.org.uk/">Code Firs
 &lt;/blockquote>
 &lt;p>in &lt;code>colours.go&lt;/code>:&lt;/p>
 &lt;p>(First, let&amp;rsquo;s bring the functions here)&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#66d9ef">func&lt;/span> &lt;span style="color:#a6e22e">resetColourChanges&lt;/span>() {
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#66d9ef">func&lt;/span> &lt;span style="color:#a6e22e">resetColourChanges&lt;/span>() {
 &lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Print&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;\x1b[0m&amp;#34;&lt;/span>)
 }
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>as the function name says, it reset colour changes to default;&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#66d9ef">func&lt;/span> &lt;span style="color:#a6e22e">colourText&lt;/span>(&lt;span style="color:#a6e22e">colour&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span>, &lt;span style="color:#a6e22e">bright&lt;/span> &lt;span style="color:#66d9ef">bool&lt;/span>) {
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#66d9ef">func&lt;/span> &lt;span style="color:#a6e22e">colourText&lt;/span>(&lt;span style="color:#a6e22e">colour&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span>, &lt;span style="color:#a6e22e">bright&lt;/span> &lt;span style="color:#66d9ef">bool&lt;/span>) {
 &lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#a6e22e">bright&lt;/span> {
 &lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Printf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;\x1b[9%vm&amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">colour&lt;/span>)
 } &lt;span style="color:#66d9ef">else&lt;/span> {
@@ -311,14 +311,14 @@ I&amp;rsquo;ve helped with &lt;a href="https://codefirstgirls.org.uk/">Code Firs
 }
 }
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>colourText&lt;/code> is a wrapper around printing from basic palette of 8 colours (black, red, green, yellow, blue, magenta, cyan and white) in bright (&lt;code>[9&lt;/code>) variant or in normal - let&amp;rsquo;s call it plain (&lt;code>[3&lt;/code>);&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#66d9ef">func&lt;/span> &lt;span style="color:#a6e22e">colourTextRGB&lt;/span>(&lt;span style="color:#a6e22e">red&lt;/span>, &lt;span style="color:#a6e22e">green&lt;/span>, &lt;span style="color:#a6e22e">blue&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span>) {
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#66d9ef">func&lt;/span> &lt;span style="color:#a6e22e">colourTextRGB&lt;/span>(&lt;span style="color:#a6e22e">red&lt;/span>, &lt;span style="color:#a6e22e">green&lt;/span>, &lt;span style="color:#a6e22e">blue&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span>) {
 &lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Printf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;\x1b[38;2;%v;%v;%vm&amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">red&lt;/span>, &lt;span style="color:#a6e22e">green&lt;/span>, &lt;span style="color:#a6e22e">blue&lt;/span>)
 }
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>This is the function I ended up using - I&amp;rsquo;ve found a way to print the colours using RGB values - the loading bar you see before the solo starts is done using this magical thing!&lt;/p>
 &lt;p>&lt;a href="#top">Go to Top&lt;/a>&lt;/p>
 &lt;!-- raw HTML omitted -->
 &lt;p>Remember &lt;code>noteRest&lt;/code>? It&amp;rsquo;s nothing else than a wrapper around &lt;code>time.Sleep&lt;/code>. To print time-based frames, I used &lt;code>printInMicroseconds&lt;/code>:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#66d9ef">func&lt;/span> &lt;span style="color:#a6e22e">printInMicroseconds&lt;/span>(&lt;span style="color:#a6e22e">s&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span>, &lt;span style="color:#a6e22e">spd&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span>) {
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#66d9ef">func&lt;/span> &lt;span style="color:#a6e22e">printInMicroseconds&lt;/span>(&lt;span style="color:#a6e22e">s&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span>, &lt;span style="color:#a6e22e">spd&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span>) {
 &lt;span style="color:#a6e22e">speed&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">spd&lt;/span> &lt;span style="color:#f92672">*&lt;/span> &lt;span style="color:#ae81ff">1000&lt;/span>
 &lt;span style="color:#a6e22e">freq&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> (float64(&lt;span style="color:#a6e22e">speed&lt;/span>) &lt;span style="color:#f92672">/&lt;/span> float64(len(&lt;span style="color:#a6e22e">s&lt;/span>)))
 &lt;span style="color:#66d9ef">for&lt;/span> &lt;span style="color:#a6e22e">i&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>; &lt;span style="color:#a6e22e">i&lt;/span> &amp;lt; len(&lt;span style="color:#a6e22e">s&lt;/span>); &lt;span style="color:#a6e22e">i&lt;/span>&lt;span style="color:#f92672">++&lt;/span> {
@@ -327,7 +327,7 @@ I&amp;rsquo;ve helped with &lt;a href="https://codefirstgirls.org.uk/">Code Firs
 }
 }
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Why &lt;em>Microseconds&lt;/em> instead of &lt;em>Milliseconds&lt;/em> you ask? The reason for that is sometimes the lyrics aren&amp;rsquo;t really divisible by the millisecond duration of the note in a nice fashion. That&amp;rsquo;s why, I&amp;rsquo;m converting milliseconds to microseconds and then printing. Check &lt;code>verse1.go&lt;/code>:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#f92672">...&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#f92672">...&lt;/span>
 &lt;span style="color:#66d9ef">func&lt;/span> &lt;span style="color:#a6e22e">verse1&lt;/span>() {
 &lt;span style="color:#a6e22e">printInMicroseconds&lt;/span>(&lt;span style="color:#a6e22e">verse1_1_1&lt;/span>, &lt;span style="color:#a6e22e">halfnote&lt;/span>&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#a6e22e">quaternote&lt;/span>) &lt;span style="color:#75715e">// 3/1
 &lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#a6e22e">printInMicroseconds&lt;/span>(&lt;span style="color:#a6e22e">verse1_1_2&lt;/span>, &lt;span style="color:#a6e22e">quaternote&lt;/span>) &lt;span style="color:#75715e">// 1/1
@@ -338,7 +338,7 @@ I&amp;rsquo;ve helped with &lt;a href="https://codefirstgirls.org.uk/">Code Firs
 &lt;p>And now,&lt;/p>
 &lt;!-- raw HTML omitted -->
 &lt;p>This is the part, I think, I&amp;rsquo;m most proud of. The function:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#66d9ef">func&lt;/span> (&lt;span style="color:#a6e22e">s&lt;/span> &lt;span style="color:#f92672">*&lt;/span>&lt;span style="color:#a6e22e">Sized&lt;/span>) &lt;span style="color:#a6e22e">printNoteInBinary&lt;/span>(&lt;span style="color:#a6e22e">note&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span>, &lt;span style="color:#a6e22e">speed&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span>) {
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#66d9ef">func&lt;/span> (&lt;span style="color:#a6e22e">s&lt;/span> &lt;span style="color:#f92672">*&lt;/span>&lt;span style="color:#a6e22e">Sized&lt;/span>) &lt;span style="color:#a6e22e">printNoteInBinary&lt;/span>(&lt;span style="color:#a6e22e">note&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span>, &lt;span style="color:#a6e22e">speed&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span>) {
 &lt;span style="color:#66d9ef">var&lt;/span> &lt;span style="color:#a6e22e">toBinary&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span>
 &lt;span style="color:#66d9ef">for&lt;/span> &lt;span style="color:#a6e22e">_&lt;/span>, &lt;span style="color:#a6e22e">c&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#66d9ef">range&lt;/span> &lt;span style="color:#a6e22e">note&lt;/span> {
 &lt;span style="color:#a6e22e">toBinary&lt;/span> &lt;span style="color:#f92672">+=&lt;/span> &lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Sprintf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;%b &amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">c&lt;/span>)
@@ -351,7 +351,7 @@ I&amp;rsquo;ve helped with &lt;a href="https://codefirstgirls.org.uk/">Code Firs
 &lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Println&lt;/span>()
 }
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>The function itself is nothing crazy, but the approach to printing is:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#f92672">...&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#f92672">...&lt;/span>
 &lt;span style="color:#75715e">// 1st bar
 &lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#a6e22e">s&lt;/span>.&lt;span style="color:#a6e22e">printNoteInBinary&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;D&amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">fullnote&lt;/span>)
 &lt;span style="color:#a6e22e">s&lt;/span>.&lt;span style="color:#a6e22e">printNoteInBinary&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;F&amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">fullnote&lt;/span>)
@@ -384,7 +384,7 @@ I&amp;rsquo;ve helped with &lt;a href="https://codefirstgirls.org.uk/">Code Firs
 &lt;blockquote>
 &lt;p>All functions are in chorus_last.go&lt;/p>
 &lt;/blockquote>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#66d9ef">func&lt;/span> (&lt;span style="color:#a6e22e">s&lt;/span> &lt;span style="color:#f92672">*&lt;/span>&lt;span style="color:#a6e22e">Sized&lt;/span>) &lt;span style="color:#a6e22e">formatLine&lt;/span>(&lt;span style="color:#a6e22e">str&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span>) &lt;span style="color:#66d9ef">string&lt;/span> {
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#66d9ef">func&lt;/span> (&lt;span style="color:#a6e22e">s&lt;/span> &lt;span style="color:#f92672">*&lt;/span>&lt;span style="color:#a6e22e">Sized&lt;/span>) &lt;span style="color:#a6e22e">formatLine&lt;/span>(&lt;span style="color:#a6e22e">str&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span>) &lt;span style="color:#66d9ef">string&lt;/span> {
 &lt;span style="color:#a6e22e">add&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> int(&lt;span style="color:#a6e22e">math&lt;/span>.&lt;span style="color:#a6e22e">RoundToEven&lt;/span>((float64(&lt;span style="color:#a6e22e">s&lt;/span>.&lt;span style="color:#a6e22e">width&lt;/span>) &lt;span style="color:#f92672">-&lt;/span> float64(len(&lt;span style="color:#a6e22e">str&lt;/span>))) &lt;span style="color:#f92672">/&lt;/span> &lt;span style="color:#ae81ff">2&lt;/span>))
 &lt;span style="color:#66d9ef">var&lt;/span> &lt;span style="color:#a6e22e">pre&lt;/span>, &lt;span style="color:#a6e22e">post&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span>
 &lt;span style="color:#66d9ef">for&lt;/span> &lt;span style="color:#a6e22e">i&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>; &lt;span style="color:#a6e22e">i&lt;/span> &amp;lt; &lt;span style="color:#a6e22e">add&lt;/span>; &lt;span style="color:#a6e22e">i&lt;/span>&lt;span style="color:#f92672">++&lt;/span> {
@@ -398,7 +398,7 @@ I&amp;rsquo;ve helped with &lt;a href="https://codefirstgirls.org.uk/">Code Firs
 &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#a6e22e">f&lt;/span>
 }
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>As each display will be different, the art needs to be formatted - which basically means adding &lt;code>:&lt;/code> at the beginning and the end until the whole width of the display is used.&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#66d9ef">func&lt;/span> (&lt;span style="color:#a6e22e">s&lt;/span> &lt;span style="color:#f92672">*&lt;/span>&lt;span style="color:#a6e22e">Sized&lt;/span>) &lt;span style="color:#a6e22e">generateLine&lt;/span>(&lt;span style="color:#a6e22e">char&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span>) &lt;span style="color:#66d9ef">string&lt;/span> {
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#66d9ef">func&lt;/span> (&lt;span style="color:#a6e22e">s&lt;/span> &lt;span style="color:#f92672">*&lt;/span>&lt;span style="color:#a6e22e">Sized&lt;/span>) &lt;span style="color:#a6e22e">generateLine&lt;/span>(&lt;span style="color:#a6e22e">char&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span>) &lt;span style="color:#66d9ef">string&lt;/span> {
 &lt;span style="color:#66d9ef">var&lt;/span> &lt;span style="color:#a6e22e">str&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span>
 &lt;span style="color:#66d9ef">for&lt;/span> &lt;span style="color:#a6e22e">i&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>; &lt;span style="color:#a6e22e">i&lt;/span> &amp;lt; &lt;span style="color:#a6e22e">s&lt;/span>.&lt;span style="color:#a6e22e">width&lt;/span>; &lt;span style="color:#a6e22e">i&lt;/span>&lt;span style="color:#f92672">++&lt;/span> {
 &lt;span style="color:#a6e22e">str&lt;/span> &lt;span style="color:#f92672">+=&lt;/span> &lt;span style="color:#a6e22e">char&lt;/span>
@@ -416,7 +416,7 @@ I&amp;rsquo;ve helped with &lt;a href="https://codefirstgirls.org.uk/">Code Firs
 }
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Then, we need something to populate the whole display with &lt;code>:&lt;/code> - which means generating some lines and then creating an array which will be of full terminal dimension.&lt;/p>
 &lt;p>And now, the last behemoth:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#66d9ef">func&lt;/span> (&lt;span style="color:#a6e22e">s&lt;/span> &lt;span style="color:#f92672">*&lt;/span>&lt;span style="color:#a6e22e">Sized&lt;/span>) &lt;span style="color:#a6e22e">lastChorus&lt;/span>() {
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#66d9ef">func&lt;/span> (&lt;span style="color:#a6e22e">s&lt;/span> &lt;span style="color:#f92672">*&lt;/span>&lt;span style="color:#a6e22e">Sized&lt;/span>) &lt;span style="color:#a6e22e">lastChorus&lt;/span>() {
 &lt;span style="color:#a6e22e">cleanDisplay&lt;/span>()
 &lt;span style="color:#a6e22e">s&lt;/span>.&lt;span style="color:#a6e22e">generateDisplay&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;:&amp;#34;&lt;/span>)
 &lt;span style="color:#a6e22e">maxHeight&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> (&lt;span style="color:#a6e22e">s&lt;/span>.&lt;span style="color:#a6e22e">height&lt;/span> &lt;span style="color:#f92672">-&lt;/span> &lt;span style="color:#ae81ff">32&lt;/span>) &lt;span style="color:#f92672">/&lt;/span> &lt;span style="color:#ae81ff">2&lt;/span>
@@ -514,12 +514,12 @@ Part I Part II As you&amp;rsquo;ve probably figured out from the title, I&amp;rs
 &lt;h2 id="how-to-set-up-your-go-repos-with-circleci-and-sonarcloud">How to set up your Go repos with CircleCI and Sonarcloud&lt;/h2>
 &lt;p>Lately, I&amp;rsquo;ve been playing with a &lt;a href="https://sonarcloud.io">SonarCloud&lt;/a> - recommended by one of my friends, the service improves your quality of code by constantly checking the bugs, code duplicates, anything you might ever oversee while coding!&lt;/p>
 &lt;p>But what if your software (again) uses private Go modules? The error you&amp;rsquo;ll see more than often will be:&lt;/p>
-&lt;pre>&lt;code>ERROR: Repository not found.
+&lt;pre tabindex="0">&lt;code>ERROR: Repository not found.
 fatal: Could not read from remote repository.
 &lt;/code>&lt;/pre>&lt;p>What to do now?&lt;/p>
 &lt;h2 id="use-the-same-tactic-as-with-your-docker-images">Use the same tactic as with your docker images&lt;/h2>
 &lt;p>Let&amp;rsquo;s check the yaml now:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="color:#f92672">version&lt;/span>: &lt;span style="color:#ae81ff">2.1&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="color:#f92672">version&lt;/span>: &lt;span style="color:#ae81ff">2.1&lt;/span>
 &lt;span style="color:#f92672">orbs&lt;/span>:
 &lt;span style="color:#f92672">sonarcloud&lt;/span>: &lt;span style="color:#ae81ff">sonarsource/sonarcloud@1.0.1&lt;/span>
 &lt;span style="color:#f92672">jobs&lt;/span>:
@@ -570,7 +570,7 @@ How to use Docker and Go Modules with private repos? Since our last talk about u
 &lt;h2 id="how-to-use-docker-and-go-modules-with-private-repos">How to use Docker and Go Modules with private repos?&lt;/h2>
 &lt;p>Since our last talk about using private repositories with Go Modules, I&amp;rsquo;ve been playing with setting up Docker images for modules-based apps. As you might remember, I wasn&amp;rsquo;t a fan of Go Mod but that has changed slightly!&lt;/p>
 &lt;p>The approach below will be based on Bitbucket, but it should work out-of-the-box for any version control system.&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-docker" data-lang="docker">&lt;span style="color:#66d9ef">FROM&lt;/span>&lt;span style="color:#e6db74"> golang:1.14.2-alpine AS app&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-docker" data-lang="docker">&lt;span style="color:#66d9ef">FROM&lt;/span>&lt;span style="color:#e6db74"> golang:1.14.2-alpine AS app&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">
 &lt;/span>&lt;span style="color:#960050;background-color:#1e0010">
 &lt;/span>&lt;span style="color:#960050;background-color:#1e0010">&lt;/span>&lt;span style="color:#66d9ef">ENV&lt;/span> GOPRIVATE&lt;span style="color:#f92672">=&lt;/span>bitbucket.org&lt;span style="color:#960050;background-color:#1e0010">
 &lt;/span>&lt;span style="color:#960050;background-color:#1e0010">&lt;/span>&lt;span style="color:#66d9ef">ENV&lt;/span> GO111MODULE&lt;span style="color:#f92672">=&lt;/span>on
@@ -612,7 +612,7 @@ Devops Playground on Go: &lt;a href="https://www.youtube.com/watch?v=JpznEfXcoe0
 &lt;p>The code architecture will stay mostly the same.&lt;/p>
 &lt;p>Let&amp;rsquo;s cut straight to the chase and set up &lt;strong>server.go&lt;/strong>:&lt;/p>
 &lt;p>&lt;strong>server.go&lt;/strong>&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#f92672">package&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#f92672">package&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>
 &lt;span style="color:#f92672">import&lt;/span> (
 &lt;span style="color:#e6db74">&amp;#34;database/sql&amp;#34;&lt;/span>
 &lt;span style="color:#e6db74">&amp;#34;encoding/json&amp;#34;&lt;/span>
@@ -624,10 +624,10 @@ Devops Playground on Go: &lt;a href="https://www.youtube.com/watch?v=JpznEfXcoe0
 )
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Same as in &lt;strong>main.go&lt;/strong>, we do the initial prep and import the necessary packages. Last line is the most interesting one:&lt;/p>
 &lt;p>&lt;strong>server.go&lt;/strong>&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#a6e22e">_&lt;/span> &lt;span style="color:#e6db74">&amp;#34;github.com/lib/pq&amp;#34;&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#a6e22e">_&lt;/span> &lt;span style="color:#e6db74">&amp;#34;github.com/lib/pq&amp;#34;&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>This is &lt;em>THE ONLY&lt;/em> external library we use in our code. &lt;code>pg&lt;/code> allows us to use Postgres connection and &lt;code>_&lt;/code> in front means that this is &amp;ldquo;empty import&amp;rdquo; - we need our code to understand that it&amp;rsquo;s there, not actually to use it. I know, it&amp;rsquo;s a bit odd but trust me - that&amp;rsquo;s the only odd thing here!&lt;/p>
 &lt;p>&lt;strong>server.go&lt;/strong>&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#66d9ef">type&lt;/span> &lt;span style="color:#a6e22e">App&lt;/span> &lt;span style="color:#66d9ef">struct&lt;/span> {
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#66d9ef">type&lt;/span> &lt;span style="color:#a6e22e">App&lt;/span> &lt;span style="color:#66d9ef">struct&lt;/span> {
 &lt;span style="color:#a6e22e">Db&lt;/span> &lt;span style="color:#f92672">*&lt;/span>&lt;span style="color:#a6e22e">sql&lt;/span>.&lt;span style="color:#a6e22e">DB&lt;/span>
 }
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>I&amp;rsquo;m not a fan of using global variables in my code. That&amp;rsquo;s why I&amp;rsquo;m creating a &lt;strong>struct&lt;/strong> that will hold all the necessary variables I will use. In our case, it&amp;rsquo;s the pointer to &lt;code>DB&lt;/code> type in &lt;code>sql&lt;/code> package.&lt;/p>
@@ -635,7 +635,7 @@ Devops Playground on Go: &lt;a href="https://www.youtube.com/watch?v=JpznEfXcoe0
 &lt;h2 id="initialize-server">Initialize server&lt;/h2>
 &lt;p>Let&amp;rsquo;s set up a function to initialize our server setup:&lt;/p>
 &lt;p>&lt;strong>server.go&lt;/strong>&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#66d9ef">func&lt;/span> (&lt;span style="color:#a6e22e">a&lt;/span> &lt;span style="color:#f92672">*&lt;/span>&lt;span style="color:#a6e22e">App&lt;/span>) &lt;span style="color:#a6e22e">Initialize&lt;/span>() {
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#66d9ef">func&lt;/span> (&lt;span style="color:#a6e22e">a&lt;/span> &lt;span style="color:#f92672">*&lt;/span>&lt;span style="color:#a6e22e">App&lt;/span>) &lt;span style="color:#a6e22e">Initialize&lt;/span>() {
 &lt;span style="color:#a6e22e">PgUsername&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">os&lt;/span>.&lt;span style="color:#a6e22e">Getenv&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;PG_USERNAME&amp;#34;&lt;/span>)
 &lt;span style="color:#a6e22e">PgPassword&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">os&lt;/span>.&lt;span style="color:#a6e22e">Getenv&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;PG_PASSWORD&amp;#34;&lt;/span>)
 &lt;span style="color:#a6e22e">PgDbName&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">os&lt;/span>.&lt;span style="color:#a6e22e">Getenv&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;PG_DB_NAME&amp;#34;&lt;/span>)
@@ -649,14 +649,14 @@ Devops Playground on Go: &lt;a href="https://www.youtube.com/watch?v=JpznEfXcoe0
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>Initialize()&lt;/code> function will set up the db connection for us and fail if the connection fails. Next bit is to actually register our handlers.&lt;/p>
 &lt;p>Same as in our Playground, I&amp;rsquo;ll set up handler routes with prefixes. In &lt;code>Initialize()&lt;/code> add:&lt;/p>
 &lt;p>&lt;strong>server.go&lt;/strong>&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go"> &lt;span style="color:#a6e22e">prefix&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;/api&amp;#34;&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go"> &lt;span style="color:#a6e22e">prefix&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;/api&amp;#34;&lt;/span>
 &lt;span style="color:#a6e22e">http&lt;/span>.&lt;span style="color:#a6e22e">HandleFunc&lt;/span>(&lt;span style="color:#a6e22e">prefix&lt;/span>&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#e6db74">&amp;#34;/posts&amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">a&lt;/span>.&lt;span style="color:#a6e22e">GetAllPosts&lt;/span>)
 &lt;span style="color:#a6e22e">http&lt;/span>.&lt;span style="color:#a6e22e">HandleFunc&lt;/span>(&lt;span style="color:#a6e22e">prefix&lt;/span>&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#e6db74">&amp;#34;/post&amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">a&lt;/span>.&lt;span style="color:#a6e22e">Handler&lt;/span>)
 }
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="prepare-to-run">Prepare to run&lt;/h2>
 &lt;p>There&amp;rsquo;s two more things we need to do before we&amp;rsquo;ll move to handlers - we need to set up a function for running the server and the same, nice helper function for handling JSON response as in Playground code:&lt;/p>
 &lt;p>&lt;strong>server.go&lt;/strong>&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#66d9ef">func&lt;/span> (&lt;span style="color:#a6e22e">a&lt;/span> &lt;span style="color:#f92672">*&lt;/span>&lt;span style="color:#a6e22e">App&lt;/span>) &lt;span style="color:#a6e22e">Run&lt;/span>(&lt;span style="color:#a6e22e">addr&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span>) {
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#66d9ef">func&lt;/span> (&lt;span style="color:#a6e22e">a&lt;/span> &lt;span style="color:#f92672">*&lt;/span>&lt;span style="color:#a6e22e">App&lt;/span>) &lt;span style="color:#a6e22e">Run&lt;/span>(&lt;span style="color:#a6e22e">addr&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span>) {
 &lt;span style="color:#a6e22e">log&lt;/span>.&lt;span style="color:#a6e22e">Printf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Server is listening on %v&amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">addr&lt;/span>)
 &lt;span style="color:#a6e22e">log&lt;/span>.&lt;span style="color:#a6e22e">Fatal&lt;/span>(&lt;span style="color:#a6e22e">http&lt;/span>.&lt;span style="color:#a6e22e">ListenAndServe&lt;/span>(&lt;span style="color:#a6e22e">addr&lt;/span>, &lt;span style="color:#66d9ef">nil&lt;/span>))
 }
@@ -699,17 +699,17 @@ But what if you work in a company, that has a strict rules over which packages c
 &lt;/li>
 &lt;/ul>
 &lt;p>Once we all got this, let&amp;rsquo;s create a folder in our work directory:&lt;/p>
-&lt;pre>&lt;code>mkdir plain-go-crud &amp;amp;&amp;amp; cd plain-go-crud
+&lt;pre tabindex="0">&lt;code>mkdir plain-go-crud &amp;amp;&amp;amp; cd plain-go-crud
 &lt;/code>&lt;/pre>&lt;p>As we have Go installed, we can set up &lt;strong>Go Modules&lt;/strong> in our directory. Go Modules is the way how Go manages it&amp;rsquo;s dependencies:&lt;/p>
-&lt;pre>&lt;code>go mod init plain-go-crud
+&lt;pre tabindex="0">&lt;code>go mod init plain-go-crud
 &lt;/code>&lt;/pre>&lt;p>You should notice, that this has created a &lt;code>go.mod&lt;/code> file. We don&amp;rsquo;t have to worry about our dependencies anymore! Also, in our case, this will be a rather empty file&amp;hellip;&lt;/p>
 &lt;p>When I was learning programming, I really didn&amp;rsquo;t like the tutorials which were jumping through the files without the initial scaffolding prior. So, we won&amp;rsquo;t do that here. Let&amp;rsquo;s create a few files:&lt;/p>
-&lt;pre>&lt;code>touch main.go server.go broker.go
+&lt;pre tabindex="0">&lt;code>touch main.go server.go broker.go
 &lt;/code>&lt;/pre>&lt;p>&lt;code>main.go&lt;/code> will be our entry file, &lt;code>server.go&lt;/code> as the name says, will be our server logic and &lt;code>broker.go&lt;/code> will contain everything we need in order to use the database.&lt;/p>
 &lt;h2 id="set-up-entry">Set Up Entry&lt;/h2>
 &lt;p>Our goal is to create an API which we would be able to deploy immediately. For the Postgres connection, we will use environment keys. We need to check if the application has access to them and if they are set up in a way we need them. Let&amp;rsquo;s write some code:&lt;/p>
 &lt;p>&lt;strong>main.go&lt;/strong>&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#f92672">package&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#f92672">package&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>
 &lt;span style="color:#f92672">import&lt;/span> (
 &lt;span style="color:#e6db74">&amp;#34;log&amp;#34;&lt;/span>
 &lt;span style="color:#e6db74">&amp;#34;os&amp;#34;&lt;/span>
@@ -717,14 +717,14 @@ But what if you work in a company, that has a strict rules over which packages c
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>The beginning of our file defines the package in which we are in - if we would build a modular app, or a mesh of micro-services, we could create different packages for different parts of our application logic. In our case, that would only ramp up the complexity of the application. &lt;strong>Go&lt;/strong> compiler checks the &lt;code>package&lt;/code> name when compiling. If it&amp;rsquo;s &lt;code>main&lt;/code> it knows that it has to generate the executable we&amp;rsquo;ll be able to use.&lt;/p>
 &lt;p>&lt;code>import&lt;/code> imports the packages necessary for this file to compile - in this case is the &lt;code>log&lt;/code> package which provides an easy way to log to &lt;code>stdout&lt;/code> and &lt;code>os&lt;/code> which will allow us to check environment keys.&lt;/p>
 &lt;p>&lt;strong>main.go&lt;/strong>&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#66d9ef">func&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>() {
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#66d9ef">func&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>() {
 &lt;span style="color:#a6e22e">a&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">App&lt;/span>{}
 &lt;span style="color:#a6e22e">a&lt;/span>.&lt;span style="color:#a6e22e">Initialize&lt;/span>()
 &lt;span style="color:#a6e22e">a&lt;/span>.&lt;span style="color:#a6e22e">Run&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;:9000&amp;#34;&lt;/span>)
 }
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>func main()&lt;/code> is our main function in the application - when Go compiles it&amp;rsquo;s code, it looks for this function to allow the code to execute. Although we don&amp;rsquo;t have the &lt;code>App&lt;/code>, &lt;code>Initialize&lt;/code> and &lt;code>Run&lt;/code> logic yet, we can add it here. &lt;code>App&lt;/code> will create an object, that will hold all the server logic, &lt;code>Initialize&lt;/code> will set up everything we need for the app to run, and &lt;code>Run&lt;/code> - well, runs the app on the port we provide!&lt;/p>
 &lt;p>&lt;strong>main.go&lt;/strong>&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#66d9ef">func&lt;/span> &lt;span style="color:#a6e22e">init&lt;/span>() {
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#66d9ef">func&lt;/span> &lt;span style="color:#a6e22e">init&lt;/span>() {
 &lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#a6e22e">ok&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">os&lt;/span>.&lt;span style="color:#a6e22e">Getenv&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;PG_USERNAME&amp;#34;&lt;/span>); &lt;span style="color:#a6e22e">ok&lt;/span> &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span> {
 &lt;span style="color:#a6e22e">log&lt;/span>.&lt;span style="color:#a6e22e">Fatalln&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;PG_USERNAME not specified&amp;#34;&lt;/span>)
 }
@@ -741,7 +741,7 @@ But what if you work in a company, that has a strict rules over which packages c
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>func init()&lt;/code> runs before the whole application does - before the app starts, in this few milliseconds before the code gets to &lt;code>main()&lt;/code>, Go allows us to do things prior to that. In our case, we are checking the four keys we will need for Postgres to run in our app.&lt;/p>
 &lt;p>Let&amp;rsquo;s take one bit and understand what is going on here:&lt;/p>
 &lt;p>&lt;strong>main.go&lt;/strong>&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#a6e22e">ok&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">os&lt;/span>.&lt;span style="color:#a6e22e">Getenv&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;PG_USERNAME&amp;#34;&lt;/span>); &lt;span style="color:#a6e22e">ok&lt;/span> &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span> {
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#a6e22e">ok&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">os&lt;/span>.&lt;span style="color:#a6e22e">Getenv&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;PG_USERNAME&amp;#34;&lt;/span>); &lt;span style="color:#a6e22e">ok&lt;/span> &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span> {
 &lt;span style="color:#a6e22e">log&lt;/span>.&lt;span style="color:#a6e22e">Fatalln&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;PG_USERNAME not specified&amp;#34;&lt;/span>)
 }
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>if ok := &lt;/code> initialized a variable &lt;code>ok&lt;/code>; &lt;code>os.Getenv&lt;/code> is the method that checks the variable - in this case &lt;code>PG_USERNAME&lt;/code>. &lt;code>ok == &amp;quot;&amp;quot;&lt;/code> checks if the variable is empty or not; we&amp;rsquo;re doing that by comparing the &lt;code>ok&lt;/code> to an empty string. If it&amp;rsquo;s empty, we print it to the stdout and call &lt;code>os.Exit(1)&lt;/code> - all neatly hidden in &lt;code>log.Fatalln&lt;/code>.&lt;/p>
@@ -754,7 +754,7 @@ But what if you work in a company, that has a strict rules over which packages c
 &lt;li>Wrote checks for env keys we&amp;rsquo;ll use to connect to the database.&lt;/li>
 &lt;/ul>
 &lt;p>Full &lt;strong>main.go&lt;/strong> should look like this:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#f92672">package&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#f92672">package&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>
 &lt;span style="color:#f92672">import&lt;/span> (
 &lt;span style="color:#e6db74">&amp;#34;log&amp;#34;&lt;/span>
 &lt;span style="color:#e6db74">&amp;#34;os&amp;#34;&lt;/span>
@@ -879,7 +879,7 @@ Make sure you have Go installed. Write a whole application to find and kill vim:
 &lt;li>Make sure you have Go installed.&lt;/li>
 &lt;li>Write a whole application to find and kill vim:&lt;/li>
 &lt;/ul>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#f92672">package&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#f92672">package&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>
 &lt;span style="color:#f92672">import&lt;/span> (
 &lt;span style="color:#e6db74">&amp;#34;bytes&amp;#34;&lt;/span>
 &lt;span style="color:#e6db74">&amp;#34;io/ioutil&amp;#34;&lt;/span>
@@ -949,7 +949,7 @@ Make sure you have Go installed. Write a whole application to find and kill vim:
 &lt;p>Because command-line interfaces makes your life easier. And if you&amp;rsquo;re nerd like me, and don&amp;rsquo;t like leaving your cozy terminal, that&amp;rsquo;s even better. I won&amp;rsquo;t go over the whole package here, I&amp;rsquo;ll just do the small highlights and general overview.&lt;/p>
 &lt;h2 id="following-format">Following format&lt;/h2>
 &lt;p>First thing we need to do, is to get the correct file name for our blog to run:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#a6e22e">t&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">time&lt;/span>.&lt;span style="color:#a6e22e">Now&lt;/span>()
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#a6e22e">t&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">time&lt;/span>.&lt;span style="color:#a6e22e">Now&lt;/span>()
 &lt;span style="color:#a6e22e">year&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">strconv&lt;/span>.&lt;span style="color:#a6e22e">Itoa&lt;/span>(&lt;span style="color:#a6e22e">t&lt;/span>.&lt;span style="color:#a6e22e">Year&lt;/span>())
 &lt;span style="color:#a6e22e">monthInt&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> int(&lt;span style="color:#a6e22e">t&lt;/span>.&lt;span style="color:#a6e22e">Month&lt;/span>())
 &lt;span style="color:#a6e22e">dayInt&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">t&lt;/span>.&lt;span style="color:#a6e22e">Day&lt;/span>()
@@ -969,19 +969,19 @@ Make sure you have Go installed. Write a whole application to find and kill vim:
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>As you can see, we&amp;rsquo;re getting the current time, extracting &lt;strong>year&lt;/strong>, &lt;strong>month&lt;/strong> and &lt;strong>day&lt;/strong> and concatenating them with the post title we&amp;rsquo;ll pass later in the CLI.&lt;/p>
 &lt;h2 id="adding-the-block">Adding the block&lt;/h2>
 &lt;p>That&amp;rsquo;s even easier:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#a6e22e">header&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;---\nlayout: post\ntitle: &amp;#34;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#a6e22e">title&lt;/span> &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#e6db74">&amp;#34;\n---\n\n&amp;#34;&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#a6e22e">header&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;---\nlayout: post\ntitle: &amp;#34;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#a6e22e">title&lt;/span> &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#e6db74">&amp;#34;\n---\n\n&amp;#34;&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>But, this is where the real fun begins.&lt;/p>
 &lt;h2 id="wrap-it-all-together">Wrap it all together!&lt;/h2>
 &lt;p>(Tried to record my screen here and export it to GIF, might write a Go package to do that for me&amp;hellip;)&lt;/p>
 &lt;p>My workflow is really easy: I type &lt;code>nju post &amp;quot;&amp;lt;name&amp;gt;&amp;quot;&lt;/code> from whenever I am - I don&amp;rsquo;t have to change any directory whatsoever, Nju works from EEEEVVEEERYYYYWWWHEEEEREEEE, then type what I want, save it and press &lt;code>y&lt;/code> to upload it to my blog! Easy?&lt;/p>
 &lt;p>Not so much. Bear in mind, I&amp;rsquo;m an avid fan of Vim, so I tend to do almost everything in Vim. Therefore, when I type &lt;code>nju post &amp;quot;&amp;lt;name&amp;gt;&amp;quot;&lt;/code>, this commands opens up Vim with pre-set header and ready for me to type. That happens because of these lines:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#a6e22e">cmd&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">exec&lt;/span>.&lt;span style="color:#a6e22e">Command&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;vim&amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">filepath&lt;/span>.&lt;span style="color:#a6e22e">Join&lt;/span>(&lt;span style="color:#a6e22e">blogDir&lt;/span>, &lt;span style="color:#a6e22e">filepath&lt;/span>.&lt;span style="color:#a6e22e">Base&lt;/span>(&lt;span style="color:#a6e22e">fileName&lt;/span>)))
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#a6e22e">cmd&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">exec&lt;/span>.&lt;span style="color:#a6e22e">Command&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;vim&amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">filepath&lt;/span>.&lt;span style="color:#a6e22e">Join&lt;/span>(&lt;span style="color:#a6e22e">blogDir&lt;/span>, &lt;span style="color:#a6e22e">filepath&lt;/span>.&lt;span style="color:#a6e22e">Base&lt;/span>(&lt;span style="color:#a6e22e">fileName&lt;/span>)))
 &lt;span style="color:#a6e22e">cmd&lt;/span>.&lt;span style="color:#a6e22e">Stdin&lt;/span> = &lt;span style="color:#a6e22e">os&lt;/span>.&lt;span style="color:#a6e22e">Stdin&lt;/span>
 &lt;span style="color:#a6e22e">cmd&lt;/span>.&lt;span style="color:#a6e22e">Stdout&lt;/span> = &lt;span style="color:#a6e22e">os&lt;/span>.&lt;span style="color:#a6e22e">Stdout&lt;/span>
 &lt;span style="color:#a6e22e">cmd&lt;/span>.&lt;span style="color:#a6e22e">Run&lt;/span>()
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>I&amp;rsquo;m routing my &lt;strong>Stdin&lt;/strong> and &lt;strong>Stdout&lt;/strong> streams to Vim, that&amp;rsquo;s why the header is already set!&lt;/p>
 &lt;p>Then, when I save and exit Vim, my terminal asks me &lt;code>Is that post finished? Do you want to commit? (y/n)&lt;/code>. This very simple check lets me write posts throughout a few days or, if it&amp;rsquo;s ready, to commit it automatically:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Printf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Let&amp;#39;s go with this post then!\n&amp;#34;&lt;/span>)
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Printf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Let&amp;#39;s go with this post then!\n&amp;#34;&lt;/span>)
 &lt;span style="color:#a6e22e">add&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">exec&lt;/span>.&lt;span style="color:#a6e22e">Command&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;git&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;add&amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">fileName&lt;/span>)
 &lt;span style="color:#a6e22e">add&lt;/span>.&lt;span style="color:#a6e22e">Dir&lt;/span> = &lt;span style="color:#a6e22e">blogDir&lt;/span>
 &lt;span style="color:#a6e22e">add&lt;/span>.&lt;span style="color:#a6e22e">Run&lt;/span>()
@@ -996,7 +996,7 @@ Make sure you have Go installed. Write a whole application to find and kill vim:
 &lt;p>Probably this could be done nicer and cleaner but bear in mind, I haven&amp;rsquo;t played with this app in a while now - it works perfectly for my needs!&lt;/p>
 &lt;h2 id="licence-to-cli">Licence to CLI&lt;/h2>
 &lt;p>I&amp;rsquo;ve added my binary as an alias in my &lt;code>.zshrc&lt;/code> config, so then I can use this app from whenever I am - I can quicly switch context when working if I want to write something without overthinking it:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#a6e22e">f&lt;/span>, &lt;span style="color:#a6e22e">err&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">os&lt;/span>.&lt;span style="color:#a6e22e">Create&lt;/span>(&lt;span style="color:#a6e22e">filepath&lt;/span>.&lt;span style="color:#a6e22e">Join&lt;/span>(&lt;span style="color:#a6e22e">blogDir&lt;/span>, &lt;span style="color:#a6e22e">filepath&lt;/span>.&lt;span style="color:#a6e22e">Base&lt;/span>(&lt;span style="color:#a6e22e">fileName&lt;/span>)))
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#a6e22e">f&lt;/span>, &lt;span style="color:#a6e22e">err&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">os&lt;/span>.&lt;span style="color:#a6e22e">Create&lt;/span>(&lt;span style="color:#a6e22e">filepath&lt;/span>.&lt;span style="color:#a6e22e">Join&lt;/span>(&lt;span style="color:#a6e22e">blogDir&lt;/span>, &lt;span style="color:#a6e22e">filepath&lt;/span>.&lt;span style="color:#a6e22e">Base&lt;/span>(&lt;span style="color:#a6e22e">fileName&lt;/span>)))
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>This line makes sure that my streams are in the right place. &lt;code>blogDir&lt;/code> is a path to my blog repo on my Mac.&lt;/p>
 &lt;h2 id="wrapping-up">Wrapping up&lt;/h2>
 &lt;p>Literally every single post I&amp;rsquo;ve written here has been done using this CLI. Even the Hello World was my testing ground for this package. What I would (and probably will) change in the next few months:&lt;/p>
@@ -1068,7 +1068,7 @@ Both have introduced limitations to opening hours and how many orders they&amp;r
 &lt;p>Let&amp;rsquo;s dive down.&lt;/p>
 &lt;h3 id="1-check-the-page">1. Check the page&lt;/h3>
 &lt;p>That&amp;rsquo;s easy - a simple &lt;code>GET&lt;/code> and check the body. I&amp;rsquo;ve used a really, really nice lib called &lt;code>goquery&lt;/code> here, which allows me to check the body according to the class/id which, I presume, has the info I need:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go"> &lt;span style="color:#a6e22e">doc&lt;/span>, &lt;span style="color:#a6e22e">err&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">goquery&lt;/span>.&lt;span style="color:#a6e22e">NewDocumentFromReader&lt;/span>(&lt;span style="color:#a6e22e">res&lt;/span>.&lt;span style="color:#a6e22e">Body&lt;/span>)
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go"> &lt;span style="color:#a6e22e">doc&lt;/span>, &lt;span style="color:#a6e22e">err&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">goquery&lt;/span>.&lt;span style="color:#a6e22e">NewDocumentFromReader&lt;/span>(&lt;span style="color:#a6e22e">res&lt;/span>.&lt;span style="color:#a6e22e">Body&lt;/span>)
 &lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#a6e22e">err&lt;/span> &lt;span style="color:#f92672">!=&lt;/span> &lt;span style="color:#66d9ef">nil&lt;/span> {
 &lt;span style="color:#a6e22e">log&lt;/span>.&lt;span style="color:#a6e22e">Fatal&lt;/span>(&lt;span style="color:#a6e22e">err&lt;/span>)
 }
@@ -1087,7 +1087,7 @@ Both have introduced limitations to opening hours and how many orders they&amp;r
 }
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>If you check the code, I can do a lot more with my selectors, but for now, I&amp;rsquo;ve identified what I need, and just rolled with it. The trick here was to check what it being changed on the page and what indicates if the shop&amp;rsquo;s open.&lt;/p>
 &lt;h3 id="2-save-the-page-state">2. Save the page state&lt;/h3>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#66d9ef">func&lt;/span> &lt;span style="color:#a6e22e">updateMill&lt;/span>(&lt;span style="color:#a6e22e">mill&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span>) {
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#66d9ef">func&lt;/span> &lt;span style="color:#a6e22e">updateMill&lt;/span>(&lt;span style="color:#a6e22e">mill&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span>) {
 &lt;span style="color:#a6e22e">sel&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">getMill&lt;/span>(&lt;span style="color:#a6e22e">mill&lt;/span>)
 &lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#a6e22e">mill&lt;/span> &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#a6e22e">SHIPTON&lt;/span> {
 &lt;span style="color:#a6e22e">_&lt;/span> = &lt;span style="color:#a6e22e">ioutil&lt;/span>.&lt;span style="color:#a6e22e">WriteFile&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;shiptonmill.txt&amp;#34;&lt;/span>, []byte(&lt;span style="color:#a6e22e">sel&lt;/span>), &lt;span style="color:#ae81ff">0644&lt;/span>)
@@ -1101,7 +1101,7 @@ Both have introduced limitations to opening hours and how many orders they&amp;r
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Quick and dirty. All that I need in these days!&lt;/p>
 &lt;h3 id="3-check-if-it-has-changed">3. Check if it has changed&lt;/h3>
 &lt;p>Again, nothing spectacular:&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#66d9ef">func&lt;/span> &lt;span style="color:#a6e22e">checkMill&lt;/span>(&lt;span style="color:#a6e22e">mill&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span>) {
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#66d9ef">func&lt;/span> &lt;span style="color:#a6e22e">checkMill&lt;/span>(&lt;span style="color:#a6e22e">mill&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span>) {
 &lt;span style="color:#a6e22e">sel&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">getMill&lt;/span>(&lt;span style="color:#a6e22e">mill&lt;/span>)
 &lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#a6e22e">mill&lt;/span> &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#a6e22e">SHIPTON&lt;/span> {
 &lt;span style="color:#a6e22e">b&lt;/span>, &lt;span style="color:#a6e22e">_&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">ioutil&lt;/span>.&lt;span style="color:#a6e22e">ReadFile&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;shiptonmill.txt&amp;#34;&lt;/span>)
@@ -1121,7 +1121,7 @@ Both have introduced limitations to opening hours and how many orders they&amp;r
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Just getting the page, checking my reference file and notifying me if something changed.&lt;/p>
 &lt;h3 id="4-notify-if-changed">4. Notify if changed&lt;/h3>
 &lt;p>And that&amp;rsquo;s the part I&amp;rsquo;m really proud of. It&amp;rsquo;s not much code, but it&amp;rsquo;s nice and cohesive and, well, doesn&amp;rsquo;t crumble.&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#66d9ef">func&lt;/span> &lt;span style="color:#a6e22e">notify&lt;/span>(&lt;span style="color:#a6e22e">mill&lt;/span>, &lt;span style="color:#a6e22e">state&lt;/span>, &lt;span style="color:#a6e22e">content&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span>) &lt;span style="color:#66d9ef">error&lt;/span> {
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#66d9ef">func&lt;/span> &lt;span style="color:#a6e22e">notify&lt;/span>(&lt;span style="color:#a6e22e">mill&lt;/span>, &lt;span style="color:#a6e22e">state&lt;/span>, &lt;span style="color:#a6e22e">content&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span>) &lt;span style="color:#66d9ef">error&lt;/span> {
 &lt;span style="color:#a6e22e">from&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">os&lt;/span>.&lt;span style="color:#a6e22e">Getenv&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;NOTIFICATION_EMAIL_SEND&amp;#34;&lt;/span>)
 &lt;span style="color:#a6e22e">password&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">os&lt;/span>.&lt;span style="color:#a6e22e">Getenv&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;NOTIFICATION_EMAIL_SEND_PASSWORD&amp;#34;&lt;/span>)
 &lt;span style="color:#a6e22e">receiver&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> []&lt;span style="color:#66d9ef">string&lt;/span>{&lt;span style="color:#a6e22e">os&lt;/span>.&lt;span style="color:#a6e22e">Getenv&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;NOTIFICATION_EMAIL_RECEIVER&amp;#34;&lt;/span>)}
@@ -1148,7 +1148,7 @@ Both have introduced limitations to opening hours and how many orders they&amp;r
 &lt;p>Talking about fun stuff - have you ever tried to dockerize your Go app? Probably it&amp;rsquo;s easy, there&amp;rsquo;s a ton of Medium posts on how to do that. But what to do when &lt;strong>one of your packages is behind the private organisation&lt;/strong>?&lt;/p>
 &lt;h2 id="how-to-dockerize-an-app-which-uses-private-libraries">How to dockerize an app which uses private libraries?&lt;/h2>
 &lt;p>Well, that was a thing, that took me a few days to figure out. I&amp;rsquo;m not a Docker master, and I&amp;rsquo;m more than 100% sure, that it can be done sexier than this. Ok, let&amp;rsquo;s go!&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-dockerfile" data-lang="dockerfile">&lt;span style="color:#75715e"># Part I&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-dockerfile" data-lang="dockerfile">&lt;span style="color:#75715e"># Part I&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">
 &lt;/span>&lt;span style="color:#960050;background-color:#1e0010">&lt;/span>&lt;span style="color:#66d9ef">FROM&lt;/span>&lt;span style="color:#e6db74"> alpine/git AS prebuild&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">
 &lt;/span>&lt;span style="color:#960050;background-color:#1e0010">&lt;/span>&lt;span style="color:#66d9ef">WORKDIR&lt;/span>&lt;span style="color:#e6db74"> /go/src/github.com/&amp;lt;package&amp;gt;&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">
 &lt;/span>&lt;span style="color:#960050;background-color:#1e0010">&lt;/span>&lt;span style="color:#66d9ef">ARG&lt;/span> GIT_USERNAME&lt;span style="color:#960050;background-color:#1e0010">
@@ -1168,7 +1168,7 @@ Both have introduced limitations to opening hours and how many orders they&amp;r
 &lt;/span>&lt;span style="color:#960050;background-color:#1e0010">&lt;/span>&lt;span style="color:#66d9ef">CMD&lt;/span> [&lt;span style="color:#e6db74">&amp;#34;./your-app&amp;#34;&lt;/span>]&lt;span style="color:#960050;background-color:#1e0010">
 &lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>So, as you probably can see, I&amp;rsquo;m not using &lt;em>go modules&lt;/em>. Well, it&amp;rsquo;s my private thing (had more problems than solved issues with them, so until they&amp;rsquo;re not in better shape&amp;hellip;) so I&amp;rsquo;m going with oldschool approach and doing &lt;code>go get&lt;/code> myself. Let&amp;rsquo;s dive into separate parts then!&lt;/p>
 &lt;h2 id="part-i---get-the-private-repo">Part I - Get the private repo&lt;/h2>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-dockerfile" data-lang="dockerfile">&lt;span style="color:#66d9ef">FROM&lt;/span>&lt;span style="color:#e6db74"> alpine/git AS prebuild&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-dockerfile" data-lang="dockerfile">&lt;span style="color:#66d9ef">FROM&lt;/span>&lt;span style="color:#e6db74"> alpine/git AS prebuild&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">
 &lt;/span>&lt;span style="color:#960050;background-color:#1e0010">&lt;/span>&lt;span style="color:#66d9ef">WORKDIR&lt;/span>&lt;span style="color:#e6db74"> /go/src/github.com/ecs-digital/Smart-Explorer&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">
 &lt;/span>&lt;span style="color:#960050;background-color:#1e0010">&lt;/span>&lt;span style="color:#66d9ef">ARG&lt;/span> GIT_USERNAME&lt;span style="color:#960050;background-color:#1e0010">
 &lt;/span>&lt;span style="color:#960050;background-color:#1e0010">&lt;/span>&lt;span style="color:#66d9ef">ARG&lt;/span> GIT_PASSWORD&lt;span style="color:#960050;background-color:#1e0010">
@@ -1178,7 +1178,7 @@ Both have introduced limitations to opening hours and how many orders they&amp;r
 &lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>First bit is rather easy - we&amp;rsquo;re using the lightest container that allows us to use &lt;code>git&lt;/code>.&lt;/p>
 &lt;p>Now we need to figure out how we can authorize our call to GitHub to get the repo. We could hardcode our &lt;code>GIT_USERNAME&lt;/code> and &lt;code>GIT_PASSWORD&lt;/code> but that&amp;rsquo;s a proper security breach and we don&amp;rsquo;t like it. So, we&amp;rsquo;re passing the &lt;code>username&lt;/code>-&lt;code>password&lt;/code> combo as parameters during the build and by the power of multi-stage build, we&amp;rsquo;re hiding all the keys in the first stage - the only visible thing when doing &lt;code>docker history IMAGE_ID&lt;/code> would be the second part, not the bit when we authorize ourselves!&lt;/p>
 &lt;h2 id="part-ii---do-the-rest">Part II - Do the rest&lt;/h2>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-dockerfile" data-lang="dockerfile">&lt;span style="color:#66d9ef">FROM&lt;/span>&lt;span style="color:#e6db74"> golang:1.13.8-alpine&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-dockerfile" data-lang="dockerfile">&lt;span style="color:#66d9ef">FROM&lt;/span>&lt;span style="color:#e6db74"> golang:1.13.8-alpine&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">
 &lt;/span>&lt;span style="color:#960050;background-color:#1e0010">&lt;/span>&lt;span style="color:#66d9ef">RUN&lt;/span> apk add git&lt;span style="color:#960050;background-color:#1e0010">
 &lt;/span>&lt;span style="color:#960050;background-color:#1e0010">&lt;/span>&lt;span style="color:#66d9ef">COPY&lt;/span> --from&lt;span style="color:#f92672">=&lt;/span>prebuild /go/src/github.com /go/src/github.com&lt;span style="color:#960050;background-color:#1e0010">
 &lt;/span>&lt;span style="color:#960050;background-color:#1e0010">&lt;/span>&lt;span style="color:#66d9ef">WORKDIR&lt;/span>&lt;span style="color:#e6db74"> /app&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">
