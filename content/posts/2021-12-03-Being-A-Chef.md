@@ -24,7 +24,7 @@ The long answer is - because I wanted a PS5 and we wanted to write some good Go 
 
 The submission is called Stylelia - and here's Jason to tell you more about what it is:
 
-> <Jason>
+> Jason
 
 Hey all, so I'm Jason, a long term Chef contributor and former board member of the Open Source [Sous-Chefs Org](https://github.com/sous-chefs). 
 
@@ -32,7 +32,7 @@ Stylelia exists to solve a long term problem that we have seen in the industry, 
 
 The main aim of Stylelia is to ensure that the code is always in line with recommended standards from the tools making it quicker and easier to develop with.
 
-> </Jason>
+> /Jason
 
 ## How?
 
@@ -42,7 +42,7 @@ Whole thing is built using Go and leveraging [Cookstyle](https://github.com/chef
 
 Another thing - it's all plug'n'play. We do have our own in-memory store, we have Redis implementation and we do have interfaces for almost everything. For uninitiated - interfaces in Go allows us for literally changing anything as we see fit as long as the interface is satisfied.
 
-> <Jason>
+> Jason
 
 For me we needed to build it to be scalable and pluggable, there is little value if for each and every type of static code analysis tool we have to build a unique tool/stack for them.
 
@@ -50,17 +50,17 @@ The other imporant thing is context in the Pull Requests and Git history, so we 
 
 Fundamentally the tool is doing the same things a developer can do locally so it should not add complexity when deciding what rules to tune or disable.
 
-> </Jason>
+> /Jason
 
 ## Would you do it again?
 
-> <Jason>
+> Jason
 
 Personally I would do it again, my main aim in joining the hackathon was less to learn Chef but to learn Golang. In this, it was successful as Artur helped me to learn a lot during this process. I would recommend a hackathon if there is something you have been wanting to build for a while but not had time to or something you want to learn in a time box. For me having a deadline meant that I had to finish at a certain point and therefore didn't keep delaying things and delaying things. 
 
 To summarise I found it a great experience when there is a clear vision and a timeline to learn something new in.
 
-> </Jason>
+> /Jason
 
 Me? Definitely yes. I like building stuff and also it helps finding your shortcomings. Apart from COUNTLESS memes and laughs we've had with Jason, I've learned a lot about the Chef ecosystem and I can see myself writing some more code for them in the future.
 
