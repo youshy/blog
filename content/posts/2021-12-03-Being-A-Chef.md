@@ -43,7 +43,7 @@ Whole thing is built using Go and leveraging [Cookstyle](https://github.com/chef
 Another thing - it's all plug'n'play. We do have our own in-memory store, we have Redis implementation and we do have interfaces for almost everything. For uninitiated - interfaces in Go allows us for literally changing anything as we see fit as long as the interface is satisfied.
 
 <Jason>
-
+For me we needed to build it to be scalable and pluggable, there is little value if for each and every type of static code analysis tool we have to build a unique tool/stack for them. The other imporant thing is context in the Pull Requests and Git history, so we have ensured that the reasons for the changes which the tool informs us of are used for the commit and pull request body, ensuring the reviewer understands why. The added benefit is if the reviewer decides that is not the desired behaviour they have all the information required to update a config file in the repo (The one the static code analysis tool would be looking at for it's config, e.g. `rubocop.yml`) to disable or change the behaviour. Fundamentally the tool is doing the same things a developer can do locally so it should not add complexity when deciding what rules to tune or disable.
 </Jason>
 
 ## Would you do it again?
