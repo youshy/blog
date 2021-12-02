@@ -24,13 +24,19 @@ The submission is called Stylelia - and here's Jason to tell you more about what
 
 <Jason>
 
+ Hey all, so I'm Jason, a long term Chef contributor and former board member of the Open Source [Sous-Chefs Org](https://github.com/sous-chefs). 
+
+ Stylelia exists to solve a long term problem that we have seen in the industry, the auto remediation of static code analysis recommendations. As an industry we have a number of great tools out there to help keep our code neat and following best practices, in Ruby we have `rubocop`, for Python it's `pylint`, within Golang we have `golangci-lint` and so on and so on. In Chef the tool is called `cookstyle` and the aim of Stylelia is to automate the running of these tools, with an initial focus on `cookstyle` running and creating pull requests for the recommended fixes into GitHub.
+
+The main aim of Stylelia is to ensure that the code is always in line with recommended standards from the tools making it quicker and easier to develop with.
+
 </Jason>
 
 ## How?
 
 The biggest thing was, that we TDD'd the living crap out of our code - albeit we had 8 weeks to build it, we've decided that we'll either build it proper, or not build it at all.
 
-Whole thing is built using Go and leveraging Cookstyle within AWS Lambda ecosystem.
+Whole thing is built using Go and leveraging [Cookstyle](https://github.com/chef/cookstyle) within AWS Lambda ecosystem.
 
 ## Would you do it again?
 
