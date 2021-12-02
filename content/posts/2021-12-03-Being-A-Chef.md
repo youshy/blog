@@ -12,6 +12,8 @@ My team has won the Chef's Automate for Good hackathon recently - here's a sneak
 
 I haven't written for a while, huh? Well, 2021 is about to end, my life won't be the same anymore (IYKYK) but in the meantime, I've managed to team up with a friend of mine, amazing devops fella, Jason Field, write a piece of code that has won the Automate for Good hackathon in "Most Promising Idea" category!
 
+And yes, we are representing ECS Europe ([we're hiring!](https://ecs.co.uk/careers/)) - come check us out!
+
 Without further adieu, let's dive into it.
 
 ## But Why?
