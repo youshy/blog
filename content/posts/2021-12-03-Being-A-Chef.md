@@ -43,14 +43,20 @@ Whole thing is built using Go and leveraging [Cookstyle](https://github.com/chef
 Another thing - it's all plug'n'play. We do have our own in-memory store, we have Redis implementation and we do have interfaces for almost everything. For uninitiated - interfaces in Go allows us for literally changing anything as we see fit as long as the interface is satisfied.
 
 <Jason>
-For me we needed to build it to be scalable and pluggable, there is little value if for each and every type of static code analysis tool we have to build a unique tool/stack for them. The other imporant thing is context in the Pull Requests and Git history, so we have ensured that the reasons for the changes which the tool informs us of are used for the commit and pull request body, ensuring the reviewer understands why. The added benefit is if the reviewer decides that is not the desired behaviour they have all the information required to update a config file in the repo (The one the static code analysis tool would be looking at for it's config, e.g. `rubocop.yml`) to disable or change the behaviour. Fundamentally the tool is doing the same things a developer can do locally so it should not add complexity when deciding what rules to tune or disable.
+
+For me we needed to build it to be scalable and pluggable, there is little value if for each and every type of static code analysis tool we have to build a unique tool/stack for them.
+
+The other imporant thing is context in the Pull Requests and Git history, so we have ensured that the reasons for the changes which the tool informs us of are used for the commit and pull request body, ensuring the reviewer understands why. The added benefit is if the reviewer decides that is not the desired behaviour they have all the information required to update a config file in the repo (The one the static code analysis tool would be looking at for it's config, e.g. `rubocop.yml`) to disable or change the behaviour.
+
+Fundamentally the tool is doing the same things a developer can do locally so it should not add complexity when deciding what rules to tune or disable.
+
 </Jason>
 
 ## Would you do it again?
 
 <Jason>
 
-Personally I would do it again, my main aim in joining the hackathon was less to learn Chef but to learn GoLang. In this it was successful as Artur helped me to learn a lot during this process. I would recommend a hackathon if there is something you have been wanting to build for a while but not had time to or something you want to learn in a time box. For me having a deadline meant that I had to finish at a certain point and therefore didn't keep delaying things and delaying things. 
+Personally I would do it again, my main aim in joining the hackathon was less to learn Chef but to learn Golang. In this, it was successful as Artur helped me to learn a lot during this process. I would recommend a hackathon if there is something you have been wanting to build for a while but not had time to or something you want to learn in a time box. For me having a deadline meant that I had to finish at a certain point and therefore didn't keep delaying things and delaying things. 
 
 To summarise I found it a great experience when there is a clear vision and a timeline to learn something new in.
 
@@ -71,3 +77,5 @@ If you really want, you can listen to us talking about Stylelia (and a lot more)
 Talk to us on LinkedIn if you have an idea and let's make it a reality!
 
 Also, amazing people from Abbey Road, please do another hackathon and allow me to write code inside of Studio A! (They did [one edition](https://www.abbeyroad.com/hackathon) in 2019, I hope they'll do another in 2022!)
+
+Hopefully we'll talk before end of the year but if we won't - have a really chill and happy xmas and a proper new year!
