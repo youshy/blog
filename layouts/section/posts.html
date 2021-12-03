@@ -7,7 +7,7 @@
     <!-- Ranges through content/posts/*.md -->
     {{ range .Pages }}
         <li>
-            <span>{{.Date.Format "2006-01-02"}} |</span><a href="{{.Permalink}}"> {{.Title}}</a>
+            <span>{{.Date.Format "2006-01-02"}} | </span><a href="{{.Permalink}}">{{.Title}}</a>
         </li>
     {{ end }}
     </ul>
