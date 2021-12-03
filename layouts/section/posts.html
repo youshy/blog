@@ -5,7 +5,7 @@
     </div>
     <ul>
     <!-- Ranges through content/posts/*.md -->
-    {{ range (.Paginate (.Data.Pages.GroupByDate "2019")).PageGroups }}
+    {{ range .Pages }}
         <li>
             <span>{{.Date.Format "2006-01-02"}} | </span><a href="{{.Permalink}}">{{.Title}}</a>
         </li>
