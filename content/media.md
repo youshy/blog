@@ -10,6 +10,28 @@ All pics are clickable and will take you places!
 
 ---
 
+## Youtube
+
+A fair bit of guitar videos - more things to come somewhere in the future when I'll have a proper place to shoot these videos!
+
+[![One Shot - Squier Troy Sanders Jaguar & Ibanez RC1320](http://img.youtube.com/vi/T-HM6lyanlI/0.jpg)](https://www.youtube.com/watch?v=T-HM6lyanlI)
+
+[![One Shot - Ibanez AZ2402 & FTM33](http://img.youtube.com/vi/HI-AeAqtmn4/0.jpg)](https://www.youtube.com/watch?v=HI-AeAqtmn4)
+
+[![One Shot - Ibanez RG550](http://img.youtube.com/vi/jH26_s4207U/0.jpg)](https://www.youtube.com/watch?v=jH26_s4207U)
+
+## Everybody Needs An Enemy
+
+Most favourite project to date - produced with a good buddy Hunor here in London, hopefully we'll finish the songs one day!
+
+Also, featuring first (and so far only!) music video written in Go:
+
+[![ENAE - The System](http://img.youtube.com/vi/-_-2EpUqb9g/0.jpg)](https://www.youtube.com/watch?v=-_-2EpUqb9g "ENAE - The System")
+
+And the acoustic version of it (both songs featuring our previous singer, amazing Sarah Cairns!)
+
+[![ENAE - The System (Acoustic)](http://img.youtube.com/vi/b1fZCNhTVFw/0.jpg)](https://www.youtube.com/watch?v=b1fZCNhTVFw "ENAE - The System (Acoustic)")
+
 ## Tap3s
 
 [Spotify](https://open.spotify.com/artist/11snR6DNci1YazNpAzJzSF?si=1V2DFuoIQ7KOztun5ENDMg) 
