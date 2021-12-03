@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>chef on Artur Kondas</title><link>/tags/chef/</link><description>Recent content in chef on Artur Kondas</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Fri, 03 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/chef/index.xml" rel="self" type="application/rss+xml"/><item><title>Being a Chef</title><link>/blog/being-a-chef/</link><pubDate>Fri, 03 Dec 2021 00:00:00 +0000</pubDate><guid>/blog/being-a-chef/</guid><description>&lt;p>My team has won the Chef&amp;rsquo;s Automate for Good hackathon recently - here&amp;rsquo;s a sneak peek into why we did it, how we did it and if we&amp;rsquo;d do it again. Featuring my good buddy and teammate &lt;a href="https://www.linkedin.com/in/jasonfield1/">Jason Field&lt;/a>!&lt;/p></description><content>&lt;p>My team has won the Chef&amp;rsquo;s Automate for Good hackathon recently - here&amp;rsquo;s a sneak peek into why we did it, how we did it and if we&amp;rsquo;d do it again. Featuring my good buddy and teammate &lt;a href="https://www.linkedin.com/in/jasonfield1/">Jason Field&lt;/a>!&lt;/p>
+&lt;p>I haven&amp;rsquo;t written for a while, huh? Well, 2021 is about to end, my life won&amp;rsquo;t be the same anymore (IYKYK) but in the meantime, I&amp;rsquo;ve managed to team up with a friend of mine, amazing devops fella, Jason Field, and write a piece of code that has won the Automate for Good hackathon in &amp;ldquo;Most Promising Idea&amp;rdquo; category!&lt;/p>
+&lt;p>And yes, we are representing ECS Europe (&lt;a href="https://ecs.co.uk/careers/">we&amp;rsquo;re hiring!&lt;/a>) - come check us out!&lt;/p>
+&lt;p>Without further adieu, let&amp;rsquo;s dive into it.&lt;/p>
+&lt;h2 id="but-why">But Why?&lt;/h2>
+&lt;p>Short answer is - because we&amp;rsquo;ve wanted to.&lt;/p>
+&lt;p>The long answer is - because I wanted a PS5 and we wanted to write some good Go code.&lt;/p>
+&lt;p>The submission is called Stylelia - and here&amp;rsquo;s Jason to tell you more about what it is:&lt;/p>
+&lt;blockquote>
+&lt;p>Jason&lt;/p>
+&lt;/blockquote>
+&lt;p>Hey all, so I&amp;rsquo;m Jason, a long term Chef contributor and former board member of the Open Source &lt;a href="https://github.com/sous-chefs">Sous-Chefs Org&lt;/a>.&lt;/p>
+&lt;p>Stylelia exists to solve a long term problem that we have seen in the industry, the auto remediation of static code analysis recommendations. As an industry we have a number of great tools out there to help keep our code neat and following best practices, in Ruby we have &lt;code>rubocop&lt;/code>, for Python it&amp;rsquo;s &lt;code>pylint&lt;/code>, within Golang we have &lt;code>golangci-lint&lt;/code> and so on and so on. In Chef the tool is called &lt;code>cookstyle&lt;/code> and the aim of Stylelia is to automate the running of these tools, with an initial focus on &lt;code>cookstyle&lt;/code> running and creating pull requests for the recommended fixes into GitHub.&lt;/p>
+&lt;p>The main aim of Stylelia is to ensure that the code is always in line with recommended standards from the tools making it quicker and easier to develop with.&lt;/p>
+&lt;blockquote>
+&lt;p>/Jason&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="how">How?&lt;/h2>
+&lt;p>The biggest thing was, that we TDD&amp;rsquo;d the living crap out of our code - albeit we had 8 weeks to build it, we&amp;rsquo;ve decided that we&amp;rsquo;ll either build it proper, or not build it at all.&lt;/p>
+&lt;p>Whole thing is built using Go and leveraging &lt;a href="https://github.com/chef/cookstyle">Cookstyle&lt;/a> within AWS Lambda ecosystem. We&amp;rsquo;ve chose it as it allows us for basically infinite scalling - however much horsepower we need under the hood, we can have.&lt;/p>
+&lt;p>Another thing - it&amp;rsquo;s all plug&amp;rsquo;n&amp;rsquo;play. We do have our own in-memory store, we have Redis implementation and we do have interfaces for almost everything. For uninitiated - interfaces in Go allows us for literally changing anything as we see fit as long as the interface is satisfied.&lt;/p>
+&lt;blockquote>
+&lt;p>Jason&lt;/p>
+&lt;/blockquote>
+&lt;p>For me we needed to build it to be scalable and pluggable, there is little value if for each and every type of static code analysis tool we have to build a unique tool/stack for them.&lt;/p>
+&lt;p>The other imporant thing is context in the Pull Requests and Git history, so we have ensured that the reasons for the changes which the tool informs us of are used for the commit and pull request body, ensuring the reviewer understands why. The added benefit is if the reviewer decides that is not the desired behaviour they have all the information required to update a config file in the repo (The one the static code analysis tool would be looking at for it&amp;rsquo;s config, e.g. &lt;code>rubocop.yml&lt;/code>) to disable or change the behaviour.&lt;/p>
+&lt;p>Fundamentally the tool is doing the same things a developer can do locally so it should not add complexity when deciding what rules to tune or disable.&lt;/p>
+&lt;blockquote>
+&lt;p>/Jason&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="would-you-do-it-again">Would you do it again?&lt;/h2>
+&lt;blockquote>
+&lt;p>Jason&lt;/p>
+&lt;/blockquote>
+&lt;p>Personally I would do it again, my main aim in joining the hackathon was less to learn Chef but to learn Golang. In this, it was successful as Artur helped me to learn a lot during this process. I would recommend a hackathon if there is something you have been wanting to build for a while but not had time to or something you want to learn in a time box. For me having a deadline meant that I had to finish at a certain point and therefore didn&amp;rsquo;t keep delaying things and delaying things.&lt;/p>
+&lt;p>To summarise I found it a great experience when there is a clear vision and a timeline to learn something new in.&lt;/p>
+&lt;blockquote>
+&lt;p>/Jason&lt;/p>
+&lt;/blockquote>
+&lt;p>Me? Definitely yes. I like building stuff and also it helps finding your shortcomings. Apart from COUNTLESS memes and laughs we&amp;rsquo;ve had with Jason, I&amp;rsquo;ve learned a lot about the Chef ecosystem and I can see myself writing some more code for them in the future.&lt;/p>
+&lt;p>And also new PlayStation 5 is pretty sweet. Got Deathloop and Hitman 3 right out of the gate - both are amazing!&lt;/p>
+&lt;h2 id="listen-to-us-rambling-about-it">Listen to us rambling about it&lt;/h2>
+&lt;p>If you really want, you can listen to us talking about Stylelia (and a lot more) on youtube:&lt;/p>
+&lt;p>&lt;a href="https://www.youtube.com/watch?v=FGQ6kZgIP2I">&lt;img src="https://img.youtube.com/vi/FGQ6kZgIP2I/0.jpg" alt="Stylelia Chat">&lt;/a>&lt;/p>
+&lt;h2 id="i-want-to-do-hackathons-with-you-guys">I want to do hackathons with you guys!&lt;/h2>
+&lt;p>Talk to us on LinkedIn if you have an idea and let&amp;rsquo;s make it a reality!&lt;/p>
+&lt;p>Also, amazing people from Abbey Road, please do another hackathon and allow me to write code inside of Studio A! (They did &lt;a href="https://www.abbeyroad.com/hackathon">one edition&lt;/a> in 2019, I hope they&amp;rsquo;ll do another in 2022!)&lt;/p>
+&lt;p>Hopefully we&amp;rsquo;ll talk before end of the year but if we won&amp;rsquo;t - have a really chill and happy xmas and a proper new year!&lt;/p></content></item></channel></rss>
