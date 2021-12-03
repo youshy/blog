@@ -1,0 +1,15 @@
+{{ define "main" }}
+<main>
+    <div>
+        <h2>Here's all the posts I've written here!</h2>
+    </div>
+    <ul>
+    <!-- Ranges through content/posts/*.md -->
+    {{ range .Pages }}
+        <li>
+            <span>{{.Date.Format "2006-01-02"}} | </span><a href="{{.Permalink}}">{{.Title}}</a>
+        </li>
+    {{ end }}
+    </ul>
+</main>
+{{ end }}
