@@ -43,13 +43,6 @@ summaryLength = 20
   # it's set to `true` by default
   oneHeadingSize = false
 
-[params.twitter]
-  # set Twitter handles for Twitter cards
-  # see https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started#card-and-content-attribution
-  # do not include @
-  creator = "Artur Kondas"
-  site = "arturkondas"
-
 [params.linkedin]
   creator = "Artur Kondas"
   site = "https://www.linkedin.com/in/arturkondas/"
@@ -91,4 +84,8 @@ summaryLength = 20
         identifier = "Tags"
         name = "Tags"
         url = "/tags"
+      [[languages.en.menu.main]]
+        identifier = "All Content"
+        name = "All Content"
+        url = "/all"
 
