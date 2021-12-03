@@ -60,7 +60,7 @@ summaryLength = 20
     readOtherPosts = "Read other posts"
     newerPosts = "Newer posts"
     olderPosts = "Older posts"
-    missingContentMessage = "Page not found..."
+    missingContentMessage = "These are not the droids you're looking for..."
     missingBackButtonLabel = "Back to home page"
 
     [languages.en.params.logo]
@@ -85,7 +85,7 @@ summaryLength = 20
         name = "Tags"
         url = "/tags"
       [[languages.en.menu.main]]
-        identifier = "All Content"
-        name = "All Content"
-        url = "/all"
+        identifier = "All Posts"
+        name = "All Posts"
+        url = "/posts"
 
