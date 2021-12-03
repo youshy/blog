@@ -14,7 +14,7 @@ All posts are my personal views, not to be associated with my current employeer.
 
 ### Contact me
 
-If you need to talk to me, or just say something - grab me on any of the social medias below!
+If you need to talk to me, or just say something - grab me on either LinkedIn or email me directly!
 
 * [LinkedIn](https://www.linkedin.com/in/arturkondas/)
-* [Twitter](https://twitter.com/arturkondas)
+* [Email me!](mailto:hello@akondas.com)
