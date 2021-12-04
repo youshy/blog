@@ -82,6 +82,10 @@ Glassdoor reviews maybe doesn't reflect the reality 100%, as a lot of these revi
 
 Aim for your company to reflect your marketing team game in the real life. And revert to point no.1 - listen to your employees, they will **literally** tell you what's wrong with the company and, most probably, will propose how you can fix it.
 
+### Be a man of your word.
+
+If you're giving somebody a raise mid-year and you won't give them another by the end of the year (even if your company policy is to have a EOTY salary review), just tell them. Don't play the card "but we've already given you the raise, why do you want another". Who's the joke here then, the raise or you?
+
 ## As a Recruiter
 
 ## As a Human
