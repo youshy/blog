@@ -118,7 +118,7 @@ Just be fair and honest with yourself. We've all been in situations where you ha
 That has become my mantra (although previously in Polish) for the last few years - if you are true to who you are, you're not doing any bad things and not making other lifes miserable - then you should be fine. 
 Work out where you want to be, how to get there and enjoy the ride. Remember that all plans, however great, might change - embrace the change and grow.
 
-## ...But I really want to be a dick
+## ...But I really want to be one!
 
 Well, I can't help you there. I'd maybe say *choose your battles wisely*? I really don't know.
 
