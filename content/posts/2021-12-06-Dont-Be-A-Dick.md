@@ -66,7 +66,7 @@ You literally can't have a good product if the team behind it doesn't believe in
 
 ### Give options to grow.
 
-If you're a tech company that uses PHP and Java 4 and you're wondering why the median tenancy is 6 months - well, read this sentence again.
+If you're a tech company that uses PHP and Java 6 and you're wondering why the median tenancy is 6 months - well, read this sentence again.
 
 I don't think there's another field that is as competitive as IT and grows as fast - not saying that you should flip your current stack on it's head but maybe introduce something new? Maybe [email somebody](mailto:hello@akondas.com) and get them to introduce Go within your company? IDK...
 
