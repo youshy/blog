@@ -18,7 +18,7 @@ We will look from four angles - as an employee who wants to change/is changing j
 
 > Really, really big disclaimer here:
 >
-> This is all based on my own experiences switching jobs here and there, so the view is a little biased. If you feel like you want to add something in the discussion, [tell me about it!](mailto:hello@akondas.com).
+> This is all based on my own (and not only) experiences switching jobs here and there, so the view is a little biased. If you feel like you want to add something in the discussion, [tell me about it!](mailto:hello@akondas.com).
 
 ## As an Employee
 
@@ -57,6 +57,7 @@ Okay, this one might be fun - I've never employed anyone, so this will be mostly
 > Yet another disclaimer here
 >
 > Please, do not associate these things here to any of my previous, current or future employers. This is based on multitude of years of observations from various viewpoints.
+> I feel like I need to put it there.
 
 ### Listen to your team.
 
@@ -84,9 +85,27 @@ Aim for your company to reflect your marketing team game in the real life. And r
 
 ### Be a man of your word.
 
-If you're giving somebody a raise mid-year and you won't give them another by the end of the year (even if your company policy is to have a EOTY salary review), just tell them. Don't play the card "but we've already given you the raise, why do you want another". Who's the joke here then, the raise or you?
+If you're giving somebody a raise mid-year and you won't give them another by the end of the year (even if your company policy is to have a EOTY salary review), just tell them. Don't play the card *but we've already given you the raise, why do you want another?*. 
+
+Who's the joke here then, the raise or you?
 
 ## As a Recruiter
+
+### Don't waste time.
+
+As a techie, honestly, I don't have time to respond to yet another cold email that asks for my number and if I'm interested to talk about one-sentence intro to a workplace. It's not Tinder, you won't buy me with *great opportunities* or *generous equity*. Just give me the job description, salary and what you need from me and I'll 10 out of 10 times respond.
+
+### If you're here for the numbers, you've chosen the wrong profession pal.
+
+Again, this goes together with no.1 - if you're using LinkedIn to send cold invites and then you're moaning that nobody responds to them and your cold-emails allowance is gone - well, do you really need to work in recruitment?
+
+The best recruiters I've worked with, even if I didn't take the job, were treating me as equal - we're both in this game for money, for me in long-term, for you in short-term bonus. Help me and I'll help you.
+
+### Know the limits.
+
+Oh, this is the best one. I knew a recruiter who was so eager to get me across that was messaging me privately on WhatsApp or researching my profile on Facebook. 
+
+Well, kudos for proper research but it's a work relationship. It's creepy as hell when you are writing to me in the afternoon to ask *what's up?* or calling me and telling me *so, I've found out that your best friend is moving to Canada, have you knew about it?* (both are true btw). Know where the boundaries are, if we'll end up becoming friends, it's definitely not overnight.
 
 ## As a Human
 
