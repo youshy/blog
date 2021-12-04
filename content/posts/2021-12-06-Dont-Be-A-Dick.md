@@ -52,6 +52,36 @@ And last, but not least, be the bigger person here - if you're finishing your ti
 
 ## As an Employer
 
+Okay, this one might be fun - I've never employed anyone, so this will be mostly "how I'd like to be treated by the companies I'm working for".
+
+> Yet another disclaimer here
+>
+> Please, do not associate these things here to any of my previous, current or future employers. This is based on multitude of years of observations from various viewpoints.
+
+### Listen to your team.
+
+That should go without saying - if all decisions are made by the C-suite with little to no regards to what your employees think, well, don't be surprised if your current team will walk on you.
+
+You literally can't have a good product if the team behind it doesn't believe in either the product itself or your capabilities in shipping it to the market. Nobody wants to spend months of their lives on something that will be binned eventually and won't ever see the light of day.
+
+### Give options to grow.
+
+If you're a tech company that uses PHP and Java 4 and you're wondering why the median tenancy is 6 months - well, read this sentence again.
+
+I don't think there's another field that is as competitive as IT and grows as fast - not saying that you should flip your current stack on it's head but maybe introduce something new? Maybe [email somebody](mailto:hello@akondas.com) and get them to introduce Go within your company? IDK...
+
+### Grow as a company.
+
+Simple things as, I don't know, having a nice maternity package or having inclusive socials - not everybody wants to socialise face-to-face, maybe the online social you did a year ago in the middle of C-word was a big hit - why won't you do it again?
+Or just have nice, 6-months pay reviews - you're moaning about "how hard it is to retain people" but you have yearly salary reviews and you do 5% pay increase then - have you seen how high inflation went this year?
+
+### Real life =/= LinkedIn life.
+
+I always like how companies are promoting themselves as "the best place to work" with having really big turnover (it's not really hard to figure this out in these days).
+Glassdoor reviews maybe doesn't reflect the reality 100%, as a lot of these reviews might be written after something has happened in the workplace so it's filled with bad voodoo and really bad emotions - but they do have some truth in them.
+
+Aim for your company to reflect your marketing team game in the real life. And revert to point no.1 - listen to your employees, they will **literally** tell you what's wrong with the company and, most probably, will propose how you can fix it.
+
 ## As a Recruiter
 
 ## As a Human
