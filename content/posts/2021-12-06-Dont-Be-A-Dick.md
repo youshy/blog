@@ -57,7 +57,7 @@ Okay, this one might be fun - I've never employed anyone, so this will be mostly
 > Yet another disclaimer here
 >
 > Please, do not associate these things here to any of my previous, current or future employers. This is based on multitude of years of observations from various viewpoints.
-> I feel like I need to put it there.
+> I felt like I need to put it there again.
 
 ### Listen to your team.
 
@@ -115,7 +115,7 @@ Just be fair and honest with yourself. We've all been in situations where you ha
 
 ## Just don't be a dick
 
-That has become my mantra (although previously in Polish) for the last few years - if you are true to who you are, you're not doing any bad things and not making other lifes miserable - then you should be fine. 
+That has become my mantra for the last few years - if you are true to who you are, you're not doing any bad things and not making other lifes miserable - then you should be fine. 
 Work out where you want to be, how to get there and enjoy the ride. Remember that all plans, however great, might change - embrace the change and grow.
 
 ## ...But I really want to be one!
