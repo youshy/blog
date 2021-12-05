@@ -111,11 +111,11 @@ Well, kudos for proper research but it's a work relationship. It's creepy as hel
 
 This one is easy in my opinion.
 
-Just be fair and honest with yourself. We've all been in situations where you had to take the job because otherwise you wouldn't be able to pay the bills but, currently, we are the ones who can negociate upwards. You should always, ALWAYS negociate - it'll show you how open the company is and how much dialog you can have.
+Just be fair and honest with yourself. We've all been in situations where you had to take the job because otherwise you wouldn't be able to pay the bills but, currently, we are the ones who can negotiate upwards. You should always, ALWAYS negotiate - it'll show you how open the company is and how much dialog you can have.
 
 ## Just don't be a dick
 
-That has become my mantra for the last few years - if you are true to who you are, you're not doing any bad things and not making other lifes miserable - then you should be fine. 
+That has become my mantra for the last few years - if you are true to who you are, you're not doing any bad things and not making other lives miserable - then you should be fine. 
 Work out where you want to be, how to get there and enjoy the ride. Remember that all plans, however great, might change - embrace the change and grow.
 
 ## ...But I really want to be one!
