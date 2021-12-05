@@ -97,6 +97,7 @@ ENABLEGITINFO
 enae
 enaehq
 ENDMg
+EOTY
 Eprom
 esque
 FAANG
@@ -130,6 +131,7 @@ giphy
 gitea
 github
 gitutil
+Glassdoor
 gmail
 gmnoprint
 goapify
@@ -169,6 +171,7 @@ html
 http
 Hunor
 ico
+IDK
 img
 imporant
 Instagram
@@ -256,6 +259,7 @@ params
 pdf
 PEBp
 permalink
+PHP
 pid
 pizzaiolo
 plug'n'play
@@ -308,6 +312,7 @@ shiptonmill
 sitemap
 sixteenthnote
 sixtyfourthnote
+skillset
 smtp
 sonarcloud
 sonarsource
