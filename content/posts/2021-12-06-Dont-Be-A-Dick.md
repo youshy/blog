@@ -1,7 +1,7 @@
 ---
-date: "2021-12-03T00:00:00Z"
+date: "2021-12-06T00:00:00Z"
 title: Don't Be A Dick
-draft: true
+draft: false
 toc: true
 tags: [thoughts, jobs]
 ---
