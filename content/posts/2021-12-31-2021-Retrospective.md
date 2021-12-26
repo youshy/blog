@@ -1,5 +1,5 @@
 ---
-date: "2021-12-31T00:00:00~"
+date: "2021-12-31T00:00:00Z"
 title: 2021 In Retrospective
 draft: false
 tags: [retrospective, new year resolutions]
