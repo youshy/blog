@@ -91,11 +91,12 @@ Hope to have time to write more!
 
 ## Why So Many Goals
 
-I like to have more on my plate than less - this way I can drop the things that are not exactly profitable or worth pursuing in the given timeframe. Out of the ones up there, there's a few ones that are a bit higher up and a few ones that are a bit lower on the list.
+I like to have more on my plate than less - this way I can drop the things that are not exactly profitable or worth pursuing in the given timeframe. 
+Out of the ones up there, there's a few that are a bit higher up and a few that are a bit lower on the list.
 
 ## Thank you
 
-Although there has been less than a dozen posts here, I'm really grateful that you've read my ramblings here - and a few of you actually reached out and talked with me about them. I'm raising a glass for you today!
+Although there has been less than a dozen posts here, I'm really grateful that you're readimg my ramblings here - and a few of you actually reached out and talked with me about them. I'm raising a glass for you today!
 
 All in all, we've been through a very weird 2020, and I don't think 2021 will be less than this - hope it'll be tho but, there's a saying *hope for the best, prepare for the worst* - and that's my mantra during these odd times.
 
