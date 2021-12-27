@@ -53,7 +53,7 @@ This is an extension of the last point - if I'll be able to release at least two
 
 Since like mid-2020, I've started writing for and producing a few projects here and there. Eventually, I'd love for this to be a 30-40% of my annual workload and that's the general aim.
 
-The 2nd facade of this goal is to get back into session guitar work. I've used to do this way more and I'm eager to get my chops back up to speed.
+The 2nd facade of this goal is to get back into session guitar work. I've used to do this way more in the past and I'm eager to get my chops back up to speed.
 
 ### Youtube Channel
 
@@ -73,7 +73,8 @@ Don't know which one, don't know about what, I just want to build some stuff in 
 
 ### A Conference
 
-I like nerding out and I like talking about stuff I find interesting. I did a few online conferences in 2020, haven't done any in 2021 (life, huh?) but I really want to do one or two in 2022.
+I like nerding out and talking about stuff I find interesting. 
+I did a few online conferences in 2020, haven't done any in 2021 (life, huh?) but I really want to do one or two in 2022.
 
 And that leads us to...
 
