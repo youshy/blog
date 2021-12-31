@@ -98,8 +98,8 @@ Out of the ones up there, there's a few that are a bit higher up and a few that 
 
 Although there has been less than a dozen posts here, I'm really grateful that you're readimg my ramblings here - and a few of you actually reached out and talked with me about them. I'm raising a glass for you today!
 
-All in all, we've been through a very weird 2020, and I don't think 2021 will be less than this - hope it'll be tho but, there's a saying *hope for the best, prepare for the worst* - and that's my mantra during these odd times.
+All in all, we've been through a very weird 2021, and I don't think 2022 will be any less than this - hope it'll be tho but, there's a saying *hope for the best, prepare for the worst* - and that's my mantra during these odd times.
 
-Hope that 2021 will treat you how you want it to do and hope we'll cross paths on a Slack call somewhere or start a very ignited convo under some random post in a deep ends of our professional bubble. 
+Hope that 2022 will treat you how you want it to do and hope we'll cross paths on a Slack call somewhere or start a very ignited convo under some random post in a deep ends of our professional bubble. 
 
 Happy New Year!
