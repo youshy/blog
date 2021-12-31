@@ -1,4 +1,61 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Artur Kondas</title><link>/</link><description>Recent content on Artur Kondas</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Mon, 06 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Don't Be A Dick</title><link>/blog/dont-be-a-dick/</link><pubDate>Mon, 06 Dec 2021 00:00:00 +0000</pubDate><guid>/blog/dont-be-a-dick/</guid><description>&lt;p>If you&amp;rsquo;re a techie, you know that this year has been absolutely red hot when it comes to jobs. But job hunting comes with an absolute crapton of entitlement* - from all sides.&lt;/p></description><content>&lt;p>If you&amp;rsquo;re a techie, you know that this year has been absolutely red hot when it comes to jobs. But job hunting comes with an absolute crapton of entitlement* - from all sides.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Artur Kondas</title><link>/</link><description>Recent content on Artur Kondas</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Fri, 31 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>2021 In Retrospective</title><link>/blog/2021-in-retrospective/</link><pubDate>Fri, 31 Dec 2021 00:00:00 +0000</pubDate><guid>/blog/2021-in-retrospective/</guid><description>I&amp;rsquo;ve used to do these retros every year but in a different place - now, that I have my own corner of the internet for myself, I think I can do it here.</description><content>&lt;p>I&amp;rsquo;ve used to do these retros every year but in a different place - now, that I have my own corner of the internet for myself, I think I can do it here.&lt;/p>
+&lt;p>Here we go - 2021 in retrospective!&lt;/p>
+&lt;blockquote>
+&lt;p>This post is rather personal one. But also, this page is a very personal one.
+Basically, YMMV.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="2021-goals">2021 Goals&lt;/h2>
+&lt;h3 id="start-a-youtube-channel">Start a Youtube Channel&lt;/h3>
+&lt;p>Okay, so I&amp;rsquo;ve started one. Or restarted. And that&amp;rsquo;d be about it.&lt;/p>
+&lt;p>Not upset about it at all as I&amp;rsquo;ve recorded a few hours of material, working on shots, frames, colours and everything in between.&lt;/p>
+&lt;p>This is SO going to happen!&lt;/p>
+&lt;h3 id="get-certified">Get Certified&lt;/h3>
+&lt;p>This one I feel like I&amp;rsquo;ve fulfilled in 120%:&lt;/p>
+&lt;ul>
+&lt;li>AWS Database Specialty&lt;/li>
+&lt;li>Site Reliability Engineering Foundation&lt;/li>
+&lt;li>Certified Kubernetes Application Developer&lt;/li>
+&lt;/ul>
+&lt;p>And a few smaller ones. Really happy about this in general.&lt;/p>
+&lt;h3 id="code-outside-of-work">Code Outside Of Work&lt;/h3>
+&lt;p>Again, this one is a homerun. Apart from a few small projects, I&amp;rsquo;ve managed to win Chef&amp;rsquo;s Automate For Good hackathon with my Good Buddy Jason. Also, managed to build and hack my Good Buddy Dominika&amp;rsquo;s &lt;a href="https://fabric-class.teachable.com/">new training site&lt;/a>!&lt;/p>
+&lt;h3 id="music">Music&lt;/h3>
+&lt;p>This one, literally as always, is somewhat split in two.
+From one angle, I&amp;rsquo;ve managed to write a ton of songs, record a full album (which is in post-production) and started writing more music for other people.
+From another, I&amp;rsquo;ve managed to release almost none. Talk about perfectionism, huh?&lt;/p>
+&lt;h2 id="2022-goals">2022 Goals&lt;/h2>
+&lt;h3 id="music-1">Music&lt;/h3>
+&lt;p>This is an extension of the last point - if I&amp;rsquo;ll be able to release at least two projects (out of&amp;hellip; I don&amp;rsquo;t remember how many), I&amp;rsquo;ll be happy!&lt;/p>
+&lt;h3 id="session--producing-work">Session &amp;amp; Producing Work&lt;/h3>
+&lt;p>Since like mid-2020, I&amp;rsquo;ve started writing for and producing a few projects here and there. Eventually, I&amp;rsquo;d love for this to be a 30-40% of my annual workload and that&amp;rsquo;s the general aim.&lt;/p>
+&lt;p>The 2nd facade of this goal is to get back into session guitar work. I&amp;rsquo;ve used to do this way more in the past and I&amp;rsquo;m eager to get my chops back up to speed.&lt;/p>
+&lt;h3 id="youtube-channel">Youtube Channel&lt;/h3>
+&lt;p>And that&amp;rsquo;s the 3rd (woah!) facade of the previous goal - I don&amp;rsquo;t want to compete with Pete Thorn or Rhett Shull but I see a small niche for the ideas I have and the videos I can shoot and stuff I can talk about.&lt;/p>
+&lt;p>The one thing I&amp;rsquo;m really happy about is that I&amp;rsquo;m not aiming to do Youtube or Session work full time - I&amp;rsquo;ve used to do latter full time a few years back and I really don&amp;rsquo;t want to put all eggs in one basket again.&lt;/p>
+&lt;h3 id="certifications">Certifications&lt;/h3>
+&lt;p>I want to definitely pursuit the Kubernetes stuff a bit more, there&amp;rsquo;s one or two Amazon certs I want to do (them architecture ones looks so nice) and maybe some Hashicorp one would add up to the pile.&lt;/p>
+&lt;p>But that k8s pain I want to embrace.&lt;/p>
+&lt;h3 id="another-hackathon">Another Hackathon&lt;/h3>
+&lt;p>Don&amp;rsquo;t know which one, don&amp;rsquo;t know about what, I just want to build some stuff in a relatively short time again. There&amp;rsquo;s one I&amp;rsquo;d really hope that&amp;rsquo;d happen in 2022 but it&amp;rsquo;s not my call if it will or not.&lt;/p>
+&lt;h3 id="a-conference">A Conference&lt;/h3>
+&lt;p>I like nerding out and talking about stuff I find interesting.
+I did a few online conferences in 2020, haven&amp;rsquo;t done any in 2021 (life, huh?) but I really want to do one or two in 2022.&lt;/p>
+&lt;p>And that leads us to&amp;hellip;&lt;/p>
+&lt;h3 id="new-ventures">New Ventures&lt;/h3>
+&lt;p>&amp;hellip;which you&amp;rsquo;ll know about more in a due time.&lt;/p>
+&lt;h3 id="writing-more">Writing More&lt;/h3>
+&lt;p>Last but not least, I&amp;rsquo;d love to write more here.
+I like that I can rant here, I like that I can brag here and I like that I have a full control over what I write and how does it look.
+I didn&amp;rsquo;t wanted it to be a tech blog 100%, I always wanted to have a very open-ended thing here.
+Hope to have time to write more!&lt;/p>
+&lt;h2 id="why-so-many-goals">Why So Many Goals&lt;/h2>
+&lt;p>I like to have more on my plate than less - this way I can drop the things that are not exactly profitable or worth pursuing in the given timeframe.
+Out of the ones up there, there&amp;rsquo;s a few that are a bit higher up and a few that are a bit lower on the list.&lt;/p>
+&lt;h2 id="thank-you">Thank you&lt;/h2>
+&lt;p>Although there has been less than a dozen posts here, I&amp;rsquo;m really grateful that you&amp;rsquo;re readimg my ramblings here - and a few of you actually reached out and talked with me about them. I&amp;rsquo;m raising a glass for you today!&lt;/p>
+&lt;p>All in all, we&amp;rsquo;ve been through a very weird 2021, and I don&amp;rsquo;t think 2022 will be any less than this - hope it&amp;rsquo;ll be tho but, there&amp;rsquo;s a saying &lt;em>hope for the best, prepare for the worst&lt;/em> - and that&amp;rsquo;s my mantra during these odd times.&lt;/p>
+&lt;p>Hope that 2022 will treat you how you want it to do and hope we&amp;rsquo;ll cross paths on a Slack call somewhere or start a very ignited convo under some random post in a deep ends of our professional bubble.&lt;/p>
+&lt;p>Happy New Year!&lt;/p></content></item><item><title>Don't Be A Dick</title><link>/blog/dont-be-a-dick/</link><pubDate>Mon, 06 Dec 2021 00:00:00 +0000</pubDate><guid>/blog/dont-be-a-dick/</guid><description>&lt;p>If you&amp;rsquo;re a techie, you know that this year has been absolutely red hot when it comes to jobs. But job hunting comes with an absolute crapton of entitlement* - from all sides.&lt;/p></description><content>&lt;p>If you&amp;rsquo;re a techie, you know that this year has been absolutely red hot when it comes to jobs. But job hunting comes with an absolute crapton of entitlement* - from all sides.&lt;/p>
 &lt;blockquote>
 &lt;ul>
 &lt;li>I don&amp;rsquo;t know if entitlement is the right word here but read on to figure out what I want to say!&lt;/li>
