@@ -20,6 +20,22 @@ Subscribe to this page!
     margin: 10px;
 }
 
+button {
+
+  /* remove default behavior */
+  appearance:none;
+  -webkit-appearance:none;
+
+  /* usual styles */
+  padding:10px;
+  border:none;
+  background-color:#ffa86a;
+  color:rgb(34, 33, 41);
+  font-weight:600;
+  border-radius:5px;
+  width:100%;
+
+}
 </style>
 
 <!-- Begin Mailchimp Signup Form -->
