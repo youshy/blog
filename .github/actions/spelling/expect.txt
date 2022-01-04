@@ -107,6 +107,7 @@ ENDMg
 EOTY
 Eprom
 esque
+Etsy
 FAANG
 facebook
 fafafa
@@ -171,6 +172,7 @@ HFYe
 Hitman
 HMIDAy
 homerun
+Honne
 href
 HRY
 hsla
@@ -178,6 +180,8 @@ htb
 html
 http
 Hunor
+hussle
+hyperachiever
 ico
 IDK
 img
@@ -315,6 +319,7 @@ rss
 rubocop
 rustfmt
 rxhanson
+SBarxs
 scalling
 scrollbar
 scss
@@ -367,6 +372,7 @@ toc
 TODO
 toml
 toolbar
+truthbombs
 tuc
 TVFw
 Ubuntu
