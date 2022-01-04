@@ -15,9 +15,12 @@ All pics are clickable and will take you places!
 
 A fair bit of guitar videos - more things to come somewhere in the future when I'll have a proper place to shoot these videos!
 
+
 {{< youtube T-HM6lyanlI >}}
 
+
 {{< youtube HI-AeAqtmn4 >}}
+
 
 {{< youtube jH26_s4207U >}}
 
@@ -27,9 +30,11 @@ Most favourite project to date - produced with a good buddy Hunor here in London
 
 Also, featuring first (and so far only!) music video written in Go:
 
+
 {{< youtube -_-2EpUqb9g >}}
 
 And the acoustic version of it (both songs featuring our previous singer, amazing Sarah Cairns!)
+
 
 {{< youtube b1fZCNhTVFw >}}
 
@@ -39,11 +44,9 @@ And the acoustic version of it (both songs featuring our previous singer, amazin
 
 [Bandcamp](https://tap3s.bandcamp.com/)
 
-Tap3s - PS4
 
 {{< youtube xW_buHhVFqw >}}
 
-Iggy Not Pop x Tap3s - Powiedz Mi Coś Więcej
 
 {{< youtube seUh9RCKXiM >}}
 
@@ -57,11 +60,9 @@ Tap3s is a musical partnership between me and my good mate Bartek. We do a lot o
 
 [Spotify](https://open.spotify.com/artist/08GCf4AAuCcRxJN32DaFs0?si=nP8ZnJ-6QA-KZ_zcdtWISg)
 
-Ogród - Smog City
 
 {{< youtube DNssZeG_0Qg >}}
 
-Ogród - Nocny Lot
 
 {{< youtube w-QOgWvcgig >}}
 
@@ -75,7 +76,6 @@ Everything below the line here is VERY old stuff but I'm very proud of it!
 
 ## Ego Trip / Prawo Głosu
 
-Ego Trip - Miasto Nocą
 
 {{< youtube Arxd0zraGDs >}}
 
@@ -84,13 +84,11 @@ Ego Trip - Miasto Nocą
 
 For the curious ones - Ego Trip was a band I played with in Polish edition of Must Be The Music. We even got to the finals! I'll leave this breadcrumb for you to follow...
 
-Prawo Głosu
 
 {{< youtube SGs3KmO5ejM >}}
 
 (and some live stuff)
 
-Prawo Głosu Live
 
 {{< youtube 5ZIxLsQzgi4 >}}
 
@@ -98,7 +96,6 @@ Prawo Głosu Live
 
 ## Sunrise Hunters
 
-Sunrise Hunters EP
 
 {{< youtube _20T4qx6jxY >}}
 
