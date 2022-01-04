@@ -88,4 +88,8 @@ summaryLength = 20
         identifier = "All Posts"
         name = "All Posts"
         url = "/posts"
+      [[languages.en.menu.main]]
+        identifier = "Subscribe"
+        name = "Subscribe"
+        url = "/subscribe"
 
