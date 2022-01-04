@@ -72,24 +72,30 @@ summaryLength = 20
         identifier = "About"
         name = "About"
         url = "/about"
+        weight = 1
       [[languages.en.menu.main]]
         identifier = "Media"
         name = "Media"
         url = "/media"
+        weight = 2
       [[languages.en.menu.main]]
         identifier = "Open Source"
         name = "Open Source"
         url = "/opensource"
-      [[languages.en.menu.main]]
-        identifier = "Tags"
-        name = "Tags"
-        url = "/tags"
+        weight = 3
       [[languages.en.menu.main]]
         identifier = "All Posts"
         name = "All Posts"
         url = "/posts"
+        weight = 4
+      [[languages.en.menu.main]]
+        identifier = "Tags"
+        name = "Tags"
+        url = "/tags"
+        weight = 5
       [[languages.en.menu.main]]
         identifier = "Subscribe"
         name = "Subscribe"
         url = "/subscribe"
+        weight = 6
 
