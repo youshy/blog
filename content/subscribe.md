@@ -8,18 +8,27 @@ Subscribe to this page!
 
 {{< rawhtml >}}
 
+<style>
+.form {
+  box-sizing: border-box;
+}
+
+.field {
+	padding: 10px;
+	margin: 10px;
+}
+
+</style>
+
 <!-- Begin Mailchimp Signup Form -->
-<div id="mc_embed_signup">
+<div id="mc_embed_signup" class="form">
 <form action="https://akondas.us20.list-manage.com/subscribe/post?u=a51d84c0a38c791624a88cc4d&amp;id=73c1b8cf8f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate SIGNUP={{ .Permalink }}>
     <div id="mc_embed_signup_scroll">
 <div class="mc-field-group">
-	<label for="mce-NAME">Name </label>
-	<input type="text" value="" name="NAME" class="" id="mce-NAME">
+	<input type="text" value="" name="NAME" class="required field" id="mce-NAME" placeholder="Name">
 </div>
 <div class="mc-field-group">
-	<label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
-</label>
-	<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+	<input type="email" value="" name="EMAIL" class="required email field" id="mce-EMAIL" placeholder="Email Address">
 </div>
 	<div id="mce-responses" class="clear foot">
 		<div class="response" id="mce-error-response" style="display:none"></div>
@@ -33,7 +42,6 @@ Subscribe to this page!
             </div>
         </div>
     </div>
-    <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
 </form>
 </div>
 
