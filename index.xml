@@ -1520,7 +1520,6 @@ margin-top: 10px;
 &lt;div class="optionalParent">
 &lt;div class="clear foot">
 &lt;input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
-&lt;p class="brandingLogo">&lt;a href="http://eepurl.com/hRq3sL" title="Mailchimp - email marketing made easy and fun">&lt;img src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg">&lt;/a>&lt;/p>
 &lt;/div>
 &lt;/div>
 &lt;/div>
