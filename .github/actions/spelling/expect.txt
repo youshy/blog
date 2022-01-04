@@ -40,7 +40,9 @@ btw
 calt
 ccc
 cdata
+cdn
 cej
+certs
 charset
 checkbox
 chilcano
@@ -57,6 +59,7 @@ colorintech
 colourfull
 config
 Consolas
+convo
 cookstyle
 coverprofile
 crapton
@@ -77,16 +80,20 @@ Dockerimage
 dockerize
 Dockerizing
 doctype
+Dominika
 downsides
 doy
 droids
 DTo
+dtp
 eaeaea
 ecs
 ECSD
 eea
 EEEEEVVEEEERYYYYTHIIINGGG
 EEEEVVEEERYYYYWWWHEEEEREEEE
+eep
+eepurl
 Ehas
 eightnote
 Elasticsearch
@@ -163,6 +170,7 @@ helvetica
 HFYe
 Hitman
 HMIDAy
+homerun
 href
 HRY
 hsla
@@ -208,9 +216,11 @@ lockdown
 locl
 loooo
 lyanl
+Mailchimp
 mailto
 matthews
 matthewsmill
+mce
 meetup
 memes
 Miasto
@@ -229,6 +239,7 @@ neatiest
 necolas
 neoclide
 nerdiest
+nerding
 Netflix
 netlify
 Neue
@@ -240,6 +251,7 @@ Nocny
 noindex
 nojekyll
 noodp
+novalidate
 nowrap
 nuevo
 nvim
@@ -289,8 +301,10 @@ quicly
 Qzgi
 randban
 randpos
+rawhtml
 RCKXi
 rdquo
+readimg
 Redis
 regex
 rgb
@@ -309,6 +323,7 @@ SGs
 SHHH
 shipton
 shiptonmill
+signup
 sitemap
 sixteenthnote
 sixtyfourthnote
@@ -334,6 +349,7 @@ submenu
 svg
 Svq
 sweatpants
+tabindex
 Tarantino
 tbody
 TDD'd
@@ -344,6 +360,7 @@ Tful
 thead
 thirtysecondnote
 Thu
+timeframe
 timeline
 tnum
 toc
@@ -373,6 +390,7 @@ wiki
 wikipedia
 wireframe
 WISg
+woah
 woff
 WORKDIR
 workflow
@@ -389,6 +407,7 @@ Yaz
 ycombinator
 YKWYA
 yml
+YMMV
 YOLO
 youll
 youshy
