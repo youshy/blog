@@ -13,12 +13,9 @@ Apart from writing code as my daily job, I do produce, record, compose and relea
 
 A fair bit of guitar videos - more things to come somewhere in the future when I'll have a proper place to shoot these videos!
 
-
 {{< youtube T-HM6lyanlI >}}
 
-
 {{< youtube HI-AeAqtmn4 >}}
-
 
 {{< youtube jH26_s4207U >}}
 
@@ -28,11 +25,9 @@ Most favourite project to date - produced with a good buddy Hunor here in London
 
 Also, featuring first (and so far only!) music video written in Go:
 
-
 {{< youtube -_-2EpUqb9g >}}
 
 And the acoustic version of it (both songs featuring our previous singer, amazing Sarah Cairns!)
-
 
 {{< youtube b1fZCNhTVFw >}}
 
@@ -42,9 +37,7 @@ And the acoustic version of it (both songs featuring our previous singer, amazin
 
 [Bandcamp](https://tap3s.bandcamp.com/)
 
-
 {{< youtube xW_buHhVFqw >}}
-
 
 {{< youtube seUh9RCKXiM >}}
 
@@ -58,13 +51,11 @@ Tap3s is a musical partnership between me and my good mate Bartek. We do a lot o
 
 [Spotify](https://open.spotify.com/artist/08GCf4AAuCcRxJN32DaFs0?si=nP8ZnJ-6QA-KZ_zcdtWISg)
 
-
 {{< youtube DNssZeG_0Qg >}}
-
 
 {{< youtube w-QOgWvcgig >}}
 
-That was my songwriter/producer outlet. Both songs are composed, arranged, recorded (apart from vocals) and mixed by me.
+That was/is my songwriter/producer outlet. Both songs are composed, arranged, recorded (apart from vocals) and mixed by me.
 
 ---
 
@@ -74,7 +65,6 @@ Everything below the line here is VERY old stuff but I'm very proud of it!
 
 ## Ego Trip / Prawo Głosu
 
-
 {{< youtube Arxd0zraGDs >}}
 
 #### [Ego Trip's Full Album](https://www.youtube.com/playlist?list=PLywWxNJsXt2Sm3XeFBhZW2JCWplDbVhFJ)
@@ -82,18 +72,15 @@ Everything below the line here is VERY old stuff but I'm very proud of it!
 
 For the curious ones - Ego Trip was a band I played with in Polish edition of Must Be The Music. We even got to the finals! I'll leave this breadcrumb for you to follow...
 
-
 {{< youtube SGs3KmO5ejM >}}
 
 (and some live stuff)
-
 
 {{< youtube 5ZIxLsQzgi4 >}}
 
 ---
 
 ## Sunrise Hunters
-
 
 {{< youtube _20T4qx6jxY >}}
 
