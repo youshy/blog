@@ -10,10 +10,8 @@ Subscribe to this page!
 
 <!-- Begin Mailchimp Signup Form -->
 <div id="mc_embed_signup">
-<form action="https://akondas.us20.list-manage.com/subscribe/post?u=a51d84c0a38c791624a88cc4d&amp;id=73c1b8cf8f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+<form action="https://akondas.us20.list-manage.com/subscribe/post?u=a51d84c0a38c791624a88cc4d&amp;id=73c1b8cf8f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate SIGNUP={{ .Permalink }}>
     <div id="mc_embed_signup_scroll">
-	<h2>Subscribe</h2>
-<div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
 <div class="mc-field-group">
 	<label for="mce-NAME">Name </label>
 	<input type="text" value="" name="NAME" class="" id="mce-NAME">
@@ -35,6 +33,7 @@ Subscribe to this page!
             </div>
         </div>
     </div>
+    <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
 </form>
 </div>
 
