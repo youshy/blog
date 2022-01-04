@@ -10,12 +10,14 @@ Subscribe to this page!
 
 <style>
 .form {
-  box-sizing: border-box;
+    box-sizing: border-box;
+    width: 200px;
+    padding: 20px;
 }
 
 .field {
-	padding: 10px;
-	margin: 10px;
+    padding: 10px;
+    margin: 10px;
 }
 
 </style>
