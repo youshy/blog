@@ -41,7 +41,7 @@ Your email will NEVER BE SHARED with another 3rd party, it always stays here and
 <form action="https://akondas.us20.list-manage.com/subscribe/post?u=a51d84c0a38c791624a88cc4d&amp;id=73c1b8cf8f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate SIGNUP={{ .Permalink }}>
     <div id="mc_embed_signup_scroll">
 <div class="mc-field-group">
-	<input type="email" value="" name="EMAIL" class="required email field" id="mce-EMAIL" placeholder="Email Address">
+	<input type="email" value="" name="EMAIL" class="required email field" id="mce-EMAIL" placeholder="Type your email address here">
 </div>
 	<div id="mce-responses" class="clear foot">
 		<div class="response" id="mce-error-response" style="display:none"></div>
