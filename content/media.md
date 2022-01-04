@@ -7,8 +7,6 @@ permalink: /media/
 
 Apart from writing code as my daily job, I do produce, record, compose and release a lot of music and different stuff. Here you can find a few things I've been working on so far!
 
-All pics are clickable and will take you places!
-
 ---
 
 ## Youtube
