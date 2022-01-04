@@ -1462,4 +1462,50 @@ Chef - chef/golang Rod - go-rod/rod Grafana - grafana/grafana Beep - faiface/bee
 &lt;li>Unshaky - &lt;a href="https://github.com/aahung/Unshaky">aahung/Unshaky&lt;/a> (translation)&lt;/li>
 &lt;li>Rectangle - &lt;a href="https://github.com/rxhanson/Rectangle">rxhanson/Rectangle&lt;/a> (translation)&lt;/li>
 &lt;li>Microsoft Visual Studio Code (translation)&lt;/li>
-&lt;/ul></content></item></channel></rss>
+&lt;/ul></content></item><item><title>Subscribe</title><link>/subscribe/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/subscribe/</guid><description>Get a semi-periodic update about the new posts and other stuff. There might be some extra content coming your way, but I&amp;rsquo;ll update you each time when the new things might come, so you&amp;rsquo;ll be able to choose what you actually want.</description><content>&lt;p>Get a semi-periodic update about the new posts and other stuff. There might be some extra content coming your way, but I&amp;rsquo;ll update you each time when the new things might come, so you&amp;rsquo;ll be able to choose what you actually want.&lt;/p>
+&lt;p>Your email will NEVER BE SHARED with another 3rd party, it always stays here and won&amp;rsquo;t be sold to anybody, ever. Your email is probably bloated as it is, I don&amp;rsquo;t want to add to the problem.&lt;/p>
+&lt;style>
+.form {
+box-sizing: border-box;
+}
+.field {
+padding: 10px;
+width: 100%;
+margin-top: 10px;
+margin-bottom: 10px;
+}
+.button {
+appearance:none;
+-webkit-appearance:none;
+padding:10px;
+border:none;
+background-color:#ffa86a;
+color:rgb(34, 33, 41);
+font-weight:600;
+border-radius:5px;
+width:100%;
+margin-top: 10px;
+}
+&lt;/style>
+&lt;!-- Begin Mailchimp Signup Form -->
+&lt;div id="mc_embed_signup" class="form">
+&lt;form action="https://akondas.us20.list-manage.com/subscribe/post?u=a51d84c0a38c791624a88cc4d&amp;amp;id=73c1b8cf8f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate SIGNUP={{ .Permalink }}>
+&lt;div id="mc_embed_signup_scroll">
+&lt;div class="mc-field-group">
+&lt;input type="email" value="" name="EMAIL" class="required email field" id="mce-EMAIL" placeholder="Email Address">
+&lt;/div>
+&lt;div id="mce-responses" class="clear foot">
+&lt;div class="response" id="mce-error-response" style="display:none">&lt;/div>
+&lt;div class="response" id="mce-success-response" style="display:none">&lt;/div>
+&lt;/div> &lt;!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+&lt;div style="position: absolute; left: -5000px;" aria-hidden="true">&lt;input type="text" name="b_a51d84c0a38c791624a88cc4d_73c1b8cf8f" tabindex="-1" value="">&lt;/div>
+&lt;div class="optionalParent">
+&lt;div class="clear foot">
+&lt;input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+&lt;p class="brandingLogo">&lt;a href="http://eepurl.com/hRq3sL" title="Mailchimp - email marketing made easy and fun">&lt;img src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg">&lt;/a>&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/form>
+&lt;/div>
+&lt;!--End mc_embed_signup--></content></item></channel></rss>
