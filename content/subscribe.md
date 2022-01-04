@@ -4,20 +4,22 @@ title: Subscribe
 permalink: /subscribe/
 ---
 
-Subscribe to this page!
+Get a semi-periodic update about the new posts and other stuff. There might be some extra content coming your way, but I'll update you each time when the new things might come, so you'll be able to choose what you actually want.
+
+Your email will NEVER BE SHARED with another 3rd party, it always stays here and won't be sold to anybody, ever. Your email is probably bloated as it is, I don't want to add to the problem.
 
 {{< rawhtml >}}
 
 <style>
 .form {
     box-sizing: border-box;
-    width: 200px;
-    padding: 20px;
 }
 
 .field {
     padding: 10px;
-    margin: 10px;
+		width: 100%;
+		margin-top: 10px;
+		margin-bottom: 10px;
 }
 
 .button {
@@ -31,6 +33,7 @@ Subscribe to this page!
   font-weight:600;
   border-radius:5px;
   width:100%;
+	margin-top: 10px;
 }
 </style>
 
@@ -38,9 +41,6 @@ Subscribe to this page!
 <div id="mc_embed_signup" class="form">
 <form action="https://akondas.us20.list-manage.com/subscribe/post?u=a51d84c0a38c791624a88cc4d&amp;id=73c1b8cf8f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate SIGNUP={{ .Permalink }}>
     <div id="mc_embed_signup_scroll">
-<div class="mc-field-group">
-	<input type="text" value="" name="NAME" class="required field" id="mce-NAME" placeholder="Name">
-</div>
 <div class="mc-field-group">
 	<input type="email" value="" name="EMAIL" class="required email field" id="mce-EMAIL" placeholder="Email Address">
 </div>
