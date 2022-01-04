@@ -51,7 +51,6 @@ Your email will NEVER BE SHARED with another 3rd party, it always stays here and
         <div class="optionalParent">
             <div class="clear foot">
                 <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
-                <p class="brandingLogo"><a href="http://eepurl.com/hRq3sL" title="Mailchimp - email marketing made easy and fun"><img src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg"></a></p>
             </div>
         </div>
     </div>
