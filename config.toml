@@ -1,4 +1,4 @@
-baseurl = "/"
+baseurl = "https://akondas.com/"
 languageCode = "en-gb"
 theme = "terminal"
 paginate = 5
