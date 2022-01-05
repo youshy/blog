@@ -58,3 +58,7 @@ The older I get, the more I go with not even *doing things safe* but *doing thin
 I did both ways (doing the bare minimum and YOLO) and I've found doing things smart to have the golden ratio between these ways.
 
 Now it's your turn to figure it out!
+
+---
+
+Liked that post? Consider [subscribing](https://akondas.com/subscribe/) to get notifications when new things arrive here!
