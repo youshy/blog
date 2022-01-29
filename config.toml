@@ -92,15 +92,14 @@ summaryLength = 20
         identifier = "All Posts"
         name = "All Posts"
         url = "/posts"
-        weight = 5
+        weight = 6
       [[languages.en.menu.main]]
         identifier = "Tags"
         name = "Tags"
         url = "/tags"
-        weight = 6
+        weight = 7
       [[languages.en.menu.main]]
         identifier = "Subscribe"
         name = "Subscribe"
         url = "/subscribe"
-        weight = 7
-
+        weight = 5
