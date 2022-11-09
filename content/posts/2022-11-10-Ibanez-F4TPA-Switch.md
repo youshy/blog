@@ -20,8 +20,8 @@ Switch:
 <td>
 
 ```
-  \
------
+  /
+------
 ```
 
 </td>
@@ -36,8 +36,8 @@ Switch:
 <td>
 
 ```
-  /
-------
+  \
+-----
 ```
 
 </td>
@@ -46,10 +46,10 @@ Switch:
 <td>
 
 ```
-X I I
-X I I
-X I I
-X I I
+I I X
+I I X
+I I X
+I I X
 ```
 
 </td>
@@ -66,10 +66,10 @@ I I X
 <td>
 
 ```
-I I X
-I I X
-I I X
-I I X
+X I I
+X I I
+X I I
+X I I
 ```
 
 </td>
@@ -88,8 +88,8 @@ For comparison, here's the DiMarzio EP1111 switch:
 <td>
 
 ```
-  \
------
+  /
+------
 ```
 
 </td>
@@ -104,8 +104,8 @@ For comparison, here's the DiMarzio EP1111 switch:
 <td>
 
 ```
-  /
-------
+  \
+-----
 ```
 
 </td>
@@ -114,10 +114,10 @@ For comparison, here's the DiMarzio EP1111 switch:
 <td>
 
 ```
-X I I
-X I I
-X I I
-X I I
+I I X
+I I X
+I I X
+I I X
 ```
 
 </td>
@@ -134,10 +134,10 @@ I I X
 <td>
 
 ```
-I I X
-I I X
-I I X
-I I X
+X I I
+X I I
+X I I
+X I I
 ```
 
 </td>
