@@ -1,6 +1,6 @@
 ---
 date: "2022-01-05T00:00:00Z"
-title: Love The Job You Hate
+title: Ibanez
 draft: false
 toc: true
 tags: [hobby, jobs]
