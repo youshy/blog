@@ -24,7 +24,7 @@
 &lt;p>Also, please don&amp;rsquo;t judge me on the package, it&amp;rsquo;s old but it worked like a bliss since I&amp;rsquo;ve started blogging. And it&amp;rsquo;s more than 2 years old at the moment!&lt;/p>
 &lt;/blockquote>
 &lt;p>Let&amp;rsquo;s checkout what I&amp;rsquo;ve found so far:&lt;/p>
-&lt;pre tabindex="0">&lt;code>date: &amp;quot;2021-06-24T00:00:00Z&amp;quot;
+&lt;pre tabindex="0">&lt;code>date: &amp;#34;2021-06-24T00:00:00Z&amp;#34;
 title: A Love Letter To Hugo
 draft: true
 tags: [hugo]
@@ -40,21 +40,24 @@ toc: true
 &lt;blockquote>
 &lt;p>I&amp;rsquo;m using a great &lt;a href="https://github.com/panr/hugo-theme-terminal">terminal&lt;/a> theme made by panr - your mileage may wary.&lt;/p>
 &lt;/blockquote>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-toml" data-lang="toml">[...]
-[&lt;span style="color:#a6e22e">permalinks&lt;/span>]
-&lt;span style="color:#a6e22e">posts&lt;/span> = &lt;span style="color:#e6db74">&amp;#34;/blog/:title&amp;#34;&lt;/span>
-[&lt;span style="color:#a6e22e">params&lt;/span>]
-&lt;span style="color:#a6e22e">showMenuItems&lt;/span> = &lt;span style="color:#ae81ff">6&lt;/span>
-&lt;span style="color:#a6e22e">favicon&lt;/span> = &lt;span style="color:#e6db74">&amp;#34;images/favicon.ico&amp;#34;&lt;/span>
-[&lt;span style="color:#a6e22e">languages&lt;/span>]
-[&lt;span style="color:#a6e22e">languages&lt;/span>.&lt;span style="color:#a6e22e">en&lt;/span>]
-[...]
-[&lt;span style="color:#a6e22e">languages&lt;/span>.&lt;span style="color:#a6e22e">en&lt;/span>.&lt;span style="color:#a6e22e">menu&lt;/span>]
-[[&lt;span style="color:#a6e22e">languages&lt;/span>.&lt;span style="color:#a6e22e">en&lt;/span>.&lt;span style="color:#a6e22e">menu&lt;/span>.&lt;span style="color:#a6e22e">main&lt;/span>]]
-&lt;span style="color:#a6e22e">identifier&lt;/span> = &lt;span style="color:#e6db74">&amp;#34;About&amp;#34;&lt;/span>
-&lt;span style="color:#a6e22e">name&lt;/span> = &lt;span style="color:#e6db74">&amp;#34;About&amp;#34;&lt;/span>
-&lt;span style="color:#a6e22e">url&lt;/span> = &lt;span style="color:#e6db74">&amp;#34;/about&amp;#34;&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>I&amp;rsquo;ve chosen the bits I really like - and a few that took me a second of reverse engineering my theme to understand how it actually works.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-toml" data-lang="toml">&lt;span style="display:flex;">&lt;span>[...]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[&lt;span style="color:#a6e22e">permalinks&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">posts&lt;/span> = &lt;span style="color:#e6db74">&amp;#34;/blog/:title&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[&lt;span style="color:#a6e22e">params&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">showMenuItems&lt;/span> = &lt;span style="color:#ae81ff">6&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">favicon&lt;/span> = &lt;span style="color:#e6db74">&amp;#34;images/favicon.ico&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[&lt;span style="color:#a6e22e">languages&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> [&lt;span style="color:#a6e22e">languages&lt;/span>.&lt;span style="color:#a6e22e">en&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> [...]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> [&lt;span style="color:#a6e22e">languages&lt;/span>.&lt;span style="color:#a6e22e">en&lt;/span>.&lt;span style="color:#a6e22e">menu&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> [[&lt;span style="color:#a6e22e">languages&lt;/span>.&lt;span style="color:#a6e22e">en&lt;/span>.&lt;span style="color:#a6e22e">menu&lt;/span>.&lt;span style="color:#a6e22e">main&lt;/span>]]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">identifier&lt;/span> = &lt;span style="color:#e6db74">&amp;#34;About&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">name&lt;/span> = &lt;span style="color:#e6db74">&amp;#34;About&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">url&lt;/span> = &lt;span style="color:#e6db74">&amp;#34;/about&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>I&amp;rsquo;ve chosen the bits I really like - and a few that took me a second of reverse engineering my theme to understand how it actually works.&lt;/p>
 &lt;ul>
 &lt;li>&lt;code>posts = &amp;quot;/blog/:title&amp;quot;&lt;/code> - because my Jekyll blog had &lt;code>akondas.com/blog/:title&lt;/code> url per each post, I wanted to keep the same for the V2. If I&amp;rsquo;ll ever want to change it, I just have to change it there, Hugo will take care of it.&lt;/li>
 &lt;li>&lt;code>showMenuItems = 6&lt;/code> - if I&amp;rsquo;ll ever extend a bit more, I can either print all menu items out-of-the-box - or, I can wrap them for a neater, cleaner experience.&lt;/li>

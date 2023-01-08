@@ -1,466 +1,235 @@
-<!doctype html><html lang=en>
-<head>
-<title>How To Write A Music Video In Go :: Artur Kondas</title>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content="TL;DR: My band ENAEhas released a first single, called The System. Song is 100% DIY (from writing to recording to mixing to producing to releasing) and the music video is written 100% in Go!">
-<meta name=keywords content="Go,Golang,Programming,Open Source,Lessons,Pizza">
-<meta name=robots content="noodp">
-<link rel=canonical href=https://akondas.com/blog/how-to-write-a-music-video-in-go/>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-166121756-1','auto'),ga('send','pageview'))</script>
-<link rel=stylesheet href=https://akondas.com/assets/style.css>
-<link rel=apple-touch-icon href=https://akondas.com/img/apple-touch-icon-192x192.png>
-<link rel="shortcut icon" href=https://akondas.com/images/favicon.ico>
-<meta name=twitter:card content="summary">
-<meta property="og:locale" content="en">
-<meta property="og:type" content="article">
-<meta property="og:title" content="How To Write A Music Video In Go">
-<meta property="og:description" content="TL;DR: My band ENAEhas released a first single, called The System. Song is 100% DIY (from writing to recording to mixing to producing to releasing) and the music video is written 100% in Go!">
-<meta property="og:url" content="https://akondas.com/blog/how-to-write-a-music-video-in-go/">
-<meta property="og:site_name" content="Artur Kondas">
-<meta property="og:image" content="https://akondas.com/images/favicon.ico">
-<meta property="og:image:width" content="2048">
-<meta property="og:image:height" content="1024">
-<meta property="article:published_time" content="2020-09-01 00:00:00 +0000 UTC">
-</head>
-<body class=orange>
-<div class="container center">
-<header class=header>
-<div class=header__inner>
-<div class=header__logo>
-<a href=/>
-<div class=logo>
-Artur Kondas
-</div>
-</a>
-</div>
-<div class=menu-trigger>menu</div>
-</div>
-<nav class=menu>
-<ul class="menu__inner menu__inner--desktop">
-<li><a href=/about>About</a></li>
-<li><a href=/media>Media</a></li>
-<li><a href=/write-for-me>Write For Me</a></li>
-<li><a href=/opensource>Open Source</a></li>
-<li><a href=/subscribe>Subscribe</a></li>
-<li><a href=/posts>All Posts</a></li>
-<ul class=menu__sub-inner>
-<li class=menu__sub-inner-more-trigger>Show more ▾</li>
-<ul class="menu__sub-inner-more hidden">
-<li><a href=/tags>Tags</a></li>
-</ul>
-</ul>
-</ul>
-<ul class="menu__inner menu__inner--mobile">
-<li><a href=/about>About</a></li>
-<li><a href=/media>Media</a></li>
-<li><a href=/write-for-me>Write For Me</a></li>
-<li><a href=/opensource>Open Source</a></li>
-<li><a href=/subscribe>Subscribe</a></li>
-<li><a href=/posts>All Posts</a></li>
-<li><a href=/tags>Tags</a></li>
-</ul>
-</nav>
-</header>
-<div class=content>
-<div class=post>
-<h1 class=post-title>
-<a href=https://akondas.com/blog/how-to-write-a-music-video-in-go/>How To Write A Music Video In Go</a></h1>
-<div class=post-meta>
-<span class=post-date>
-2020-09-01
-</span>
-</div>
-<div class=post-content><div>
-<p>TL;DR: My band ENAE has released a first single, called The System. Song is 100% DIY (from writing to recording to mixing to producing to releasing) and the music video is written 100% in Go!</p>
-<p>Table of Contents:</p>
-<ul>
-<li><a href=#Intro>Intro</a></li>
-<li><a href=#Why>Why would you program a music video?</a></li>
-<li><a href=#Where>Where to start?</a></li>
-<li><a href=#Sound>Getting the sound</a></li>
-<li><a href=#Print>Getting the first characters to print</a></li>
-<li><a href=#Rhythm>Rhythm</a></li>
-<li><a href=#Binary>Binary solo</a></li>
-<li><a href=#Last>Last scene</a></li>
-<li><a href=#Where>Where to go from now?</a></li>
-</ul>
-<h2 id=intro>Intro<a href=#intro class=hanchor arialabel=Anchor>&#8983;</a> </h2>
-<p>I always had a soft spot for interesting movies. Of course, I like the good story as much as the next guy, but the visual aspect can make me fall in love with a movie. I won&rsquo;t even count how many times I&rsquo;ve watched Guy Richie&rsquo;s Sherlock Holmes (both movies actually), What We Do In The Shadows, Blade Runner or anything by Quentin Tarantino.</p>
-<p>One thing that glues all of these movies together is that they do something really fresh from the very beginning - apart of the great story, they push the limit of visual aspect.</p>
-<p>And I wanted to do the same with first ENAE single. I&rsquo;m a DIY guy and the visual aspect of things isn&rsquo;t my strongest suit so, being a dev, what can I do?</p>
-<p>Well, I can program the nerdiest music video you have seen so far.</p>
-<p>Because I can.</p>
-<p>No, really, this is the major thing why I&rsquo;ve done it. I&rsquo;ve thought that going nerdy and seeing how far I can push my knowledge about some stuff will be a fun project. Also I needed an excuse to brush off my sight reading and music transcription skills!</p>
-<p>Before we go any further, I recommend watching The Video. so we&rsquo;ll set the playing field - I&rsquo;ll refer to it a few times!</p>
-<p><a href=#top>Go to Top</a></p>
-<p>There&rsquo;s three parts to getting the song ready to be programmed:</p>
-<ul>
-<li>First, sheet notation of your song. Helps with the timings and you don&rsquo;t have to do the math yourself;</li>
-<li>Second, lyrics. Basically, what I&rsquo;ve made is a more complicated lyrics video;</li>
-<li>Third, final mix version. As the timings might change, you don&rsquo;t want to redo the whole video because your mix has changed.</li>
-</ul>
-<p>I&rsquo;ve started mocking the video a long before we&rsquo;ve finished the final mix, but I&rsquo;ve started actual programming literally the day we&rsquo;ve agreed on the mix.</p>
-<p><a href=#top>Go to Top</a></p>
-<p>Getting the sound was actually the easiest bit - I&rsquo;ve used Beep by Faiface in it&rsquo;s most raw form:</p>
-<p><strong>player.go</strong></p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=color:#f92672>package</span> <span style=color:#a6e22e>main</span>
-
-<span style=color:#f92672>import</span> (
-  <span style=color:#e6db74>&#34;log&#34;</span>
-  <span style=color:#e6db74>&#34;os&#34;</span>
-  <span style=color:#e6db74>&#34;time&#34;</span>
-
-  <span style=color:#e6db74>&#34;github.com/faiface/beep&#34;</span>
-  <span style=color:#e6db74>&#34;github.com/faiface/beep/mp3&#34;</span>
-  <span style=color:#e6db74>&#34;github.com/faiface/beep/speaker&#34;</span>
-)
-
-<span style=color:#66d9ef>func</span> <span style=color:#a6e22e>play</span>(<span style=color:#a6e22e>done</span> <span style=color:#66d9ef>chan</span> <span style=color:#66d9ef>bool</span>) {
-  <span style=color:#75715e>// Prepare the song to play
-</span><span style=color:#75715e></span>  <span style=color:#a6e22e>f</span>, <span style=color:#a6e22e>err</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>os</span>.<span style=color:#a6e22e>Open</span>(<span style=color:#e6db74>&#34;./enae-the_system.mp3&#34;</span>)
-  <span style=color:#66d9ef>if</span> <span style=color:#a6e22e>err</span> <span style=color:#f92672>!=</span> <span style=color:#66d9ef>nil</span> {
-    <span style=color:#a6e22e>log</span>.<span style=color:#a6e22e>Fatal</span>(<span style=color:#a6e22e>err</span>)
-  }
-
-  <span style=color:#a6e22e>streamer</span>, <span style=color:#a6e22e>format</span>, <span style=color:#a6e22e>err</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>mp3</span>.<span style=color:#a6e22e>Decode</span>(<span style=color:#a6e22e>f</span>)
-  <span style=color:#66d9ef>if</span> <span style=color:#a6e22e>err</span> <span style=color:#f92672>!=</span> <span style=color:#66d9ef>nil</span> {
-    <span style=color:#a6e22e>log</span>.<span style=color:#a6e22e>Fatal</span>(<span style=color:#a6e22e>err</span>)
-  }
-  <span style=color:#66d9ef>defer</span> <span style=color:#a6e22e>streamer</span>.<span style=color:#a6e22e>Close</span>()
-
-  <span style=color:#a6e22e>speaker</span>.<span style=color:#a6e22e>Init</span>(<span style=color:#a6e22e>format</span>.<span style=color:#a6e22e>SampleRate</span>, <span style=color:#a6e22e>format</span>.<span style=color:#a6e22e>SampleRate</span>.<span style=color:#a6e22e>N</span>(<span style=color:#a6e22e>time</span>.<span style=color:#a6e22e>Second</span><span style=color:#f92672>/</span><span style=color:#ae81ff>10</span>))
-
-  <span style=color:#a6e22e>speaker</span>.<span style=color:#a6e22e>Play</span>(<span style=color:#a6e22e>beep</span>.<span style=color:#a6e22e>Seq</span>(<span style=color:#a6e22e>streamer</span>, <span style=color:#a6e22e>beep</span>.<span style=color:#a6e22e>Callback</span>(<span style=color:#66d9ef>func</span>() {
-    <span style=color:#a6e22e>done</span> <span style=color:#f92672>&lt;-</span> <span style=color:#66d9ef>true</span>
-  })))
-
-  <span style=color:#f92672>&lt;-</span><span style=color:#a6e22e>done</span>
-}
-</code></pre></div><p><code>done</code> is the channel I use to notify the main goroutine that play/print has finished. As it&rsquo;s a music video, high-quality mp3 file is sufficient enough to be lightweight and good sounding.</p>
-<p><a href=#top>Go to Top</a></p>
-<p>The main file, that deals with all the things to print is, unsurprisingly, <code>printer.go</code>. Let&rsquo;s break it down:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=color:#66d9ef>var</span> (
-  <span style=color:#75715e>// notes
-</span><span style=color:#75715e></span>  <span style=color:#a6e22e>fullnote</span>         <span style=color:#66d9ef>int</span> = <span style=color:#ae81ff>1678</span>
-  <span style=color:#a6e22e>halfnote</span>         <span style=color:#66d9ef>int</span> = <span style=color:#ae81ff>839</span>
-  <span style=color:#a6e22e>quaternote</span>       <span style=color:#66d9ef>int</span> = <span style=color:#ae81ff>420</span>
-  <span style=color:#a6e22e>eightnote</span>        <span style=color:#66d9ef>int</span> = <span style=color:#ae81ff>210</span>
-  <span style=color:#a6e22e>sixteenthnote</span>    <span style=color:#66d9ef>int</span> = <span style=color:#ae81ff>105</span>
-  <span style=color:#a6e22e>thirtysecondnote</span> <span style=color:#66d9ef>int</span> = <span style=color:#ae81ff>52</span>
-  <span style=color:#a6e22e>sixtyfourthnote</span>  <span style=color:#66d9ef>int</span> = <span style=color:#ae81ff>26</span>
-)
-</code></pre></div><p>In order to be able to print stuff properly, you need to get a tempo of the song and the duration of each note in milliseconds. The formula to do that is really simple:</p>
-<blockquote>
-<p>60000 / BPM = one beat in millisecond</p>
-</blockquote>
-<p>BPM (Beats per minute) is the song tempo, one beat refers to a quater note. So, in case of <em>The System</em>, where the BPM is 143, it&rsquo;s:</p>
-<blockquote>
-<p>60000 / 143 = 420 (rounded up)</p>
-</blockquote>
-<p>This way, I&rsquo;ve calculated all necessary note durations that I&rsquo;ll need to print.</p>
-<p>Moving on:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=color:#66d9ef>type</span> <span style=color:#a6e22e>Sized</span> <span style=color:#66d9ef>struct</span> {
-  <span style=color:#a6e22e>width</span>  <span style=color:#66d9ef>int</span>
-  <span style=color:#a6e22e>height</span> <span style=color:#66d9ef>int</span>
-}
-
-<span style=color:#66d9ef>func</span> <span style=color:#a6e22e>printer</span>(<span style=color:#a6e22e>done</span> <span style=color:#66d9ef>chan</span> <span style=color:#66d9ef>bool</span>) {
-  <span style=color:#a6e22e>s</span> <span style=color:#f92672>:=</span> <span style=color:#f92672>&amp;</span><span style=color:#a6e22e>Sized</span>{}
-  <span style=color:#a6e22e>s</span>.<span style=color:#a6e22e>width</span>, <span style=color:#a6e22e>s</span>.<span style=color:#a6e22e>height</span> = <span style=color:#a6e22e>checkTerminalSize</span>()
-  <span style=color:#75715e>// intro
-</span><span style=color:#75715e></span>  <span style=color:#a6e22e>intro</span>()
-  <span style=color:#75715e>// verse 1
-</span><span style=color:#75715e></span>  <span style=color:#a6e22e>verse1</span>()
-  <span style=color:#75715e>// chorus 1
-</span><span style=color:#75715e></span>  <span style=color:#a6e22e>chorusBig1</span>()
-  <span style=color:#a6e22e>chorusBig1</span>()
-  <span style=color:#a6e22e>overAndOver</span>()
-  <span style=color:#a6e22e>chorusBig1</span>()
-  <span style=color:#75715e>// verse 2
-</span><span style=color:#75715e></span>  <span style=color:#a6e22e>verse2</span>()
-  <span style=color:#75715e>// chorus 2 - ends faster and starts loading bar
-</span><span style=color:#75715e></span>  <span style=color:#a6e22e>chorusBig1</span>()
-  <span style=color:#a6e22e>chorusBig1</span>()
-  <span style=color:#a6e22e>overAndOver</span>()
-  <span style=color:#a6e22e>chorusSmall1</span>()
-  <span style=color:#75715e>// solo
-</span><span style=color:#75715e></span>  <span style=color:#a6e22e>s</span>.<span style=color:#a6e22e>solo</span>()
-  <span style=color:#75715e>// chorus 3 - can&#39;t feel, can see...
-</span><span style=color:#75715e></span>  <span style=color:#a6e22e>s</span>.<span style=color:#a6e22e>lastChorus</span>()
-  <span style=color:#f92672>&lt;-</span><span style=color:#a6e22e>done</span>
-}
-</code></pre></div><p>We&rsquo;ll touch on <code>Sized</code> struct a while later; for now, you can see how the song was built.</p>
-<p>I&rsquo;ve divided the chorus into 4 small chunks (in case I want to change only a part of it). <code>verse1</code> and <code>verse2</code> are a tiny bit different in the approach - one is typewriting (printing one character per x milliseconds), second one is Star-Wars-esque &ldquo;Text is going up&rdquo; using frames.</p>
-<p>Before we go into the rhythm part of the music video, there are three very important functions in <code>printer.go</code>:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=color:#66d9ef>func</span> <span style=color:#a6e22e>cleanDisplay</span>() {
-  <span style=color:#a6e22e>fmt</span>.<span style=color:#a6e22e>Printf</span>(<span style=color:#e6db74>&#34;\x1b[2J&#34;</span>)
-  <span style=color:#a6e22e>moveCursor</span>(<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>)
-}
-
-<span style=color:#66d9ef>func</span> <span style=color:#a6e22e>moveCursor</span>(<span style=color:#a6e22e>row</span>, <span style=color:#a6e22e>col</span> <span style=color:#66d9ef>int</span>) {
-  <span style=color:#a6e22e>fmt</span>.<span style=color:#a6e22e>Printf</span>(<span style=color:#e6db74>&#34;\x1b[%d;%df&#34;</span>, <span style=color:#a6e22e>row</span><span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>, <span style=color:#a6e22e>col</span><span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>)
-}
-
-<span style=color:#66d9ef>func</span> <span style=color:#a6e22e>noteRest</span>(<span style=color:#a6e22e>note</span> <span style=color:#66d9ef>int</span>) {
-  <span style=color:#a6e22e>time</span>.<span style=color:#a6e22e>Sleep</span>(<span style=color:#a6e22e>time</span>.<span style=color:#a6e22e>Millisecond</span> <span style=color:#f92672>*</span> <span style=color:#a6e22e>time</span>.<span style=color:#a6e22e>Duration</span>(<span style=color:#a6e22e>note</span>))
-}
-</code></pre></div><p>Here we delve into the nitty-gritty of the whole system - <a href=https://en.wikipedia.org/wiki/ANSI_escape_code>Ansi escape codes</a>. In case of my music video, I&rsquo;ve used a few:</p>
-<p>in <code>printer.go</code>:</p>
-<ul>
-<li><code>\x1b[2J</code> - all escape codes starts with <code>\x1b</code>, which is ASCII representation of ESC. <code>[2J</code> means to clear the whole display;</li>
-<li><code>\x1b[%d;%df</code> - <code>[%d;%df</code> moves the cursor to a given position</li>
-</ul>
-<blockquote>
-<p>We&rsquo;ll talk about noteRest in a second!</p>
-</blockquote>
-<p>in <code>colours.go</code>:</p>
-<p>(First, let&rsquo;s bring the functions here)</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=color:#66d9ef>func</span> <span style=color:#a6e22e>resetColourChanges</span>() {
-  <span style=color:#a6e22e>fmt</span>.<span style=color:#a6e22e>Print</span>(<span style=color:#e6db74>&#34;\x1b[0m&#34;</span>)
-}
-</code></pre></div><p>as the function name says, it reset colour changes to default;</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=color:#66d9ef>func</span> <span style=color:#a6e22e>colourText</span>(<span style=color:#a6e22e>colour</span> <span style=color:#66d9ef>int</span>, <span style=color:#a6e22e>bright</span> <span style=color:#66d9ef>bool</span>) {
-  <span style=color:#66d9ef>if</span> <span style=color:#a6e22e>bright</span> {
-    <span style=color:#a6e22e>fmt</span>.<span style=color:#a6e22e>Printf</span>(<span style=color:#e6db74>&#34;\x1b[9%vm&#34;</span>, <span style=color:#a6e22e>colour</span>)
-  } <span style=color:#66d9ef>else</span> {
-    <span style=color:#a6e22e>fmt</span>.<span style=color:#a6e22e>Printf</span>(<span style=color:#e6db74>&#34;\x1b[3%vm&#34;</span>, <span style=color:#a6e22e>colour</span>)
-  }
-}
-</code></pre></div><p><code>colourText</code> is a wrapper around printing from basic palette of 8 colours (black, red, green, yellow, blue, magenta, cyan and white) in bright (<code>[9</code>) variant or in normal - let&rsquo;s call it plain (<code>[3</code>);</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=color:#66d9ef>func</span> <span style=color:#a6e22e>colourTextRGB</span>(<span style=color:#a6e22e>red</span>, <span style=color:#a6e22e>green</span>, <span style=color:#a6e22e>blue</span> <span style=color:#66d9ef>int</span>) {
-  <span style=color:#a6e22e>fmt</span>.<span style=color:#a6e22e>Printf</span>(<span style=color:#e6db74>&#34;\x1b[38;2;%v;%v;%vm&#34;</span>, <span style=color:#a6e22e>red</span>, <span style=color:#a6e22e>green</span>, <span style=color:#a6e22e>blue</span>)
-}
-</code></pre></div><p>This is the function I ended up using - I&rsquo;ve found a way to print the colours using RGB values - the loading bar you see before the solo starts is done using this magical thing!</p>
-<p><a href=#top>Go to Top</a></p>
-<p>Remember <code>noteRest</code>? It&rsquo;s nothing else than a wrapper around <code>time.Sleep</code>. To print time-based frames, I used <code>printInMicroseconds</code>:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=color:#66d9ef>func</span> <span style=color:#a6e22e>printInMicroseconds</span>(<span style=color:#a6e22e>s</span> <span style=color:#66d9ef>string</span>, <span style=color:#a6e22e>spd</span> <span style=color:#66d9ef>int</span>) {
-  <span style=color:#a6e22e>speed</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>spd</span> <span style=color:#f92672>*</span> <span style=color:#ae81ff>1000</span>
-  <span style=color:#a6e22e>freq</span> <span style=color:#f92672>:=</span> (float64(<span style=color:#a6e22e>speed</span>) <span style=color:#f92672>/</span> float64(len(<span style=color:#a6e22e>s</span>)))
-  <span style=color:#66d9ef>for</span> <span style=color:#a6e22e>i</span> <span style=color:#f92672>:=</span> <span style=color:#ae81ff>0</span>; <span style=color:#a6e22e>i</span> &lt; len(<span style=color:#a6e22e>s</span>); <span style=color:#a6e22e>i</span><span style=color:#f92672>++</span> {
-    <span style=color:#a6e22e>fmt</span>.<span style=color:#a6e22e>Printf</span>(<span style=color:#e6db74>&#34;%v&#34;</span>, string(<span style=color:#a6e22e>s</span>[<span style=color:#a6e22e>i</span>]))
-    <span style=color:#a6e22e>time</span>.<span style=color:#a6e22e>Sleep</span>(<span style=color:#a6e22e>time</span>.<span style=color:#a6e22e>Microsecond</span> <span style=color:#f92672>*</span> <span style=color:#a6e22e>time</span>.<span style=color:#a6e22e>Duration</span>(<span style=color:#a6e22e>freq</span>))
-  }
-}
-</code></pre></div><p>Why <em>Microseconds</em> instead of <em>Milliseconds</em> you ask? The reason for that is sometimes the lyrics aren&rsquo;t really divisible by the millisecond duration of the note in a nice fashion. That&rsquo;s why, I&rsquo;m converting milliseconds to microseconds and then printing. Check <code>verse1.go</code>:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=color:#f92672>...</span>
-<span style=color:#66d9ef>func</span> <span style=color:#a6e22e>verse1</span>() {
-  <span style=color:#a6e22e>printInMicroseconds</span>(<span style=color:#a6e22e>verse1_1_1</span>, <span style=color:#a6e22e>halfnote</span><span style=color:#f92672>+</span><span style=color:#a6e22e>quaternote</span>) <span style=color:#75715e>// 3/1
-</span><span style=color:#75715e></span>  <span style=color:#a6e22e>printInMicroseconds</span>(<span style=color:#a6e22e>verse1_1_2</span>, <span style=color:#a6e22e>quaternote</span>)          <span style=color:#75715e>// 1/1
-</span><span style=color:#75715e></span><span style=color:#f92672>...</span>
-}
-</code></pre></div><p>Sometimes some part of the lyrics will have to stay longer than pre-defined note duration. Because notes in the code are <code>int</code>, we can add them and then the function takes care of it!</p>
-<p><a href=#top>Go to Top</a></p>
-<p>And now,</p>
-<p>This is the part, I think, I&rsquo;m most proud of. The function:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=color:#66d9ef>func</span> (<span style=color:#a6e22e>s</span> <span style=color:#f92672>*</span><span style=color:#a6e22e>Sized</span>) <span style=color:#a6e22e>printNoteInBinary</span>(<span style=color:#a6e22e>note</span> <span style=color:#66d9ef>string</span>, <span style=color:#a6e22e>speed</span> <span style=color:#66d9ef>int</span>) {
-  <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>toBinary</span> <span style=color:#66d9ef>string</span>
-  <span style=color:#66d9ef>for</span> <span style=color:#a6e22e>_</span>, <span style=color:#a6e22e>c</span> <span style=color:#f92672>:=</span> <span style=color:#66d9ef>range</span> <span style=color:#a6e22e>note</span> {
-    <span style=color:#a6e22e>toBinary</span> <span style=color:#f92672>+=</span> <span style=color:#a6e22e>fmt</span>.<span style=color:#a6e22e>Sprintf</span>(<span style=color:#e6db74>&#34;%b &#34;</span>, <span style=color:#a6e22e>c</span>)
-  }
-  <span style=color:#a6e22e>freq</span> <span style=color:#f92672>:=</span> (float64(<span style=color:#a6e22e>speed</span>) <span style=color:#f92672>/</span> float64(len(<span style=color:#a6e22e>toBinary</span>))) <span style=color:#75715e>// to microseconds
-</span><span style=color:#75715e></span>  <span style=color:#66d9ef>for</span> <span style=color:#a6e22e>_</span>, <span style=color:#a6e22e>b</span> <span style=color:#f92672>:=</span> <span style=color:#66d9ef>range</span> <span style=color:#a6e22e>toBinary</span> {
-    <span style=color:#a6e22e>fmt</span>.<span style=color:#a6e22e>Printf</span>(<span style=color:#e6db74>&#34;%c&#34;</span>, <span style=color:#a6e22e>b</span>)
-    <span style=color:#a6e22e>time</span>.<span style=color:#a6e22e>Sleep</span>(<span style=color:#a6e22e>time</span>.<span style=color:#a6e22e>Millisecond</span> <span style=color:#f92672>*</span> <span style=color:#a6e22e>time</span>.<span style=color:#a6e22e>Duration</span>(<span style=color:#a6e22e>freq</span>))
-  }
-  <span style=color:#a6e22e>fmt</span>.<span style=color:#a6e22e>Println</span>()
-}
-</code></pre></div><p>The function itself is nothing crazy, but the approach to printing is:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=color:#f92672>...</span>
-<span style=color:#75715e>// 1st bar
-</span><span style=color:#75715e></span><span style=color:#a6e22e>s</span>.<span style=color:#a6e22e>printNoteInBinary</span>(<span style=color:#e6db74>&#34;D&#34;</span>, <span style=color:#a6e22e>fullnote</span>)
-<span style=color:#a6e22e>s</span>.<span style=color:#a6e22e>printNoteInBinary</span>(<span style=color:#e6db74>&#34;F&#34;</span>, <span style=color:#a6e22e>fullnote</span>)
-<span style=color:#a6e22e>s</span>.<span style=color:#a6e22e>printNoteInBinary</span>(<span style=color:#e6db74>&#34;G&#34;</span>, <span style=color:#a6e22e>halfnote</span>)
-<span style=color:#a6e22e>s</span>.<span style=color:#a6e22e>printNoteInBinary</span>(<span style=color:#e6db74>&#34;A&#34;</span>, <span style=color:#a6e22e>halfnote</span>)
-<span style=color:#a6e22e>s</span>.<span style=color:#a6e22e>printNoteInBinary</span>(<span style=color:#e6db74>&#34;C&#34;</span>, <span style=color:#a6e22e>fullnote</span>)
-<span style=color:#a6e22e>cleanDisplay</span>()
-<span style=color:#75715e>// 2nd bar
-</span><span style=color:#75715e></span><span style=color:#a6e22e>noteRest</span>(<span style=color:#a6e22e>eightnote</span>)
-<span style=color:#a6e22e>s</span>.<span style=color:#a6e22e>printNoteInBinary</span>(<span style=color:#e6db74>&#34;A&#34;</span>, <span style=color:#a6e22e>sixteenthnote</span>)
-<span style=color:#a6e22e>s</span>.<span style=color:#a6e22e>printNoteInBinary</span>(<span style=color:#e6db74>&#34;C&#34;</span>, <span style=color:#a6e22e>sixteenthnote</span>)
-<span style=color:#a6e22e>s</span>.<span style=color:#a6e22e>printNoteInBinary</span>(<span style=color:#e6db74>&#34;D&#34;</span>, <span style=color:#a6e22e>eightnote</span>)
-<span style=color:#a6e22e>s</span>.<span style=color:#a6e22e>printNoteInBinary</span>(<span style=color:#e6db74>&#34;G&#34;</span>, <span style=color:#a6e22e>quaternote</span>)
-<span style=color:#f92672>...</span>
-</code></pre></div><p>Remember at the beginning, I&rsquo;ve told that we&rsquo;d need a sheet music? Without that, programming this solo would be extremely painful. Each note gets converted to a binary representation and then gets printed within the note duration.</p>
-<blockquote>
-<p>You might notice, that there&rsquo;s a pointer to <code>Sized</code> here - reason for that is, I&rsquo;ve iterated over multiple versions of the solo and thought the one now is the best looking one. In case someone would like to print it anywhere else on the screen, they can, because they know the terminal size already!</p>
-</blockquote>
-<p><a href=#top>Go to Top</a></p>
-<p>The last scene is an interesting one, because there&rsquo;s a very small chance that it&rsquo;ll look the same ever.</p>
-<p>Each time you run this music video in the terminal, it&rsquo;ll be different, because the &ldquo;frame cleanup&rdquo; is truly randomized. I&rsquo;ve spent a while thinking about how to pull this off and went with this:</p>
-<ul>
-<li>I&rsquo;ve prepared nice ASCII art of the last chorus</li>
-<li>Then I&rsquo;ve formatted it</li>
-<li>Populated the display with <code>:</code></li>
-<li>The randomly destroyed what I need</li>
-</ul>
-<p>Sounds easy? Once I had figured it out, it actually was! So, let&rsquo;s take a closer look at the functions:</p>
-<blockquote>
-<p>All functions are in chorus_last.go</p>
-</blockquote>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=color:#66d9ef>func</span> (<span style=color:#a6e22e>s</span> <span style=color:#f92672>*</span><span style=color:#a6e22e>Sized</span>) <span style=color:#a6e22e>formatLine</span>(<span style=color:#a6e22e>str</span> <span style=color:#66d9ef>string</span>) <span style=color:#66d9ef>string</span> {
-  <span style=color:#a6e22e>add</span> <span style=color:#f92672>:=</span> int(<span style=color:#a6e22e>math</span>.<span style=color:#a6e22e>RoundToEven</span>((float64(<span style=color:#a6e22e>s</span>.<span style=color:#a6e22e>width</span>) <span style=color:#f92672>-</span> float64(len(<span style=color:#a6e22e>str</span>))) <span style=color:#f92672>/</span> <span style=color:#ae81ff>2</span>))
-  <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>pre</span>, <span style=color:#a6e22e>post</span> <span style=color:#66d9ef>string</span>
-  <span style=color:#66d9ef>for</span> <span style=color:#a6e22e>i</span> <span style=color:#f92672>:=</span> <span style=color:#ae81ff>0</span>; <span style=color:#a6e22e>i</span> &lt; <span style=color:#a6e22e>add</span>; <span style=color:#a6e22e>i</span><span style=color:#f92672>++</span> {
-    <span style=color:#a6e22e>pre</span> <span style=color:#f92672>+=</span> <span style=color:#e6db74>&#34;:&#34;</span>
-    <span style=color:#a6e22e>post</span> <span style=color:#f92672>+=</span> <span style=color:#e6db74>&#34;:&#34;</span>
-  }
-  <span style=color:#a6e22e>f</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>pre</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>str</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>post</span>
-  <span style=color:#66d9ef>if</span> len(<span style=color:#a6e22e>f</span>) <span style=color:#f92672>!=</span> <span style=color:#a6e22e>s</span>.<span style=color:#a6e22e>width</span> {
-    <span style=color:#a6e22e>f</span> = <span style=color:#a6e22e>f</span>[:len(<span style=color:#a6e22e>f</span>)<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>]
-  }
-
-  <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>f</span>
-}
-</code></pre></div><p>As each display will be different, the art needs to be formatted - which basically means adding <code>:</code> at the beginning and the end until the whole width of the display is used.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=color:#66d9ef>func</span> (<span style=color:#a6e22e>s</span> <span style=color:#f92672>*</span><span style=color:#a6e22e>Sized</span>) <span style=color:#a6e22e>generateLine</span>(<span style=color:#a6e22e>char</span> <span style=color:#66d9ef>string</span>) <span style=color:#66d9ef>string</span> {
-  <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>str</span> <span style=color:#66d9ef>string</span>
-  <span style=color:#66d9ef>for</span> <span style=color:#a6e22e>i</span> <span style=color:#f92672>:=</span> <span style=color:#ae81ff>0</span>; <span style=color:#a6e22e>i</span> &lt; <span style=color:#a6e22e>s</span>.<span style=color:#a6e22e>width</span>; <span style=color:#a6e22e>i</span><span style=color:#f92672>++</span> {
-    <span style=color:#a6e22e>str</span> <span style=color:#f92672>+=</span> <span style=color:#a6e22e>char</span>
-  }
-  <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>str</span>
-}
-
-<span style=color:#66d9ef>func</span> (<span style=color:#a6e22e>s</span> <span style=color:#f92672>*</span><span style=color:#a6e22e>Sized</span>) <span style=color:#a6e22e>generateDisplay</span>(<span style=color:#a6e22e>char</span> <span style=color:#66d9ef>string</span>) {
-  <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>strArr</span> []<span style=color:#66d9ef>string</span>
-  <span style=color:#66d9ef>for</span> <span style=color:#a6e22e>i</span> <span style=color:#f92672>:=</span> <span style=color:#ae81ff>0</span>; <span style=color:#a6e22e>i</span> &lt; <span style=color:#a6e22e>s</span>.<span style=color:#a6e22e>height</span>; <span style=color:#a6e22e>i</span><span style=color:#f92672>++</span> {
-    <span style=color:#a6e22e>str</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>s</span>.<span style=color:#a6e22e>generateLine</span>(<span style=color:#a6e22e>char</span>)
-    <span style=color:#a6e22e>strArr</span> = append(<span style=color:#a6e22e>strArr</span>, <span style=color:#a6e22e>str</span>)
-  }
-  <span style=color:#a6e22e>temp</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>strings</span>.<span style=color:#a6e22e>Join</span>(<span style=color:#a6e22e>strArr</span>[:], <span style=color:#e6db74>&#34;\n&#34;</span>)
-  <span style=color:#a6e22e>printInMicroseconds</span>(<span style=color:#a6e22e>temp</span>, <span style=color:#a6e22e>eightnote</span>)
-}
-</code></pre></div><p>Then, we need something to populate the whole display with <code>:</code> - which means generating some lines and then creating an array which will be of full terminal dimension.</p>
-<p>And now, the last behemoth:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=color:#66d9ef>func</span> (<span style=color:#a6e22e>s</span> <span style=color:#f92672>*</span><span style=color:#a6e22e>Sized</span>) <span style=color:#a6e22e>lastChorus</span>() {
-  <span style=color:#a6e22e>cleanDisplay</span>()
-  <span style=color:#a6e22e>s</span>.<span style=color:#a6e22e>generateDisplay</span>(<span style=color:#e6db74>&#34;:&#34;</span>)
-  <span style=color:#a6e22e>maxHeight</span> <span style=color:#f92672>:=</span> (<span style=color:#a6e22e>s</span>.<span style=color:#a6e22e>height</span> <span style=color:#f92672>-</span> <span style=color:#ae81ff>32</span>) <span style=color:#f92672>/</span> <span style=color:#ae81ff>2</span>
-  <span style=color:#66d9ef>var</span> (
-    <span style=color:#a6e22e>iter</span> <span style=color:#66d9ef>int</span>
-  )
-  <span style=color:#a6e22e>noteRest</span>(<span style=color:#a6e22e>eightnote</span>)
-  <span style=color:#a6e22e>moveCursor</span>(<span style=color:#a6e22e>maxHeight</span>, <span style=color:#ae81ff>0</span>)
-  <span style=color:#66d9ef>for</span> <span style=color:#a6e22e>i</span> <span style=color:#f92672>:=</span> <span style=color:#ae81ff>0</span>; <span style=color:#a6e22e>i</span> &lt; len(<span style=color:#a6e22e>banners</span>); <span style=color:#a6e22e>i</span><span style=color:#f92672>++</span> {
-    <span style=color:#a6e22e>moveCursor</span>(<span style=color:#a6e22e>maxHeight</span><span style=color:#f92672>+</span><span style=color:#a6e22e>iter</span>, <span style=color:#ae81ff>0</span>)
-    <span style=color:#a6e22e>fmt</span>.<span style=color:#a6e22e>Println</span>(<span style=color:#a6e22e>s</span>.<span style=color:#a6e22e>formatLine</span>(<span style=color:#a6e22e>banners</span>[<span style=color:#a6e22e>i</span>]))
-    <span style=color:#66d9ef>if</span> <span style=color:#a6e22e>i</span> <span style=color:#f92672>==</span> (len(<span style=color:#a6e22e>banners</span>)<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>)<span style=color:#f92672>/</span><span style=color:#ae81ff>2</span> {
-      <span style=color:#a6e22e>noteRest</span>(<span style=color:#a6e22e>eightnote</span>)
-      <span style=color:#a6e22e>iter</span><span style=color:#f92672>++</span>
-      <span style=color:#66d9ef>continue</span>
-    }
-    <span style=color:#a6e22e>noteRest</span>(<span style=color:#a6e22e>thirtysecondnote</span>)
-    <span style=color:#a6e22e>iter</span><span style=color:#f92672>++</span>
-  }
-  <span style=color:#a6e22e>noteRest</span>(<span style=color:#a6e22e>fullnote</span>)
-
-  <span style=color:#a6e22e>rest</span> <span style=color:#f92672>:=</span> <span style=color:#ae81ff>5</span>
-  <span style=color:#a6e22e>maxMilliseconds</span> <span style=color:#f92672>:=</span> int(<span style=color:#a6e22e>math</span>.<span style=color:#a6e22e>RoundToEven</span>(float64(<span style=color:#ae81ff>16</span><span style=color:#f92672>*</span><span style=color:#a6e22e>fullnote</span>) <span style=color:#f92672>/</span> float64(<span style=color:#a6e22e>rest</span>)))
-
-  <span style=color:#a6e22e>source</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>rand</span>.<span style=color:#a6e22e>NewSource</span>(<span style=color:#a6e22e>time</span>.<span style=color:#a6e22e>Now</span>().<span style=color:#a6e22e>UnixNano</span>())
-  <span style=color:#66d9ef>for</span> <span style=color:#a6e22e>j</span> <span style=color:#f92672>:=</span> <span style=color:#ae81ff>0</span>; <span style=color:#a6e22e>j</span> &lt; <span style=color:#a6e22e>maxMilliseconds</span>; <span style=color:#a6e22e>j</span><span style=color:#f92672>++</span> {
-    <span style=color:#a6e22e>randban</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>rand</span>.<span style=color:#a6e22e>New</span>(<span style=color:#a6e22e>source</span>).<span style=color:#a6e22e>Intn</span>(len(<span style=color:#a6e22e>banners</span>))
-    <span style=color:#a6e22e>banner</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>banners</span>[<span style=color:#a6e22e>randban</span>]
-    <span style=color:#66d9ef>switch</span> <span style=color:#a6e22e>randban</span> {
-    <span style=color:#66d9ef>case</span> <span style=color:#ae81ff>8</span>, <span style=color:#ae81ff>9</span>, <span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>11</span>, <span style=color:#ae81ff>12</span>, <span style=color:#ae81ff>13</span>, <span style=color:#ae81ff>14</span>, <span style=color:#ae81ff>15</span>:
-      <span style=color:#75715e>// want to get &#34;your&#34;
-</span><span style=color:#75715e></span>      <span style=color:#a6e22e>mid</span> <span style=color:#f92672>:=</span> len(<span style=color:#a6e22e>banner</span>) <span style=color:#f92672>/</span> <span style=color:#ae81ff>2</span>
-      <span style=color:#a6e22e>randpos</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>rand</span>.<span style=color:#a6e22e>New</span>(<span style=color:#a6e22e>source</span>).<span style=color:#a6e22e>Intn</span>(<span style=color:#a6e22e>mid</span>) <span style=color:#f92672>+</span> <span style=color:#a6e22e>mid</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>
-      <span style=color:#a6e22e>changedBanner</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>banner</span>[:<span style=color:#a6e22e>randpos</span><span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>] <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;:&#34;</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>banner</span>[<span style=color:#a6e22e>randpos</span>:]
-      <span style=color:#a6e22e>moveCursor</span>(<span style=color:#a6e22e>maxHeight</span><span style=color:#f92672>+</span><span style=color:#a6e22e>randban</span>, <span style=color:#ae81ff>0</span>)
-      <span style=color:#a6e22e>fmt</span>.<span style=color:#a6e22e>Println</span>(<span style=color:#a6e22e>s</span>.<span style=color:#a6e22e>formatLine</span>(<span style=color:#a6e22e>changedBanner</span>))
-      <span style=color:#a6e22e>banners</span>[<span style=color:#a6e22e>randban</span>] = <span style=color:#a6e22e>changedBanner</span>
-    <span style=color:#66d9ef>case</span> <span style=color:#ae81ff>24</span>, <span style=color:#ae81ff>25</span>, <span style=color:#ae81ff>26</span>, <span style=color:#ae81ff>27</span>, <span style=color:#ae81ff>28</span>, <span style=color:#ae81ff>29</span>, <span style=color:#ae81ff>30</span>, <span style=color:#ae81ff>31</span>:
-      <span style=color:#75715e>// we&#39;re leaving the &#34;face&#34; out, thus middle of the banner
-</span><span style=color:#75715e></span>      <span style=color:#a6e22e>mid</span> <span style=color:#f92672>:=</span> len(<span style=color:#a6e22e>banner</span>) <span style=color:#f92672>/</span> <span style=color:#ae81ff>2</span>
-      <span style=color:#a6e22e>randpos</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>rand</span>.<span style=color:#a6e22e>New</span>(<span style=color:#a6e22e>source</span>).<span style=color:#a6e22e>Intn</span>(<span style=color:#a6e22e>mid</span>) <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>
-      <span style=color:#a6e22e>changedBanner</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>banner</span>[:<span style=color:#a6e22e>randpos</span><span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>] <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;:&#34;</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>banner</span>[<span style=color:#a6e22e>randpos</span>:]
-      <span style=color:#a6e22e>moveCursor</span>(<span style=color:#a6e22e>maxHeight</span><span style=color:#f92672>+</span><span style=color:#a6e22e>randban</span>, <span style=color:#ae81ff>0</span>)
-      <span style=color:#a6e22e>fmt</span>.<span style=color:#a6e22e>Println</span>(<span style=color:#a6e22e>s</span>.<span style=color:#a6e22e>formatLine</span>(<span style=color:#a6e22e>changedBanner</span>))
-      <span style=color:#a6e22e>banners</span>[<span style=color:#a6e22e>randban</span>] = <span style=color:#a6e22e>changedBanner</span>
-    <span style=color:#66d9ef>default</span>:
-      <span style=color:#75715e>// we don&#39;t want 0 here
-</span><span style=color:#75715e></span>      <span style=color:#a6e22e>randpos</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>rand</span>.<span style=color:#a6e22e>New</span>(<span style=color:#a6e22e>source</span>).<span style=color:#a6e22e>Intn</span>(len(<span style=color:#a6e22e>banner</span>)<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>) <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>
-      <span style=color:#a6e22e>changedBanner</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>banner</span>[:<span style=color:#a6e22e>randpos</span><span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>] <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;:&#34;</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>banner</span>[<span style=color:#a6e22e>randpos</span>:]
-      <span style=color:#a6e22e>moveCursor</span>(<span style=color:#a6e22e>maxHeight</span><span style=color:#f92672>+</span><span style=color:#a6e22e>randban</span>, <span style=color:#ae81ff>0</span>)
-      <span style=color:#a6e22e>fmt</span>.<span style=color:#a6e22e>Println</span>(<span style=color:#a6e22e>s</span>.<span style=color:#a6e22e>formatLine</span>(<span style=color:#a6e22e>changedBanner</span>))
-      <span style=color:#a6e22e>banners</span>[<span style=color:#a6e22e>randban</span>] = <span style=color:#a6e22e>changedBanner</span>
-  }
-  <span style=color:#a6e22e>noteRest</span>(<span style=color:#a6e22e>rest</span>)
-  }
-}
-</code></pre></div><p>So, there&rsquo;s the magic to the system - I&rsquo;ve used the functions I&rsquo;ve prepped before and created the whole display. Next, I need to calculate how fast I can randomize the lines change - basically, the code knows which lines to find and where to start the beautiful dance of destruction.</p>
-<p>Each time it takes only one step and then rests for 5 milliseconds. This way, I&rsquo;m sure it&rsquo;ll destroy a lot of stuff, but not all.</p>
-<p><a href=#top>Go to Top</a></p>
-<p>Glad to see you here, at the end of this note!</p>
-<p>If I would do it again, what I would change:</p>
-<ul>
-<li>Cast-in-stone storyboard - I haven&rsquo;t had that as a lot of things here was just plain experimentation</li>
-<li>Even more modular code - what if I want to have Star-Wars-esque solo part?</li>
-<li>Less noise in the code - a lot of stuff I&rsquo;ve left off because I wasn&rsquo;t sure if I will use them again. It&rsquo;s more of a wireframe for the next videos now.</li>
-</ul>
-<p>Thank you for reading! Give us a like or subscribe or come to facebook or - even better - do all of these things!</p>
-</div></div>
-<div class=pagination>
-<div class=pagination__title>
-<span class=pagination__title-h>Read other posts</span>
-<hr>
-</div>
-<div class=pagination__buttons>
-<span class="button previous">
-<a href=https://akondas.com/blog/diversity-inclusion-and-everything-in-between/>
-<span class=button__icon>←</span>
-<span class=button__text>Diversity-Inclusion-and-Everything-In-Between</span>
-</a>
-</span>
-<span class="button next">
-<a href=https://akondas.com/blog/a-starters-guide-to-go-projects/>
-<span class=button__text>A Starters Guide to Go Projects</span>
-<span class=button__icon>→</span>
-</a>
-</span>
-</div>
-</div>
-</div>
-</div>
-<footer class=footer>
-<div class=footer__inner>
-<div class=copyright>
-<span>© 2022 Powered by <a href=http://gohugo.io>Hugo</a></span>
-<span>:: Theme made by <a href=https://twitter.com/panr>panr</a></span>
-</div>
-</div>
-</footer>
-<script src=https://akondas.com/assets/main.js></script>
-<script src=https://akondas.com/assets/prism.js></script>
-<style>.footer{width:100%;opacity:unset}span{opacity:.5}.form_field_footer{margin:0 auto;display:flex;flex-flow:row nowrap;align-items:center}.field_footer{padding:10px;width:100%;height:40px;border-style:solid;border-color:#ffa86a;color:#ffa86a;background-color:#222129;border-radius:0}.button_footer{appearance:none;-webkit-appearance:none;padding:10px;border:none;background-color:#ffa86a;color:#222129;font-weight:600;width:100%;border-radius:0;height:40px}.height_footer{height:40px}</style>
-<div class="footer__inner footer">
-<div>
-<span>:: <a href=https://linkedin.com/in/arturkondas target=_blank>LinkedIn</a></span>
+<!doctype html><html lang=en><head><title>How To Write A Music Video In Go :: Artur Kondas</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="TL;DR: My band ENAE has released a first single, called The System. Song is 100% DIY (from writing to recording to mixing to producing to releasing) and the music video is written 100% in Go!"><meta name=keywords content="Go,Golang,Programming,Open Source,Lessons,Pizza"><meta name=robots content="noodp"><link rel=canonical href=https://akondas.com/blog/how-to-write-a-music-video-in-go/><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,t,n,s,o,i,a){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,i=t.createElement(n),a=t.getElementsByTagName(n)[0],i.async=1,i.src=s,a.parentNode.insertBefore(i,a)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-166121756-1","auto"),ga("send","pageview"))</script><link rel=stylesheet href=https://akondas.com/assets/style.css><link rel=apple-touch-icon href=https://akondas.com/img/apple-touch-icon-192x192.png><link rel="shortcut icon" href=https://akondas.com/images/favicon.ico><meta name=twitter:card content="summary"><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="og:title" content="How To Write A Music Video In Go"><meta property="og:description" content="TL;DR: My band ENAE has released a first single, called The System. Song is 100% DIY (from writing to recording to mixing to producing to releasing) and the music video is written 100% in Go!"><meta property="og:url" content="https://akondas.com/blog/how-to-write-a-music-video-in-go/"><meta property="og:site_name" content="Artur Kondas"><meta property="og:image" content="https://akondas.com/images/favicon.ico"><meta property="og:image:width" content="2048"><meta property="og:image:height" content="1024"><meta property="article:published_time" content="2020-09-01 00:00:00 +0000 UTC"></head><body class=orange><div class="container center"><header class=header><div class=header__inner><div class=header__logo><a href=/><div class=logo>Artur Kondas</div></a></div><div class=menu-trigger>menu</div></div><nav class=menu><ul class="menu__inner menu__inner--desktop"><li><a href=/about>About</a></li><li><a href=/media>Media</a></li><li><a href=/write-for-me>Write For Me</a></li><li><a href=/opensource>Open Source</a></li><li><a href=/subscribe>Subscribe</a></li><li><a href=/posts>All Posts</a></li><ul class=menu__sub-inner><li class=menu__sub-inner-more-trigger>Show more ▾</li><ul class="menu__sub-inner-more hidden"><li><a href=/tags>Tags</a></li></ul></ul></ul><ul class="menu__inner menu__inner--mobile"><li><a href=/about>About</a></li><li><a href=/media>Media</a></li><li><a href=/write-for-me>Write For Me</a></li><li><a href=/opensource>Open Source</a></li><li><a href=/subscribe>Subscribe</a></li><li><a href=/posts>All Posts</a></li><li><a href=/tags>Tags</a></li></ul></nav></header><div class=content><div class=post><h1 class=post-title><a href=https://akondas.com/blog/how-to-write-a-music-video-in-go/>How To Write A Music Video In Go</a></h1><div class=post-meta><span class=post-date>2020-09-01</span></div><div class=post-content><div><p>TL;DR: My band ENAE has released a first single, called The System. Song is 100% DIY (from writing to recording to mixing to producing to releasing) and the music video is written 100% in Go!</p><p>Table of Contents:</p><ul><li><a href=#Intro>Intro</a></li><li><a href=#Why>Why would you program a music video?</a></li><li><a href=#Where>Where to start?</a></li><li><a href=#Sound>Getting the sound</a></li><li><a href=#Print>Getting the first characters to print</a></li><li><a href=#Rhythm>Rhythm</a></li><li><a href=#Binary>Binary solo</a></li><li><a href=#Last>Last scene</a></li><li><a href=#Where>Where to go from now?</a></li></ul><h2 id=intro>Intro<a href=#intro class=hanchor arialabel=Anchor>&#8983;</a></h2><p>I always had a soft spot for interesting movies. Of course, I like the good story as much as the next guy, but the visual aspect can make me fall in love with a movie. I won&rsquo;t even count how many times I&rsquo;ve watched Guy Richie&rsquo;s Sherlock Holmes (both movies actually), What We Do In The Shadows, Blade Runner or anything by Quentin Tarantino.</p><p>One thing that glues all of these movies together is that they do something really fresh from the very beginning - apart of the great story, they push the limit of visual aspect.</p><p>And I wanted to do the same with first ENAE single. I&rsquo;m a DIY guy and the visual aspect of things isn&rsquo;t my strongest suit so, being a dev, what can I do?</p><p>Well, I can program the nerdiest music video you have seen so far.</p><p>Because I can.</p><p>No, really, this is the major thing why I&rsquo;ve done it. I&rsquo;ve thought that going nerdy and seeing how far I can push my knowledge about some stuff will be a fun project. Also I needed an excuse to brush off my sight reading and music transcription skills!</p><p>Before we go any further, I recommend watching The Video. so we&rsquo;ll set the playing field - I&rsquo;ll refer to it a few times!</p><p><a href=#top>Go to Top</a></p><p>There&rsquo;s three parts to getting the song ready to be programmed:</p><ul><li>First, sheet notation of your song. Helps with the timings and you don&rsquo;t have to do the math yourself;</li><li>Second, lyrics. Basically, what I&rsquo;ve made is a more complicated lyrics video;</li><li>Third, final mix version. As the timings might change, you don&rsquo;t want to redo the whole video because your mix has changed.</li></ul><p>I&rsquo;ve started mocking the video a long before we&rsquo;ve finished the final mix, but I&rsquo;ve started actual programming literally the day we&rsquo;ve agreed on the mix.</p><p><a href=#top>Go to Top</a></p><p>Getting the sound was actually the easiest bit - I&rsquo;ve used Beep by Faiface in it&rsquo;s most raw form:</p><p><strong>player.go</strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=display:flex><span><span style=color:#f92672>package</span> <span style=color:#a6e22e>main</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> (
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;log&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;os&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;time&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;github.com/faiface/beep&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;github.com/faiface/beep/mp3&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;github.com/faiface/beep/speaker&#34;</span>
+</span></span><span style=display:flex><span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>func</span> <span style=color:#a6e22e>play</span>(<span style=color:#a6e22e>done</span> <span style=color:#66d9ef>chan</span> <span style=color:#66d9ef>bool</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// Prepare the song to play
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#a6e22e>f</span>, <span style=color:#a6e22e>err</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>os</span>.<span style=color:#a6e22e>Open</span>(<span style=color:#e6db74>&#34;./enae-the_system.mp3&#34;</span>)
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span> <span style=color:#a6e22e>err</span> <span style=color:#f92672>!=</span> <span style=color:#66d9ef>nil</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>log</span>.<span style=color:#a6e22e>Fatal</span>(<span style=color:#a6e22e>err</span>)
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>streamer</span>, <span style=color:#a6e22e>format</span>, <span style=color:#a6e22e>err</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>mp3</span>.<span style=color:#a6e22e>Decode</span>(<span style=color:#a6e22e>f</span>)
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span> <span style=color:#a6e22e>err</span> <span style=color:#f92672>!=</span> <span style=color:#66d9ef>nil</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>log</span>.<span style=color:#a6e22e>Fatal</span>(<span style=color:#a6e22e>err</span>)
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>defer</span> <span style=color:#a6e22e>streamer</span>.<span style=color:#a6e22e>Close</span>()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>speaker</span>.<span style=color:#a6e22e>Init</span>(<span style=color:#a6e22e>format</span>.<span style=color:#a6e22e>SampleRate</span>, <span style=color:#a6e22e>format</span>.<span style=color:#a6e22e>SampleRate</span>.<span style=color:#a6e22e>N</span>(<span style=color:#a6e22e>time</span>.<span style=color:#a6e22e>Second</span><span style=color:#f92672>/</span><span style=color:#ae81ff>10</span>))
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>speaker</span>.<span style=color:#a6e22e>Play</span>(<span style=color:#a6e22e>beep</span>.<span style=color:#a6e22e>Seq</span>(<span style=color:#a6e22e>streamer</span>, <span style=color:#a6e22e>beep</span>.<span style=color:#a6e22e>Callback</span>(<span style=color:#66d9ef>func</span>() {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>done</span> <span style=color:#f92672>&lt;-</span> <span style=color:#66d9ef>true</span>
+</span></span><span style=display:flex><span>  })))
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;-</span><span style=color:#a6e22e>done</span>
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p><code>done</code> is the channel I use to notify the main goroutine that play/print has finished. As it&rsquo;s a music video, high-quality mp3 file is sufficient enough to be lightweight and good sounding.</p><p><a href=#top>Go to Top</a></p><p>The main file, that deals with all the things to print is, unsurprisingly, <code>printer.go</code>. Let&rsquo;s break it down:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=display:flex><span><span style=color:#66d9ef>var</span> (
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// notes
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#a6e22e>fullnote</span>         <span style=color:#66d9ef>int</span> = <span style=color:#ae81ff>1678</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>halfnote</span>         <span style=color:#66d9ef>int</span> = <span style=color:#ae81ff>839</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>quaternote</span>       <span style=color:#66d9ef>int</span> = <span style=color:#ae81ff>420</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>eightnote</span>        <span style=color:#66d9ef>int</span> = <span style=color:#ae81ff>210</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>sixteenthnote</span>    <span style=color:#66d9ef>int</span> = <span style=color:#ae81ff>105</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>thirtysecondnote</span> <span style=color:#66d9ef>int</span> = <span style=color:#ae81ff>52</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>sixtyfourthnote</span>  <span style=color:#66d9ef>int</span> = <span style=color:#ae81ff>26</span>
+</span></span><span style=display:flex><span>)
+</span></span></code></pre></div><p>In order to be able to print stuff properly, you need to get a tempo of the song and the duration of each note in milliseconds. The formula to do that is really simple:</p><blockquote><p>60000 / BPM = one beat in millisecond</p></blockquote><p>BPM (Beats per minute) is the song tempo, one beat refers to a quater note. So, in case of <em>The System</em>, where the BPM is 143, it&rsquo;s:</p><blockquote><p>60000 / 143 = 420 (rounded up)</p></blockquote><p>This way, I&rsquo;ve calculated all necessary note durations that I&rsquo;ll need to print.</p><p>Moving on:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=display:flex><span><span style=color:#66d9ef>type</span> <span style=color:#a6e22e>Sized</span> <span style=color:#66d9ef>struct</span> {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>width</span>  <span style=color:#66d9ef>int</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>height</span> <span style=color:#66d9ef>int</span>
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>func</span> <span style=color:#a6e22e>printer</span>(<span style=color:#a6e22e>done</span> <span style=color:#66d9ef>chan</span> <span style=color:#66d9ef>bool</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>s</span> <span style=color:#f92672>:=</span> <span style=color:#f92672>&amp;</span><span style=color:#a6e22e>Sized</span>{}
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>s</span>.<span style=color:#a6e22e>width</span>, <span style=color:#a6e22e>s</span>.<span style=color:#a6e22e>height</span> = <span style=color:#a6e22e>checkTerminalSize</span>()
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// intro
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#a6e22e>intro</span>()
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// verse 1
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#a6e22e>verse1</span>()
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// chorus 1
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#a6e22e>chorusBig1</span>()
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>chorusBig1</span>()
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>overAndOver</span>()
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>chorusBig1</span>()
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// verse 2
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#a6e22e>verse2</span>()
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// chorus 2 - ends faster and starts loading bar
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#a6e22e>chorusBig1</span>()
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>chorusBig1</span>()
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>overAndOver</span>()
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>chorusSmall1</span>()
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// solo
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#a6e22e>s</span>.<span style=color:#a6e22e>solo</span>()
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// chorus 3 - can&#39;t feel, can see...
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#a6e22e>s</span>.<span style=color:#a6e22e>lastChorus</span>()
+</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;-</span><span style=color:#a6e22e>done</span>
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>We&rsquo;ll touch on <code>Sized</code> struct a while later; for now, you can see how the song was built.</p><p>I&rsquo;ve divided the chorus into 4 small chunks (in case I want to change only a part of it). <code>verse1</code> and <code>verse2</code> are a tiny bit different in the approach - one is typewriting (printing one character per x milliseconds), second one is Star-Wars-esque &ldquo;Text is going up&rdquo; using frames.</p><p>Before we go into the rhythm part of the music video, there are three very important functions in <code>printer.go</code>:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=display:flex><span><span style=color:#66d9ef>func</span> <span style=color:#a6e22e>cleanDisplay</span>() {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>fmt</span>.<span style=color:#a6e22e>Printf</span>(<span style=color:#e6db74>&#34;\x1b[2J&#34;</span>)
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>moveCursor</span>(<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>)
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>func</span> <span style=color:#a6e22e>moveCursor</span>(<span style=color:#a6e22e>row</span>, <span style=color:#a6e22e>col</span> <span style=color:#66d9ef>int</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>fmt</span>.<span style=color:#a6e22e>Printf</span>(<span style=color:#e6db74>&#34;\x1b[%d;%df&#34;</span>, <span style=color:#a6e22e>row</span><span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>, <span style=color:#a6e22e>col</span><span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>)
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>func</span> <span style=color:#a6e22e>noteRest</span>(<span style=color:#a6e22e>note</span> <span style=color:#66d9ef>int</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>time</span>.<span style=color:#a6e22e>Sleep</span>(<span style=color:#a6e22e>time</span>.<span style=color:#a6e22e>Millisecond</span> <span style=color:#f92672>*</span> <span style=color:#a6e22e>time</span>.<span style=color:#a6e22e>Duration</span>(<span style=color:#a6e22e>note</span>))
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>Here we delve into the nitty-gritty of the whole system - <a href=https://en.wikipedia.org/wiki/ANSI_escape_code>Ansi escape codes</a>. In case of my music video, I&rsquo;ve used a few:</p><p>in <code>printer.go</code>:</p><ul><li><code>\x1b[2J</code> - all escape codes starts with <code>\x1b</code>, which is ASCII representation of ESC. <code>[2J</code> means to clear the whole display;</li><li><code>\x1b[%d;%df</code> - <code>[%d;%df</code> moves the cursor to a given position</li></ul><blockquote><p>We&rsquo;ll talk about noteRest in a second!</p></blockquote><p>in <code>colours.go</code>:</p><p>(First, let&rsquo;s bring the functions here)</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=display:flex><span><span style=color:#66d9ef>func</span> <span style=color:#a6e22e>resetColourChanges</span>() {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>fmt</span>.<span style=color:#a6e22e>Print</span>(<span style=color:#e6db74>&#34;\x1b[0m&#34;</span>)
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>as the function name says, it reset colour changes to default;</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=display:flex><span><span style=color:#66d9ef>func</span> <span style=color:#a6e22e>colourText</span>(<span style=color:#a6e22e>colour</span> <span style=color:#66d9ef>int</span>, <span style=color:#a6e22e>bright</span> <span style=color:#66d9ef>bool</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span> <span style=color:#a6e22e>bright</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>fmt</span>.<span style=color:#a6e22e>Printf</span>(<span style=color:#e6db74>&#34;\x1b[9%vm&#34;</span>, <span style=color:#a6e22e>colour</span>)
+</span></span><span style=display:flex><span>  } <span style=color:#66d9ef>else</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>fmt</span>.<span style=color:#a6e22e>Printf</span>(<span style=color:#e6db74>&#34;\x1b[3%vm&#34;</span>, <span style=color:#a6e22e>colour</span>)
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p><code>colourText</code> is a wrapper around printing from basic palette of 8 colours (black, red, green, yellow, blue, magenta, cyan and white) in bright (<code>[9</code>) variant or in normal - let&rsquo;s call it plain (<code>[3</code>);</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=display:flex><span><span style=color:#66d9ef>func</span> <span style=color:#a6e22e>colourTextRGB</span>(<span style=color:#a6e22e>red</span>, <span style=color:#a6e22e>green</span>, <span style=color:#a6e22e>blue</span> <span style=color:#66d9ef>int</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>fmt</span>.<span style=color:#a6e22e>Printf</span>(<span style=color:#e6db74>&#34;\x1b[38;2;%v;%v;%vm&#34;</span>, <span style=color:#a6e22e>red</span>, <span style=color:#a6e22e>green</span>, <span style=color:#a6e22e>blue</span>)
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>This is the function I ended up using - I&rsquo;ve found a way to print the colours using RGB values - the loading bar you see before the solo starts is done using this magical thing!</p><p><a href=#top>Go to Top</a></p><p>Remember <code>noteRest</code>? It&rsquo;s nothing else than a wrapper around <code>time.Sleep</code>. To print time-based frames, I used <code>printInMicroseconds</code>:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=display:flex><span><span style=color:#66d9ef>func</span> <span style=color:#a6e22e>printInMicroseconds</span>(<span style=color:#a6e22e>s</span> <span style=color:#66d9ef>string</span>, <span style=color:#a6e22e>spd</span> <span style=color:#66d9ef>int</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>speed</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>spd</span> <span style=color:#f92672>*</span> <span style=color:#ae81ff>1000</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>freq</span> <span style=color:#f92672>:=</span> (float64(<span style=color:#a6e22e>speed</span>) <span style=color:#f92672>/</span> float64(len(<span style=color:#a6e22e>s</span>)))
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>for</span> <span style=color:#a6e22e>i</span> <span style=color:#f92672>:=</span> <span style=color:#ae81ff>0</span>; <span style=color:#a6e22e>i</span> &lt; len(<span style=color:#a6e22e>s</span>); <span style=color:#a6e22e>i</span><span style=color:#f92672>++</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>fmt</span>.<span style=color:#a6e22e>Printf</span>(<span style=color:#e6db74>&#34;%v&#34;</span>, string(<span style=color:#a6e22e>s</span>[<span style=color:#a6e22e>i</span>]))
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>time</span>.<span style=color:#a6e22e>Sleep</span>(<span style=color:#a6e22e>time</span>.<span style=color:#a6e22e>Microsecond</span> <span style=color:#f92672>*</span> <span style=color:#a6e22e>time</span>.<span style=color:#a6e22e>Duration</span>(<span style=color:#a6e22e>freq</span>))
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>Why <em>Microseconds</em> instead of <em>Milliseconds</em> you ask? The reason for that is sometimes the lyrics aren&rsquo;t really divisible by the millisecond duration of the note in a nice fashion. That&rsquo;s why, I&rsquo;m converting milliseconds to microseconds and then printing. Check <code>verse1.go</code>:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=display:flex><span><span style=color:#f92672>...</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>func</span> <span style=color:#a6e22e>verse1</span>() {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>printInMicroseconds</span>(<span style=color:#a6e22e>verse1_1_1</span>, <span style=color:#a6e22e>halfnote</span><span style=color:#f92672>+</span><span style=color:#a6e22e>quaternote</span>) <span style=color:#75715e>// 3/1
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#a6e22e>printInMicroseconds</span>(<span style=color:#a6e22e>verse1_1_2</span>, <span style=color:#a6e22e>quaternote</span>)          <span style=color:#75715e>// 1/1
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#f92672>...</span>
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>Sometimes some part of the lyrics will have to stay longer than pre-defined note duration. Because notes in the code are <code>int</code>, we can add them and then the function takes care of it!</p><p><a href=#top>Go to Top</a></p><p>And now,</p><p>This is the part, I think, I&rsquo;m most proud of. The function:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=display:flex><span><span style=color:#66d9ef>func</span> (<span style=color:#a6e22e>s</span> <span style=color:#f92672>*</span><span style=color:#a6e22e>Sized</span>) <span style=color:#a6e22e>printNoteInBinary</span>(<span style=color:#a6e22e>note</span> <span style=color:#66d9ef>string</span>, <span style=color:#a6e22e>speed</span> <span style=color:#66d9ef>int</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>toBinary</span> <span style=color:#66d9ef>string</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>for</span> <span style=color:#a6e22e>_</span>, <span style=color:#a6e22e>c</span> <span style=color:#f92672>:=</span> <span style=color:#66d9ef>range</span> <span style=color:#a6e22e>note</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>toBinary</span> <span style=color:#f92672>+=</span> <span style=color:#a6e22e>fmt</span>.<span style=color:#a6e22e>Sprintf</span>(<span style=color:#e6db74>&#34;%b &#34;</span>, <span style=color:#a6e22e>c</span>)
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>freq</span> <span style=color:#f92672>:=</span> (float64(<span style=color:#a6e22e>speed</span>) <span style=color:#f92672>/</span> float64(len(<span style=color:#a6e22e>toBinary</span>))) <span style=color:#75715e>// to microseconds
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#66d9ef>for</span> <span style=color:#a6e22e>_</span>, <span style=color:#a6e22e>b</span> <span style=color:#f92672>:=</span> <span style=color:#66d9ef>range</span> <span style=color:#a6e22e>toBinary</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>fmt</span>.<span style=color:#a6e22e>Printf</span>(<span style=color:#e6db74>&#34;%c&#34;</span>, <span style=color:#a6e22e>b</span>)
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>time</span>.<span style=color:#a6e22e>Sleep</span>(<span style=color:#a6e22e>time</span>.<span style=color:#a6e22e>Millisecond</span> <span style=color:#f92672>*</span> <span style=color:#a6e22e>time</span>.<span style=color:#a6e22e>Duration</span>(<span style=color:#a6e22e>freq</span>))
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>fmt</span>.<span style=color:#a6e22e>Println</span>()
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>The function itself is nothing crazy, but the approach to printing is:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=display:flex><span><span style=color:#f92672>...</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// 1st bar
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>s</span>.<span style=color:#a6e22e>printNoteInBinary</span>(<span style=color:#e6db74>&#34;D&#34;</span>, <span style=color:#a6e22e>fullnote</span>)
+</span></span><span style=display:flex><span><span style=color:#a6e22e>s</span>.<span style=color:#a6e22e>printNoteInBinary</span>(<span style=color:#e6db74>&#34;F&#34;</span>, <span style=color:#a6e22e>fullnote</span>)
+</span></span><span style=display:flex><span><span style=color:#a6e22e>s</span>.<span style=color:#a6e22e>printNoteInBinary</span>(<span style=color:#e6db74>&#34;G&#34;</span>, <span style=color:#a6e22e>halfnote</span>)
+</span></span><span style=display:flex><span><span style=color:#a6e22e>s</span>.<span style=color:#a6e22e>printNoteInBinary</span>(<span style=color:#e6db74>&#34;A&#34;</span>, <span style=color:#a6e22e>halfnote</span>)
+</span></span><span style=display:flex><span><span style=color:#a6e22e>s</span>.<span style=color:#a6e22e>printNoteInBinary</span>(<span style=color:#e6db74>&#34;C&#34;</span>, <span style=color:#a6e22e>fullnote</span>)
+</span></span><span style=display:flex><span><span style=color:#a6e22e>cleanDisplay</span>()
+</span></span><span style=display:flex><span><span style=color:#75715e>// 2nd bar
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>noteRest</span>(<span style=color:#a6e22e>eightnote</span>)
+</span></span><span style=display:flex><span><span style=color:#a6e22e>s</span>.<span style=color:#a6e22e>printNoteInBinary</span>(<span style=color:#e6db74>&#34;A&#34;</span>, <span style=color:#a6e22e>sixteenthnote</span>)
+</span></span><span style=display:flex><span><span style=color:#a6e22e>s</span>.<span style=color:#a6e22e>printNoteInBinary</span>(<span style=color:#e6db74>&#34;C&#34;</span>, <span style=color:#a6e22e>sixteenthnote</span>)
+</span></span><span style=display:flex><span><span style=color:#a6e22e>s</span>.<span style=color:#a6e22e>printNoteInBinary</span>(<span style=color:#e6db74>&#34;D&#34;</span>, <span style=color:#a6e22e>eightnote</span>)
+</span></span><span style=display:flex><span><span style=color:#a6e22e>s</span>.<span style=color:#a6e22e>printNoteInBinary</span>(<span style=color:#e6db74>&#34;G&#34;</span>, <span style=color:#a6e22e>quaternote</span>)
+</span></span><span style=display:flex><span><span style=color:#f92672>...</span>
+</span></span></code></pre></div><p>Remember at the beginning, I&rsquo;ve told that we&rsquo;d need a sheet music? Without that, programming this solo would be extremely painful. Each note gets converted to a binary representation and then gets printed within the note duration.</p><blockquote><p>You might notice, that there&rsquo;s a pointer to <code>Sized</code> here - reason for that is, I&rsquo;ve iterated over multiple versions of the solo and thought the one now is the best looking one. In case someone would like to print it anywhere else on the screen, they can, because they know the terminal size already!</p></blockquote><p><a href=#top>Go to Top</a></p><p>The last scene is an interesting one, because there&rsquo;s a very small chance that it&rsquo;ll look the same ever.</p><p>Each time you run this music video in the terminal, it&rsquo;ll be different, because the &ldquo;frame cleanup&rdquo; is truly randomized. I&rsquo;ve spent a while thinking about how to pull this off and went with this:</p><ul><li>I&rsquo;ve prepared nice ASCII art of the last chorus</li><li>Then I&rsquo;ve formatted it</li><li>Populated the display with <code>:</code></li><li>The randomly destroyed what I need</li></ul><p>Sounds easy? Once I had figured it out, it actually was! So, let&rsquo;s take a closer look at the functions:</p><blockquote><p>All functions are in chorus_last.go</p></blockquote><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=display:flex><span><span style=color:#66d9ef>func</span> (<span style=color:#a6e22e>s</span> <span style=color:#f92672>*</span><span style=color:#a6e22e>Sized</span>) <span style=color:#a6e22e>formatLine</span>(<span style=color:#a6e22e>str</span> <span style=color:#66d9ef>string</span>) <span style=color:#66d9ef>string</span> {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>add</span> <span style=color:#f92672>:=</span> int(<span style=color:#a6e22e>math</span>.<span style=color:#a6e22e>RoundToEven</span>((float64(<span style=color:#a6e22e>s</span>.<span style=color:#a6e22e>width</span>) <span style=color:#f92672>-</span> float64(len(<span style=color:#a6e22e>str</span>))) <span style=color:#f92672>/</span> <span style=color:#ae81ff>2</span>))
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>pre</span>, <span style=color:#a6e22e>post</span> <span style=color:#66d9ef>string</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>for</span> <span style=color:#a6e22e>i</span> <span style=color:#f92672>:=</span> <span style=color:#ae81ff>0</span>; <span style=color:#a6e22e>i</span> &lt; <span style=color:#a6e22e>add</span>; <span style=color:#a6e22e>i</span><span style=color:#f92672>++</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>pre</span> <span style=color:#f92672>+=</span> <span style=color:#e6db74>&#34;:&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>post</span> <span style=color:#f92672>+=</span> <span style=color:#e6db74>&#34;:&#34;</span>
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>f</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>pre</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>str</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>post</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span> len(<span style=color:#a6e22e>f</span>) <span style=color:#f92672>!=</span> <span style=color:#a6e22e>s</span>.<span style=color:#a6e22e>width</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>f</span> = <span style=color:#a6e22e>f</span>[:len(<span style=color:#a6e22e>f</span>)<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>]
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>f</span>
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>As each display will be different, the art needs to be formatted - which basically means adding <code>:</code> at the beginning and the end until the whole width of the display is used.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=display:flex><span><span style=color:#66d9ef>func</span> (<span style=color:#a6e22e>s</span> <span style=color:#f92672>*</span><span style=color:#a6e22e>Sized</span>) <span style=color:#a6e22e>generateLine</span>(<span style=color:#a6e22e>char</span> <span style=color:#66d9ef>string</span>) <span style=color:#66d9ef>string</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>str</span> <span style=color:#66d9ef>string</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>for</span> <span style=color:#a6e22e>i</span> <span style=color:#f92672>:=</span> <span style=color:#ae81ff>0</span>; <span style=color:#a6e22e>i</span> &lt; <span style=color:#a6e22e>s</span>.<span style=color:#a6e22e>width</span>; <span style=color:#a6e22e>i</span><span style=color:#f92672>++</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>str</span> <span style=color:#f92672>+=</span> <span style=color:#a6e22e>char</span>
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>str</span>
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>func</span> (<span style=color:#a6e22e>s</span> <span style=color:#f92672>*</span><span style=color:#a6e22e>Sized</span>) <span style=color:#a6e22e>generateDisplay</span>(<span style=color:#a6e22e>char</span> <span style=color:#66d9ef>string</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>strArr</span> []<span style=color:#66d9ef>string</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>for</span> <span style=color:#a6e22e>i</span> <span style=color:#f92672>:=</span> <span style=color:#ae81ff>0</span>; <span style=color:#a6e22e>i</span> &lt; <span style=color:#a6e22e>s</span>.<span style=color:#a6e22e>height</span>; <span style=color:#a6e22e>i</span><span style=color:#f92672>++</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>str</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>s</span>.<span style=color:#a6e22e>generateLine</span>(<span style=color:#a6e22e>char</span>)
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>strArr</span> = append(<span style=color:#a6e22e>strArr</span>, <span style=color:#a6e22e>str</span>)
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>temp</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>strings</span>.<span style=color:#a6e22e>Join</span>(<span style=color:#a6e22e>strArr</span>[:], <span style=color:#e6db74>&#34;\n&#34;</span>)
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>printInMicroseconds</span>(<span style=color:#a6e22e>temp</span>, <span style=color:#a6e22e>eightnote</span>)
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>Then, we need something to populate the whole display with <code>:</code> - which means generating some lines and then creating an array which will be of full terminal dimension.</p><p>And now, the last behemoth:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=display:flex><span><span style=color:#66d9ef>func</span> (<span style=color:#a6e22e>s</span> <span style=color:#f92672>*</span><span style=color:#a6e22e>Sized</span>) <span style=color:#a6e22e>lastChorus</span>() {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>cleanDisplay</span>()
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>s</span>.<span style=color:#a6e22e>generateDisplay</span>(<span style=color:#e6db74>&#34;:&#34;</span>)
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>maxHeight</span> <span style=color:#f92672>:=</span> (<span style=color:#a6e22e>s</span>.<span style=color:#a6e22e>height</span> <span style=color:#f92672>-</span> <span style=color:#ae81ff>32</span>) <span style=color:#f92672>/</span> <span style=color:#ae81ff>2</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>var</span> (
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>iter</span> <span style=color:#66d9ef>int</span>
+</span></span><span style=display:flex><span>  )
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>noteRest</span>(<span style=color:#a6e22e>eightnote</span>)
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>moveCursor</span>(<span style=color:#a6e22e>maxHeight</span>, <span style=color:#ae81ff>0</span>)
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>for</span> <span style=color:#a6e22e>i</span> <span style=color:#f92672>:=</span> <span style=color:#ae81ff>0</span>; <span style=color:#a6e22e>i</span> &lt; len(<span style=color:#a6e22e>banners</span>); <span style=color:#a6e22e>i</span><span style=color:#f92672>++</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>moveCursor</span>(<span style=color:#a6e22e>maxHeight</span><span style=color:#f92672>+</span><span style=color:#a6e22e>iter</span>, <span style=color:#ae81ff>0</span>)
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>fmt</span>.<span style=color:#a6e22e>Println</span>(<span style=color:#a6e22e>s</span>.<span style=color:#a6e22e>formatLine</span>(<span style=color:#a6e22e>banners</span>[<span style=color:#a6e22e>i</span>]))
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> <span style=color:#a6e22e>i</span> <span style=color:#f92672>==</span> (len(<span style=color:#a6e22e>banners</span>)<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>)<span style=color:#f92672>/</span><span style=color:#ae81ff>2</span> {
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>noteRest</span>(<span style=color:#a6e22e>eightnote</span>)
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>iter</span><span style=color:#f92672>++</span>
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>continue</span>
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>noteRest</span>(<span style=color:#a6e22e>thirtysecondnote</span>)
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>iter</span><span style=color:#f92672>++</span>
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>noteRest</span>(<span style=color:#a6e22e>fullnote</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>rest</span> <span style=color:#f92672>:=</span> <span style=color:#ae81ff>5</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>maxMilliseconds</span> <span style=color:#f92672>:=</span> int(<span style=color:#a6e22e>math</span>.<span style=color:#a6e22e>RoundToEven</span>(float64(<span style=color:#ae81ff>16</span><span style=color:#f92672>*</span><span style=color:#a6e22e>fullnote</span>) <span style=color:#f92672>/</span> float64(<span style=color:#a6e22e>rest</span>)))
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>source</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>rand</span>.<span style=color:#a6e22e>NewSource</span>(<span style=color:#a6e22e>time</span>.<span style=color:#a6e22e>Now</span>().<span style=color:#a6e22e>UnixNano</span>())
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>for</span> <span style=color:#a6e22e>j</span> <span style=color:#f92672>:=</span> <span style=color:#ae81ff>0</span>; <span style=color:#a6e22e>j</span> &lt; <span style=color:#a6e22e>maxMilliseconds</span>; <span style=color:#a6e22e>j</span><span style=color:#f92672>++</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>randban</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>rand</span>.<span style=color:#a6e22e>New</span>(<span style=color:#a6e22e>source</span>).<span style=color:#a6e22e>Intn</span>(len(<span style=color:#a6e22e>banners</span>))
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>banner</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>banners</span>[<span style=color:#a6e22e>randban</span>]
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>switch</span> <span style=color:#a6e22e>randban</span> {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>case</span> <span style=color:#ae81ff>8</span>, <span style=color:#ae81ff>9</span>, <span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>11</span>, <span style=color:#ae81ff>12</span>, <span style=color:#ae81ff>13</span>, <span style=color:#ae81ff>14</span>, <span style=color:#ae81ff>15</span>:
+</span></span><span style=display:flex><span>      <span style=color:#75715e>// want to get &#34;your&#34;
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>      <span style=color:#a6e22e>mid</span> <span style=color:#f92672>:=</span> len(<span style=color:#a6e22e>banner</span>) <span style=color:#f92672>/</span> <span style=color:#ae81ff>2</span>
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>randpos</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>rand</span>.<span style=color:#a6e22e>New</span>(<span style=color:#a6e22e>source</span>).<span style=color:#a6e22e>Intn</span>(<span style=color:#a6e22e>mid</span>) <span style=color:#f92672>+</span> <span style=color:#a6e22e>mid</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>changedBanner</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>banner</span>[:<span style=color:#a6e22e>randpos</span><span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>] <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;:&#34;</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>banner</span>[<span style=color:#a6e22e>randpos</span>:]
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>moveCursor</span>(<span style=color:#a6e22e>maxHeight</span><span style=color:#f92672>+</span><span style=color:#a6e22e>randban</span>, <span style=color:#ae81ff>0</span>)
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>fmt</span>.<span style=color:#a6e22e>Println</span>(<span style=color:#a6e22e>s</span>.<span style=color:#a6e22e>formatLine</span>(<span style=color:#a6e22e>changedBanner</span>))
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>banners</span>[<span style=color:#a6e22e>randban</span>] = <span style=color:#a6e22e>changedBanner</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>case</span> <span style=color:#ae81ff>24</span>, <span style=color:#ae81ff>25</span>, <span style=color:#ae81ff>26</span>, <span style=color:#ae81ff>27</span>, <span style=color:#ae81ff>28</span>, <span style=color:#ae81ff>29</span>, <span style=color:#ae81ff>30</span>, <span style=color:#ae81ff>31</span>:
+</span></span><span style=display:flex><span>      <span style=color:#75715e>// we&#39;re leaving the &#34;face&#34; out, thus middle of the banner
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>      <span style=color:#a6e22e>mid</span> <span style=color:#f92672>:=</span> len(<span style=color:#a6e22e>banner</span>) <span style=color:#f92672>/</span> <span style=color:#ae81ff>2</span>
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>randpos</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>rand</span>.<span style=color:#a6e22e>New</span>(<span style=color:#a6e22e>source</span>).<span style=color:#a6e22e>Intn</span>(<span style=color:#a6e22e>mid</span>) <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>changedBanner</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>banner</span>[:<span style=color:#a6e22e>randpos</span><span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>] <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;:&#34;</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>banner</span>[<span style=color:#a6e22e>randpos</span>:]
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>moveCursor</span>(<span style=color:#a6e22e>maxHeight</span><span style=color:#f92672>+</span><span style=color:#a6e22e>randban</span>, <span style=color:#ae81ff>0</span>)
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>fmt</span>.<span style=color:#a6e22e>Println</span>(<span style=color:#a6e22e>s</span>.<span style=color:#a6e22e>formatLine</span>(<span style=color:#a6e22e>changedBanner</span>))
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>banners</span>[<span style=color:#a6e22e>randban</span>] = <span style=color:#a6e22e>changedBanner</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>default</span>:
+</span></span><span style=display:flex><span>      <span style=color:#75715e>// we don&#39;t want 0 here
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>      <span style=color:#a6e22e>randpos</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>rand</span>.<span style=color:#a6e22e>New</span>(<span style=color:#a6e22e>source</span>).<span style=color:#a6e22e>Intn</span>(len(<span style=color:#a6e22e>banner</span>)<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>) <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>changedBanner</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>banner</span>[:<span style=color:#a6e22e>randpos</span><span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>] <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;:&#34;</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>banner</span>[<span style=color:#a6e22e>randpos</span>:]
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>moveCursor</span>(<span style=color:#a6e22e>maxHeight</span><span style=color:#f92672>+</span><span style=color:#a6e22e>randban</span>, <span style=color:#ae81ff>0</span>)
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>fmt</span>.<span style=color:#a6e22e>Println</span>(<span style=color:#a6e22e>s</span>.<span style=color:#a6e22e>formatLine</span>(<span style=color:#a6e22e>changedBanner</span>))
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>banners</span>[<span style=color:#a6e22e>randban</span>] = <span style=color:#a6e22e>changedBanner</span>
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>noteRest</span>(<span style=color:#a6e22e>rest</span>)
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>So, there&rsquo;s the magic to the system - I&rsquo;ve used the functions I&rsquo;ve prepped before and created the whole display. Next, I need to calculate how fast I can randomize the lines change - basically, the code knows which lines to find and where to start the beautiful dance of destruction.</p><p>Each time it takes only one step and then rests for 5 milliseconds. This way, I&rsquo;m sure it&rsquo;ll destroy a lot of stuff, but not all.</p><p><a href=#top>Go to Top</a></p><p>Glad to see you here, at the end of this note!</p><p>If I would do it again, what I would change:</p><ul><li>Cast-in-stone storyboard - I haven&rsquo;t had that as a lot of things here was just plain experimentation</li><li>Even more modular code - what if I want to have Star-Wars-esque solo part?</li><li>Less noise in the code - a lot of stuff I&rsquo;ve left off because I wasn&rsquo;t sure if I will use them again. It&rsquo;s more of a wireframe for the next videos now.</li></ul><p>Thank you for reading! Give us a like or subscribe or come to facebook or - even better - do all of these things!</p></div></div><div class=pagination><div class=pagination__title><span class=pagination__title-h>Read other posts</span><hr></div><div class=pagination__buttons><span class="button previous"><a href=https://akondas.com/blog/diversity-inclusion-and-everything-in-between/><span class=button__icon>←</span>
+<span class=button__text>Diversity-Inclusion-and-Everything-In-Between</span></a></span>
+<span class="button next"><a href=https://akondas.com/blog/a-starters-guide-to-go-projects/><span class=button__text>A Starters Guide to Go Projects</span>
+<span class=button__icon>→</span></a></span></div></div></div></div><footer class=footer><div class=footer__inner><div class=copyright><span>© 2023 Powered by <a href=http://gohugo.io>Hugo</a></span>
+<span>:: Theme made by <a href=https://twitter.com/panr>panr</a></span></div></div></footer><script src=https://akondas.com/assets/main.js></script>
+<script src=https://akondas.com/assets/prism.js></script><style>.footer{width:100%;opacity:unset}span{opacity:.5}.form_field_footer{margin:0 auto;display:flex;flex-flow:row nowrap;align-items:center}.field_footer{padding:10px;width:100%;height:40px;border-style:solid;border-color:#ffa86a;color:#ffa86a;background-color:#222129;border-radius:0}.button_footer{appearance:none;-webkit-appearance:none;padding:10px;border:none;background-color:#ffa86a;color:#222129;font-weight:600;width:100%;border-radius:0;height:40px}.height_footer{height:40px}</style><div class="footer__inner footer"><div><span>:: <a href=https://linkedin.com/in/arturkondas target=_blank>LinkedIn</a></span>
 <span>:: <a href=https://www.youtube.com/channel/UC3SvqKPXF89AX0IX7LGqYsA target=_blank>YouTube</a></span>
-<span>:: <a href=https://github.com/youshy/cv/blob/master/Markdown/cv.pdf target=_blank>Resume</a> ::</span>
-</div>
-<div id=mc_embed_signup class=form>
-<form action="https://akondas.us20.list-manage.com/subscribe/post?u=a51d84c0a38c791624a88cc4d&id=73c1b8cf8f" method=post id=mc-embedded-subscribe-form name=mc-embedded-subscribe-form class=validate target=_blank novalidate signup=https://akondas.com/blog/how-to-write-a-music-video-in-go/>
-<div id=mc_embed_signup_scroll class=form_field_footer>
-<div class="mc-field-group height_footer">
-<input type=email name=EMAIL class="required email field_footer" id=mce-EMAIL placeholder="Your email goes here">
-</div>
-<div id=mce-responses class="clear foot">
-<div class=response id=mce-error-response style=display:none></div>
-<div class=response id=mce-success-response style=display:none></div>
-</div>
-<div style=position:absolute;left:-5000px aria-hidden=true><input type=text name=b_a51d84c0a38c791624a88cc4d_73c1b8cf8f tabindex=-1>
-</div>
-<div class=optionalParent>
-<div class="clear foot height_footer">
-<input type=submit value=Subscribe name=subscribe id=mc-embedded-subscribe class=button_footer>
-</div>
-</div>
-</div>
-</form>
-</div>
-</div>
-</div>
-</body>
-</html>
+<span>:: <a href=https://github.com/youshy/cv/blob/master/Markdown/cv.pdf target=_blank>Resume</a> ::</span></div><div id=mc_embed_signup class=form><form action="https://akondas.us20.list-manage.com/subscribe/post?u=a51d84c0a38c791624a88cc4d&id=73c1b8cf8f" method=post id=mc-embedded-subscribe-form name=mc-embedded-subscribe-form class=validate target=_blank novalidate signup=https://akondas.com/blog/how-to-write-a-music-video-in-go/><div id=mc_embed_signup_scroll class=form_field_footer><div class="mc-field-group height_footer"><input type=email name=EMAIL class="required email field_footer" id=mce-EMAIL placeholder="Your email goes here"></div><div id=mce-responses class="clear foot"><div class=response id=mce-error-response style=display:none></div><div class=response id=mce-success-response style=display:none></div></div><div style=position:absolute;left:-5000px aria-hidden=true><input type=text name=b_a51d84c0a38c791624a88cc4d_73c1b8cf8f tabindex=-1></div><div class=optionalParent><div class="clear foot height_footer"><input type=submit value=Subscribe name=subscribe id=mc-embedded-subscribe class=button_footer></div></div></div></form></div></div></div></body></html>

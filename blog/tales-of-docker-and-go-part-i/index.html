@@ -1,186 +1,43 @@
-<!doctype html><html lang=en>
-<head>
-<title>Tales of Docker and Go Part I :: Artur Kondas</title>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content="Yes, yes, I know, this is not a proper blog if I don&amp;rsquo;t post often. But hey, that&amp;rsquo;s the name of the game, when you&amp;rsquo;re working on fun stuff!">
-<meta name=keywords content="Go,Golang,Programming,Open Source,Lessons,Pizza">
-<meta name=robots content="noodp">
-<link rel=canonical href=https://akondas.com/blog/tales-of-docker-and-go-part-i/>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-166121756-1','auto'),ga('send','pageview'))</script>
-<link rel=stylesheet href=https://akondas.com/assets/style.css>
-<link rel=apple-touch-icon href=https://akondas.com/img/apple-touch-icon-192x192.png>
-<link rel="shortcut icon" href=https://akondas.com/images/favicon.ico>
-<meta name=twitter:card content="summary">
-<meta property="og:locale" content="en">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Tales of Docker and Go Part I">
-<meta property="og:description" content="Yes, yes, I know, this is not a proper blog if I don&amp;rsquo;t post often. But hey, that&amp;rsquo;s the name of the game, when you&amp;rsquo;re working on fun stuff!">
-<meta property="og:url" content="https://akondas.com/blog/tales-of-docker-and-go-part-i/">
-<meta property="og:site_name" content="Artur Kondas">
-<meta property="og:image" content="https://akondas.com/images/favicon.ico">
-<meta property="og:image:width" content="2048">
-<meta property="og:image:height" content="1024">
-<meta property="article:published_time" content="2020-02-25 00:00:00 +0000 UTC">
-</head>
-<body class=orange>
-<div class="container center">
-<header class=header>
-<div class=header__inner>
-<div class=header__logo>
-<a href=/>
-<div class=logo>
-Artur Kondas
-</div>
-</a>
-</div>
-<div class=menu-trigger>menu</div>
-</div>
-<nav class=menu>
-<ul class="menu__inner menu__inner--desktop">
-<li><a href=/about>About</a></li>
-<li><a href=/media>Media</a></li>
-<li><a href=/write-for-me>Write For Me</a></li>
-<li><a href=/opensource>Open Source</a></li>
-<li><a href=/subscribe>Subscribe</a></li>
-<li><a href=/posts>All Posts</a></li>
-<ul class=menu__sub-inner>
-<li class=menu__sub-inner-more-trigger>Show more ▾</li>
-<ul class="menu__sub-inner-more hidden">
-<li><a href=/tags>Tags</a></li>
-</ul>
-</ul>
-</ul>
-<ul class="menu__inner menu__inner--mobile">
-<li><a href=/about>About</a></li>
-<li><a href=/media>Media</a></li>
-<li><a href=/write-for-me>Write For Me</a></li>
-<li><a href=/opensource>Open Source</a></li>
-<li><a href=/subscribe>Subscribe</a></li>
-<li><a href=/posts>All Posts</a></li>
-<li><a href=/tags>Tags</a></li>
-</ul>
-</nav>
-</header>
-<div class=content>
-<div class=post>
-<h1 class=post-title>
-<a href=https://akondas.com/blog/tales-of-docker-and-go-part-i/>Tales of Docker and Go Part I</a></h1>
-<div class=post-meta>
-<span class=post-date>
-2020-02-25
-</span>
-</div>
-<div class=post-content><div>
-<p>Yes, yes, I know, this is not a proper blog if I don&rsquo;t post often. But hey, that&rsquo;s the name of the game, when you&rsquo;re working on fun stuff!</p>
-<p>Talking about fun stuff - have you ever tried to dockerize your Go app? Probably it&rsquo;s easy, there&rsquo;s a ton of Medium posts on how to do that. But what to do when <strong>one of your packages is behind the private organisation</strong>?</p>
-<h2 id=how-to-dockerize-an-app-which-uses-private-libraries>How to dockerize an app which uses private libraries?<a href=#how-to-dockerize-an-app-which-uses-private-libraries class=hanchor arialabel=Anchor>&#8983;</a> </h2>
-<p>Well, that was a thing, that took me a few days to figure out. I&rsquo;m not a Docker master, and I&rsquo;m more than 100% sure, that it can be done sexier than this. Ok, let&rsquo;s go!</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-dockerfile data-lang=dockerfile><span style=color:#75715e># Part I</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>FROM</span><span style=color:#e6db74> alpine/git AS prebuild</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>WORKDIR</span><span style=color:#e6db74>  /go/src/github.com/&lt;package&gt;</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>ARG</span> GIT_USERNAME<span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>ARG</span> GIT_PASSWORD<span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>RUN</span> git clone https://<span style=color:#e6db74>${</span>GIT_USERNAME<span style=color:#e6db74>}</span>:<span style=color:#e6db74>${</span>GIT_PASSWORD<span style=color:#e6db74>}</span>@your.private.git/and/amazing/package<span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e># Part II</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>FROM</span><span style=color:#e6db74> golang:1.13.8-alpine</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>RUN</span> apk add git<span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>COPY</span> --from<span style=color:#f92672>=</span>prebuild /go/src/github.com /go/src/github.com<span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>WORKDIR</span><span style=color:#e6db74> /app</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>COPY</span> . .<span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>RUN</span> go get -d -v<span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>RUN</span> go build -o your-app .<span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>EXPOSE</span><span style=color:#e6db74> 6661</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>CMD</span> [<span style=color:#e6db74>&#34;./your-app&#34;</span>]<span style=color:#960050;background-color:#1e0010>
-</span></code></pre></div><p>So, as you probably can see, I&rsquo;m not using <em>go modules</em>. Well, it&rsquo;s my private thing (had more problems than solved issues with them, so until they&rsquo;re not in better shape&mldr;) so I&rsquo;m going with oldschool approach and doing <code>go get</code> myself. Let&rsquo;s dive into separate parts then!</p>
-<h2 id=part-i---get-the-private-repo>Part I - Get the private repo<a href=#part-i---get-the-private-repo class=hanchor arialabel=Anchor>&#8983;</a> </h2>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-dockerfile data-lang=dockerfile><span style=color:#66d9ef>FROM</span><span style=color:#e6db74> alpine/git AS prebuild</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>WORKDIR</span><span style=color:#e6db74>  /go/src/github.com/ecs-digital/Smart-Explorer</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>ARG</span> GIT_USERNAME<span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>ARG</span> GIT_PASSWORD<span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>RUN</span> git clone https://<span style=color:#e6db74>${</span>GIT_USERNAME<span style=color:#e6db74>}</span>:<span style=color:#e6db74>${</span>GIT_PASSWORD<span style=color:#e6db74>}</span>@github.ecs-digital.co.uk/ECSD/ExplorationEngine<span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>WORKDIR</span><span style=color:#e6db74> /go/src/github.com/jinzhu</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>RUN</span> git clone -b master https://github.com/jinzhu/gorm.git<span style=color:#960050;background-color:#1e0010>
-</span></code></pre></div><p>First bit is rather easy - we&rsquo;re using the lightest container that allows us to use <code>git</code>.</p>
-<p>Now we need to figure out how we can authorize our call to GitHub to get the repo. We could hardcode our <code>GIT_USERNAME</code> and <code>GIT_PASSWORD</code> but that&rsquo;s a proper security breach and we don&rsquo;t like it. So, we&rsquo;re passing the <code>username</code>-<code>password</code> combo as parameters during the build and by the power of multi-stage build, we&rsquo;re hiding all the keys in the first stage - the only visible thing when doing <code>docker history IMAGE_ID</code> would be the second part, not the bit when we authorize ourselves!</p>
-<h2 id=part-ii---do-the-rest>Part II - Do the rest<a href=#part-ii---do-the-rest class=hanchor arialabel=Anchor>&#8983;</a> </h2>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-dockerfile data-lang=dockerfile><span style=color:#66d9ef>FROM</span><span style=color:#e6db74> golang:1.13.8-alpine</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>RUN</span> apk add git<span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>COPY</span> --from<span style=color:#f92672>=</span>prebuild /go/src/github.com /go/src/github.com<span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>WORKDIR</span><span style=color:#e6db74> /app</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>COPY</span> . .<span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>RUN</span> go get -d -v<span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>RUN</span> go build -o your-app .<span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>EXPOSE</span><span style=color:#e6db74> 6661</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010>
-</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>CMD</span> [<span style=color:#e6db74>&#34;./your-app&#34;</span>]<span style=color:#960050;background-color:#1e0010>
-</span></code></pre></div><p>The rest is rather standard - get <code>git</code> in our container to allow <code>go get</code> to work, we&rsquo;re copying pre-stage build (look at the <code>prebuild</code> tag) and building our app! Simple as that!</p>
-<h2 id=is-it-worth-it>Is it worth it?<a href=#is-it-worth-it class=hanchor arialabel=Anchor>&#8983;</a> </h2>
-<p>Well, yes. If you&rsquo;re working in an organisation that has it&rsquo;s own private repos, this might be your salvation (until <code>go modules</code> will work it out and allow us to authenticate&mldr;).</p>
-<p>If you have any questions, or you maybe see something fixable here - get me on Twitter @arturkondas - I&rsquo;m more than hapy to help and to learn new stuff!</p>
-</div></div>
-<div class=pagination>
-<div class=pagination__title>
-<span class=pagination__title-h>Read other posts</span>
-<hr>
-</div>
-<div class=pagination__buttons>
-<span class="button previous">
-<a href=https://akondas.com/blog/to-bake-or-not-to-bake/>
-<span class=button__icon>←</span>
-<span class=button__text>To Bake Or Not To Bake</span>
-</a>
-</span>
-<span class="button next">
-<a href=https://akondas.com/blog/colorcode-2019/>
-<span class=button__text>Colorcode 2019</span>
-<span class=button__icon>→</span>
-</a>
-</span>
-</div>
-</div>
-</div>
-</div>
-<footer class=footer>
-<div class=footer__inner>
-<div class=copyright>
-<span>© 2022 Powered by <a href=http://gohugo.io>Hugo</a></span>
-<span>:: Theme made by <a href=https://twitter.com/panr>panr</a></span>
-</div>
-</div>
-</footer>
-<script src=https://akondas.com/assets/main.js></script>
-<script src=https://akondas.com/assets/prism.js></script>
-<style>.footer{width:100%;opacity:unset}span{opacity:.5}.form_field_footer{margin:0 auto;display:flex;flex-flow:row nowrap;align-items:center}.field_footer{padding:10px;width:100%;height:40px;border-style:solid;border-color:#ffa86a;color:#ffa86a;background-color:#222129;border-radius:0}.button_footer{appearance:none;-webkit-appearance:none;padding:10px;border:none;background-color:#ffa86a;color:#222129;font-weight:600;width:100%;border-radius:0;height:40px}.height_footer{height:40px}</style>
-<div class="footer__inner footer">
-<div>
-<span>:: <a href=https://linkedin.com/in/arturkondas target=_blank>LinkedIn</a></span>
+<!doctype html><html lang=en><head><title>Tales of Docker and Go Part I :: Artur Kondas</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Yes, yes, I know, this is not a proper blog if I don&amp;rsquo;t post often. But hey, that&amp;rsquo;s the name of the game, when you&amp;rsquo;re working on fun stuff!"><meta name=keywords content="Go,Golang,Programming,Open Source,Lessons,Pizza"><meta name=robots content="noodp"><link rel=canonical href=https://akondas.com/blog/tales-of-docker-and-go-part-i/><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,t,n,s,o,i,a){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,i=t.createElement(n),a=t.getElementsByTagName(n)[0],i.async=1,i.src=s,a.parentNode.insertBefore(i,a)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-166121756-1","auto"),ga("send","pageview"))</script><link rel=stylesheet href=https://akondas.com/assets/style.css><link rel=apple-touch-icon href=https://akondas.com/img/apple-touch-icon-192x192.png><link rel="shortcut icon" href=https://akondas.com/images/favicon.ico><meta name=twitter:card content="summary"><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="og:title" content="Tales of Docker and Go Part I"><meta property="og:description" content="Yes, yes, I know, this is not a proper blog if I don&amp;rsquo;t post often. But hey, that&amp;rsquo;s the name of the game, when you&amp;rsquo;re working on fun stuff!"><meta property="og:url" content="https://akondas.com/blog/tales-of-docker-and-go-part-i/"><meta property="og:site_name" content="Artur Kondas"><meta property="og:image" content="https://akondas.com/images/favicon.ico"><meta property="og:image:width" content="2048"><meta property="og:image:height" content="1024"><meta property="article:published_time" content="2020-02-25 00:00:00 +0000 UTC"></head><body class=orange><div class="container center"><header class=header><div class=header__inner><div class=header__logo><a href=/><div class=logo>Artur Kondas</div></a></div><div class=menu-trigger>menu</div></div><nav class=menu><ul class="menu__inner menu__inner--desktop"><li><a href=/about>About</a></li><li><a href=/media>Media</a></li><li><a href=/write-for-me>Write For Me</a></li><li><a href=/opensource>Open Source</a></li><li><a href=/subscribe>Subscribe</a></li><li><a href=/posts>All Posts</a></li><ul class=menu__sub-inner><li class=menu__sub-inner-more-trigger>Show more ▾</li><ul class="menu__sub-inner-more hidden"><li><a href=/tags>Tags</a></li></ul></ul></ul><ul class="menu__inner menu__inner--mobile"><li><a href=/about>About</a></li><li><a href=/media>Media</a></li><li><a href=/write-for-me>Write For Me</a></li><li><a href=/opensource>Open Source</a></li><li><a href=/subscribe>Subscribe</a></li><li><a href=/posts>All Posts</a></li><li><a href=/tags>Tags</a></li></ul></nav></header><div class=content><div class=post><h1 class=post-title><a href=https://akondas.com/blog/tales-of-docker-and-go-part-i/>Tales of Docker and Go Part I</a></h1><div class=post-meta><span class=post-date>2020-02-25</span></div><div class=post-content><div><p>Yes, yes, I know, this is not a proper blog if I don&rsquo;t post often. But hey, that&rsquo;s the name of the game, when you&rsquo;re working on fun stuff!</p><p>Talking about fun stuff - have you ever tried to dockerize your Go app? Probably it&rsquo;s easy, there&rsquo;s a ton of Medium posts on how to do that. But what to do when <strong>one of your packages is behind the private organisation</strong>?</p><h2 id=how-to-dockerize-an-app-which-uses-private-libraries>How to dockerize an app which uses private libraries?<a href=#how-to-dockerize-an-app-which-uses-private-libraries class=hanchor arialabel=Anchor>&#8983;</a></h2><p>Well, that was a thing, that took me a few days to figure out. I&rsquo;m not a Docker master, and I&rsquo;m more than 100% sure, that it can be done sexier than this. Ok, let&rsquo;s go!</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-dockerfile data-lang=dockerfile><span style=display:flex><span><span style=color:#75715e># Part I</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>FROM</span><span style=color:#e6db74> alpine/git AS prebuild</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>WORKDIR</span><span style=color:#e6db74>  /go/src/github.com/&lt;package&gt;</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>ARG</span> GIT_USERNAME<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>ARG</span> GIT_PASSWORD<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>RUN</span> git clone https://<span style=color:#e6db74>${</span>GIT_USERNAME<span style=color:#e6db74>}</span>:<span style=color:#e6db74>${</span>GIT_PASSWORD<span style=color:#e6db74>}</span>@your.private.git/and/amazing/package<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e># Part II</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>FROM</span><span style=color:#e6db74> golang:1.13.8-alpine</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>RUN</span> apk add git<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>COPY</span> --from<span style=color:#f92672>=</span>prebuild /go/src/github.com /go/src/github.com<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>WORKDIR</span><span style=color:#e6db74> /app</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>COPY</span> . .<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>RUN</span> go get -d -v<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>RUN</span> go build -o your-app .<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>EXPOSE</span><span style=color:#e6db74> 6661</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>CMD</span> [<span style=color:#e6db74>&#34;./your-app&#34;</span>]<span style=color:#960050;background-color:#1e0010>
+</span></span></span></code></pre></div><p>So, as you probably can see, I&rsquo;m not using <em>go modules</em>. Well, it&rsquo;s my private thing (had more problems than solved issues with them, so until they&rsquo;re not in better shape&mldr;) so I&rsquo;m going with oldschool approach and doing <code>go get</code> myself. Let&rsquo;s dive into separate parts then!</p><h2 id=part-i---get-the-private-repo>Part I - Get the private repo<a href=#part-i---get-the-private-repo class=hanchor arialabel=Anchor>&#8983;</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-dockerfile data-lang=dockerfile><span style=display:flex><span><span style=color:#66d9ef>FROM</span><span style=color:#e6db74> alpine/git AS prebuild</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>WORKDIR</span><span style=color:#e6db74>  /go/src/github.com/ecs-digital/Smart-Explorer</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>ARG</span> GIT_USERNAME<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>ARG</span> GIT_PASSWORD<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>RUN</span> git clone https://<span style=color:#e6db74>${</span>GIT_USERNAME<span style=color:#e6db74>}</span>:<span style=color:#e6db74>${</span>GIT_PASSWORD<span style=color:#e6db74>}</span>@github.ecs-digital.co.uk/ECSD/ExplorationEngine<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>WORKDIR</span><span style=color:#e6db74> /go/src/github.com/jinzhu</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>RUN</span> git clone -b master https://github.com/jinzhu/gorm.git<span style=color:#960050;background-color:#1e0010>
+</span></span></span></code></pre></div><p>First bit is rather easy - we&rsquo;re using the lightest container that allows us to use <code>git</code>.</p><p>Now we need to figure out how we can authorize our call to GitHub to get the repo. We could hardcode our <code>GIT_USERNAME</code> and <code>GIT_PASSWORD</code> but that&rsquo;s a proper security breach and we don&rsquo;t like it. So, we&rsquo;re passing the <code>username</code>-<code>password</code> combo as parameters during the build and by the power of multi-stage build, we&rsquo;re hiding all the keys in the first stage - the only visible thing when doing <code>docker history IMAGE_ID</code> would be the second part, not the bit when we authorize ourselves!</p><h2 id=part-ii---do-the-rest>Part II - Do the rest<a href=#part-ii---do-the-rest class=hanchor arialabel=Anchor>&#8983;</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-dockerfile data-lang=dockerfile><span style=display:flex><span><span style=color:#66d9ef>FROM</span><span style=color:#e6db74> golang:1.13.8-alpine</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>RUN</span> apk add git<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>COPY</span> --from<span style=color:#f92672>=</span>prebuild /go/src/github.com /go/src/github.com<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>WORKDIR</span><span style=color:#e6db74> /app</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>COPY</span> . .<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>RUN</span> go get -d -v<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>RUN</span> go build -o your-app .<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>EXPOSE</span><span style=color:#e6db74> 6661</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>CMD</span> [<span style=color:#e6db74>&#34;./your-app&#34;</span>]<span style=color:#960050;background-color:#1e0010>
+</span></span></span></code></pre></div><p>The rest is rather standard - get <code>git</code> in our container to allow <code>go get</code> to work, we&rsquo;re copying pre-stage build (look at the <code>prebuild</code> tag) and building our app! Simple as that!</p><h2 id=is-it-worth-it>Is it worth it?<a href=#is-it-worth-it class=hanchor arialabel=Anchor>&#8983;</a></h2><p>Well, yes. If you&rsquo;re working in an organisation that has it&rsquo;s own private repos, this might be your salvation (until <code>go modules</code> will work it out and allow us to authenticate&mldr;).</p><p>If you have any questions, or you maybe see something fixable here - get me on Twitter @arturkondas - I&rsquo;m more than hapy to help and to learn new stuff!</p></div></div><div class=pagination><div class=pagination__title><span class=pagination__title-h>Read other posts</span><hr></div><div class=pagination__buttons><span class="button previous"><a href=https://akondas.com/blog/to-bake-or-not-to-bake/><span class=button__icon>←</span>
+<span class=button__text>To Bake Or Not To Bake</span></a></span>
+<span class="button next"><a href=https://akondas.com/blog/colorcode-2019/><span class=button__text>Colorcode 2019</span>
+<span class=button__icon>→</span></a></span></div></div></div></div><footer class=footer><div class=footer__inner><div class=copyright><span>© 2023 Powered by <a href=http://gohugo.io>Hugo</a></span>
+<span>:: Theme made by <a href=https://twitter.com/panr>panr</a></span></div></div></footer><script src=https://akondas.com/assets/main.js></script>
+<script src=https://akondas.com/assets/prism.js></script><style>.footer{width:100%;opacity:unset}span{opacity:.5}.form_field_footer{margin:0 auto;display:flex;flex-flow:row nowrap;align-items:center}.field_footer{padding:10px;width:100%;height:40px;border-style:solid;border-color:#ffa86a;color:#ffa86a;background-color:#222129;border-radius:0}.button_footer{appearance:none;-webkit-appearance:none;padding:10px;border:none;background-color:#ffa86a;color:#222129;font-weight:600;width:100%;border-radius:0;height:40px}.height_footer{height:40px}</style><div class="footer__inner footer"><div><span>:: <a href=https://linkedin.com/in/arturkondas target=_blank>LinkedIn</a></span>
 <span>:: <a href=https://www.youtube.com/channel/UC3SvqKPXF89AX0IX7LGqYsA target=_blank>YouTube</a></span>
-<span>:: <a href=https://github.com/youshy/cv/blob/master/Markdown/cv.pdf target=_blank>Resume</a> ::</span>
-</div>
-<div id=mc_embed_signup class=form>
-<form action="https://akondas.us20.list-manage.com/subscribe/post?u=a51d84c0a38c791624a88cc4d&id=73c1b8cf8f" method=post id=mc-embedded-subscribe-form name=mc-embedded-subscribe-form class=validate target=_blank novalidate signup=https://akondas.com/blog/tales-of-docker-and-go-part-i/>
-<div id=mc_embed_signup_scroll class=form_field_footer>
-<div class="mc-field-group height_footer">
-<input type=email name=EMAIL class="required email field_footer" id=mce-EMAIL placeholder="Your email goes here">
-</div>
-<div id=mce-responses class="clear foot">
-<div class=response id=mce-error-response style=display:none></div>
-<div class=response id=mce-success-response style=display:none></div>
-</div>
-<div style=position:absolute;left:-5000px aria-hidden=true><input type=text name=b_a51d84c0a38c791624a88cc4d_73c1b8cf8f tabindex=-1>
-</div>
-<div class=optionalParent>
-<div class="clear foot height_footer">
-<input type=submit value=Subscribe name=subscribe id=mc-embedded-subscribe class=button_footer>
-</div>
-</div>
-</div>
-</form>
-</div>
-</div>
-</div>
-</body>
-</html>
+<span>:: <a href=https://github.com/youshy/cv/blob/master/Markdown/cv.pdf target=_blank>Resume</a> ::</span></div><div id=mc_embed_signup class=form><form action="https://akondas.us20.list-manage.com/subscribe/post?u=a51d84c0a38c791624a88cc4d&id=73c1b8cf8f" method=post id=mc-embedded-subscribe-form name=mc-embedded-subscribe-form class=validate target=_blank novalidate signup=https://akondas.com/blog/tales-of-docker-and-go-part-i/><div id=mc_embed_signup_scroll class=form_field_footer><div class="mc-field-group height_footer"><input type=email name=EMAIL class="required email field_footer" id=mce-EMAIL placeholder="Your email goes here"></div><div id=mce-responses class="clear foot"><div class=response id=mce-error-response style=display:none></div><div class=response id=mce-success-response style=display:none></div></div><div style=position:absolute;left:-5000px aria-hidden=true><input type=text name=b_a51d84c0a38c791624a88cc4d_73c1b8cf8f tabindex=-1></div><div class=optionalParent><div class="clear foot height_footer"><input type=submit value=Subscribe name=subscribe id=mc-embedded-subscribe class=button_footer></div></div></div></form></div></div></div></body></html>
